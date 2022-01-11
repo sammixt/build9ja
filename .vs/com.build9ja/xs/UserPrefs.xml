@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{9AF85E6C-224B-4D49-B917-612C2091FCB5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="build9ja.api/Controllers/StaffAuthController.cs">
+    <Files>
+      <File FileName="build9ja.api/Dto/StaffLoginDto.cs" Line="35" Column="10" />
+      <File FileName="build9ja.api/Controllers/StaffAuthController.cs" Line="70" Column="14" />
+      <File FileName="build9ja.api/Controllers/StaffController.cs" Line="44" Column="72" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="com.build9ja" expanded="True">
+            <Node name="build9ja.api" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="StaffAuthController.cs" selected="True" />
+              </Node>
+              <Node name="Dto" expanded="True" />
+              <Node name="DtoUtility" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.com.build9ja FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.build9ja.api PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

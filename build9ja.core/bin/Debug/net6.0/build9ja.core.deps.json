@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "build9ja.core/1.0.0": {
+        "runtime": {
+          "build9ja.core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "build9ja.core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

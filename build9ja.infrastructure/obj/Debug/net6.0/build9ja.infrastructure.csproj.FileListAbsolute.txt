@@ -1,0 +1,17 @@
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.csproj.AssemblyReference.cache
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.AssemblyInfoInputs.cache
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.AssemblyInfo.cs
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.csproj.CoreCompileInputs.cache
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/build9ja.infrastructure.deps.json
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/build9ja.infrastructure.runtimeconfig.json
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/build9ja.infrastructure.dll
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/ref/build9ja.infrastructure.dll
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/build9ja.infrastructure.pdb
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/build9ja.core.dll
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/bin/Debug/net6.0/build9ja.core.pdb
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.csproj.CopyComplete
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.dll
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/ref/build9ja.infrastructure.dll
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.pdb
+/Users/sasmuelezeala/Documents/personal/com.build9ja/build9ja.infrastructure/obj/Debug/net6.0/build9ja.infrastructure.genruntimeconfig.cache

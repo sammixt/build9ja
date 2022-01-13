@@ -40,7 +40,7 @@ namespace build9ja.api.Dto
         public string Status {get; set;}
     }
 
-    public class VendorStatusDto{
+    public class StatusDto{
         [Required(ErrorMessage = "Status is required")]
         public string Status {get; set;}
     }

@@ -29,6 +29,8 @@ namespace build9ja.api.Helper
 			CreateMap<Commission,CommissionDto>().ReverseMap();
 			CreateMap<Vendor,VendorDto>().ReverseMap();
 			CreateMap<VendorBankInfo,VendorBankInfoDto>().ReverseMap();
+			CreateMap<Category,CategoryDto>().ReverseMap();
+			CreateMap<Category,CategoryListDto>().ReverseMap();
 		}
 	}
 }

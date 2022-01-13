@@ -86,7 +86,7 @@ namespace build9ja.api.Controllers
         
         //update vendor status
         [HttpPut("update/status/{id}")]
-        public async Task<ActionResult> UpdateStatus(long id, [FromBody] VendorStatusDto model)
+        public async Task<ActionResult> UpdateStatus(long id, [FromBody] StatusDto model)
         {
             if (!ModelState.IsValid)
             {

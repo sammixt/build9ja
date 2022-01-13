@@ -21,6 +21,7 @@ namespace build9ja.infrastructure.Data
 		public DbSet<Vendor> Vendors {get; set;}
 		public DbSet<VendorBankInfo> vendorBankInfos {get; set;}
 		public DbSet<VendorCredential> VendorCredentials { get; set; }
+		public DbSet<Category> Categories {get; set;}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

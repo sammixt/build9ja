@@ -51,7 +51,7 @@ namespace build9ja.api.Controllers
 
             if (!PasswordUtility.VerifyPasswordHash(model.Password, user.PasswordHash, user.PasswordSalt))
             {
-                return BadRequest("Invalid Username or password");
+                return BadRequest(new ApiResponse(400,"Invalid Username or password"));
             }
             string token =  _tokenService.CreateToken(user.VendorId, model.UserName, user.Permissions);
             LoggedInDto loggedInDto = new LoggedInDto(token, user.UserName, user.Permissions, $"{vendor.FirstName} {vendor.LastName}");

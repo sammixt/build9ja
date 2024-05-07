@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using build9ja.core.Entities;
+using build9ja.core.Specifications;
 
 namespace build9ja.core.Interfaces
 {
@@ -21,5 +22,8 @@ namespace build9ja.core.Interfaces
         Task<List<Category>> GetCategories();
         //get categoryy by name
         Task<Category> GetCategoryByName(string name);
+        Task<List<Category>> getCategoryDataTable(DataTableRequestSpecification spec);
+        Task<int> getCount();
+        Task<List<Category>> GetTopCategories();
     }
 }

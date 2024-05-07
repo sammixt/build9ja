@@ -1,0 +1,195 @@
+.progressBar-main{
+  padding: 15px 0; 
+  .progress{
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    background: none;
+    margin: 0;
+    box-shadow: none;
+    position: relative;
+  }
+  .progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress .progress-left{
+    left: 0;
+  }
+  .progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+  }
+  .progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+  }
+  .progress .progress-right{
+    right: 0;
+  }
+  .progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+  }
+  .progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    font-size: 24px;
+    font-family: $font-family-base-bold;
+    color: var(--color-text-dark);
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .progress.success:after{
+    border: 12px solid var(--artical-background-success-darkest);
+    background: var(--artical-background-success-darkest);
+  }
+  .progress.success .progress-bar{
+    border-color: var(--artical-background-success);
+  }
+  .progress.success .progress-left .progress-bar{
+    animation: loading-4 1.5s linear forwards 1.8s;
+  }
+  .progress.warning:after{
+    border: 12px solid var(--artical-background-warning-darkest);
+    background: var(--artical-background-warning-darkest);
+  }
+  .progress.warning .progress-bar{
+    border-color: var(--artical-background-warning);
+  }
+  .progress.warning .progress-left .progress-bar{
+    animation: loading-4 1.5s linear forwards 1.8s;
+  }
+  .progress.danger:after{
+    border: 12px solid var(--artical-background-danger-darkest);
+    background: var(--artical-background-danger-darkest);
+  }
+  .progress.danger .progress-bar{
+    border-color: var(--artical-background-danger);
+  }
+  .progress.danger .progress-left .progress-bar{
+    animation: loading-4 1.5s linear forwards 1.8s;
+  }
+  .progress.info:after{
+    border: 12px solid var(--artical-background-info-darkest);
+    background: var(--artical-background-info-darkest);
+  }
+  .progress.info .progress-bar{
+    border-color: var(--artical-background-info);
+  }
+  .progress.info .progress-left .progress-bar{
+    animation: loading-4 1.5s linear forwards 1.8s;
+  }
+}
+
+
+@keyframes loading-1{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+  }
+}
+@keyframes loading-2{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+      -webkit-transform: rotate(144deg);
+      transform: rotate(144deg);
+  }
+}
+@keyframes loading-3{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+  }
+}
+@keyframes loading-4{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+      -webkit-transform: rotate(36deg);
+      transform: rotate(36deg);
+  }
+}
+@keyframes loading-5{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+      -webkit-transform: rotate(126deg);
+      transform: rotate(126deg);
+  }
+}
+@media only screen and (max-width: 990px){
+  .progress{ margin-bottom: 20px; }
+}
+
+@media only screen and (max-width: 1375px){
+  .progressBar-main{
+    .progress{
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .statusbar .statuscontent {
+    width: calc(100% - 100px);
+  }
+}
+
+@media only screen and (max-width: 575px){
+  
+  .statusbar.progressBar-main{
+    .progress{
+      width: 100px;
+      height: 100px;
+    }
+  }
+ 
+}

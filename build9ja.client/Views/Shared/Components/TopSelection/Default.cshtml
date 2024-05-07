@@ -1,0 +1,1172 @@
+@model build9ja.client.Dto.Products.TopProductSelectionDto
+<section class="v-tabs-content-2">
+          <div class="container">
+            <div class=row>
+              
+              <div class="col-12 col-lg-6 col-md-6">
+                <div class="pro-heading-title-2">
+                  <h2>Top Selection</h2>
+                  <p> Most purchased products</p>
+                </div>
+                <div class="row">
+                
+                  <div class="col-12">
+                      <div class="stock-products-js deals .slider-nav row mt-3">
+                        @if(Model is not null && Model.TopSelection is not null)
+                        {
+                          int count = 1;
+                          foreach(var topSelection in Model.TopSelection)
+                          {
+                            string blockclass = (count % 2 == 0)? "mt-4": "";
+                            <div class="@blockclass">
+                            <div class=" v-product-card2">
+                              <article>
+                                <div class="pro-thumb">
+                                  @if(topSelection.ProductImage is not null && topSelection.ProductImage.MainImage is not null){
+                                                        <img class="img-fluid" id="myImage1" src="@topSelection.ProductImage.MainImage" alt="Product-Image">
+                                  }else{
+                                      <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 28.png" alt="Product-Image">
+                                  }
+                                  
+                                  
+
+                                    
+
+                                   @* <div class="pro-hover-icons">
+                                      <div class="icons">
+                                        
+                                        <button class="btn-light icon " onclick="notificationCart();">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                        <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                          <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-light icon" onclick="notificationCompare();">
+                                          <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                        </button>
+                                      </div>
+                                  </div>  *@
+                                </div>
+                              
+
+                                <div class="pro-info">
+                                    <div>
+                                      <p class="text-center p-0">@topSelection.ProductName</p>
+                                    </div>
+                                    <div class="pro-price new-price">                     
+                                      
+                                      <ins>₦@topSelection.BasePrice
+                                          @* <del>
+                                              $350.00     
+                                            </del>  *@
+                                      </ins>  
+                                      
+                                       @* <button  class="btn-light icon " onclick="notificationWishlist();">
+                                          <i class="fas fa-heart"></i>
+                                        </button>              *@
+                                    </div>
+                                    <div class="pro-stars">
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                    </div>
+
+                                  
+                                  <div class="pro-buttons">
+                                    
+                                    <button type="button" class="btn btn-link btn-sm" onclick="addToCart('@topSelection.ProductIdString')">
+                                      <i class="fas fa-shopping-basket "></i>Cart
+                                    </button>  
+                                    <a href="javascript:void(0)" onclick="addToWishList('@topSelection.ProductIdString')" class="">
+                                      <i class="fas fa-heart"></i> Wishlist
+                                      </a>
+                                    </div>
+                                </div>               
+                              </article>
+                          </div>
+                        </div>  
+                         count++;
+                          }
+
+                        }
+                           
+                        @* <div class="mt-4">
+                            <div class=" v-product-card2">
+                              <article>
+                                <div class="pro-thumb">
+                                  
+                                  <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 33.png" alt="Product-Image">
+
+                                    
+
+                                  <!-- <div class="pro-hover-icons">
+                                      <div class="icons">
+                                        
+                                        <button class="btn-light icon " onclick="notificationCart();">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                        <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                          <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-light icon" onclick="notificationCompare();">
+                                          <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                        </button>
+                                      </div>
+                                  </div> -->
+                                </div>
+                              
+
+                                <div class="pro-info">
+                                    <div>
+                                      <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                    </div>
+                                    <div class="pro-price new-price">                     
+                                      
+                                      <ins>$200.00
+                                          <del>
+                                              $350.00     
+                                            </del> 
+                                      </ins>  
+                                      
+                                      <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                          <i class="fas fa-heart"></i>
+                                        </button>             -->
+                                    </div>
+                                    <div class="pro-stars">
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                    </div>
+
+                                    
+                                  <div class="pro-buttons">
+                                    
+                                    <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                      <i class="fas fa-shopping-basket "></i>Cart
+                                    </button>  
+                                    <a href="wishlist.html" class="">
+                                      <i class="fas fa-heart"></i> Wishlist
+                                      </a>
+                                    </div>
+                                </div>               
+                              </article>
+                          </div>
+                        </div>     
+                        <div class="">
+                            <div class=" v-product-card2">
+                              <article>
+                                <div class="pro-thumb">
+                                  
+                                  <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 29.png" alt="Product-Image">
+
+                                    
+
+                                  <!-- <div class="pro-hover-icons">
+                                      <div class="icons">
+                                        
+                                        <button class="btn-light icon " onclick="notificationCart();">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                        <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                          <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-light icon" onclick="notificationCompare();">
+                                          <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                        </button>
+                                      </div>
+                                  </div> -->
+                                </div>
+                              
+
+                                <div class="pro-info">
+                                    <div>
+                                      <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                    </div>
+                                    <div class="pro-price new-price">                     
+                                      
+                                      <ins>$200.00
+                                          <del>
+                                              $350.00     
+                                            </del> 
+                                      </ins>  
+                                      
+                                      <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                          <i class="fas fa-heart"></i>
+                                        </button>             -->
+                                    </div>
+                                    <div class="pro-stars">
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                    </div>
+
+                                    
+                                  <div class="pro-buttons">
+                                    
+                                    <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                      <i class="fas fa-shopping-basket "></i>Cart
+                                    </button>  
+                                    <a href="wishlist.html" class="">
+                                      <i class="fas fa-heart"></i> Wishlist
+                                      </a>
+                                    </div>
+                                </div>               
+                              </article>
+                            </div>
+                          
+                        </div>     
+                        <div class=" mt-4">
+                            <div class=" v-product-card2">
+                              <article>
+                                <div class="pro-thumb">
+                                  
+                                  <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 34.png" alt="Product-Image">
+
+                                    
+
+                                  <!-- <div class="pro-hover-icons">
+                                      <div class="icons">
+                                        
+                                        <button class="btn-light icon " onclick="notificationCart();">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                        <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                          <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-light icon" onclick="notificationCompare();">
+                                          <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                        </button>
+                                      </div>
+                                  </div> -->
+                                </div>
+                              
+
+                                <div class="pro-info">
+                                    <div>
+                                      <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                    </div>
+                                    <div class="pro-price new-price">                     
+                                      
+                                      <ins>$200.00
+                                          <del>
+                                              $350.00     
+                                            </del> 
+                                      </ins>  
+                                      
+                                      <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                          <i class="fas fa-heart"></i>
+                                        </button>             -->
+                                    </div>
+                                    <div class="pro-stars">
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                    </div>
+
+                                    
+                                  <div class="pro-buttons">
+                                    
+                                    <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                      <i class="fas fa-shopping-basket "></i>Cart
+                                    </button>  
+                                    <a href="wishlist.html" class="">
+                                      <i class="fas fa-heart"></i> Wishlist
+                                      </a>
+                                    </div>
+                                </div>               
+                              </article>
+                          </div>
+                        </div>     
+                        <div class="">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 30.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class=" mt-4">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 35.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                              
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class="">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 3.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                              
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class="mt-4">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 3.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                              
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>    *@
+                      </div>
+                  </div>
+              </div>
+              </div>
+              <div class="col-12 col-lg-6 col-md-6">
+                <div class="pro-heading-title-2">
+                  <h2>New Arrivals</h2>
+                  <p> New Products</p>
+                </div>
+                <div class="row">
+                  
+                  <div class="col-12">
+                      <div class="stock-products-js deals .slider-nav row mt-3">
+                           @if(Model is not null && Model.NewArrival is not null)
+                        {
+                          int count = 1;
+                          foreach(var newArrival in Model.NewArrival)
+                          {
+                            string blockclass = (count % 2 == 0)? "mt-4": "";
+                            <div class="@blockclass">
+                            <div class=" v-product-card2">
+                              <article>
+                                <div class="pro-thumb">
+                                  @if(newArrival.ProductImage is not null && newArrival.ProductImage.MainImage is not null){
+                                      <img class="img-fluid" id="myImage1" src="@newArrival.ProductImage.MainImage" alt="Product-Image">
+                                  }else{
+                                      <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 28.png" alt="Product-Image">
+                                  }
+                                  
+                                  
+
+                                    
+
+                                   @* <div class="pro-hover-icons">
+                                      <div class="icons">
+                                        
+                                        <button class="btn-light icon " onclick="notificationCart();">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                        <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                          <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-light icon" onclick="notificationCompare();">
+                                          <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                        </button>
+                                      </div>
+                                  </div>  *@
+                                </div>
+                              
+
+                                <div class="pro-info">
+                                    <div>
+                                      <p class="text-center p-0">@newArrival.ProductName</p>
+                                    </div>
+                                    <div class="pro-price new-price">                     
+                                      
+                                      <ins>₦@newArrival.BasePrice
+                                          @* <del>
+                                              $350.00     
+                                            </del>  *@
+                                      </ins>  
+                                      
+                                       @* <button  class="btn-light icon " onclick="notificationWishlist();">
+                                          <i class="fas fa-heart"></i>
+                                        </button>              *@
+                                    </div>
+                                    <div class="pro-stars">
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                      <span class="fa fa-star checked"></span>
+                                    </div>
+
+                                  
+                                  <div class="pro-buttons">
+                                    
+                                    <button type="button" class="btn btn-link btn-sm" onclick="addToCart('@newArrival.ProductIdString')">
+                                      <i class="fas fa-shopping-basket "></i>Cart
+                                    </button>  
+                                    <a href="javascript:void(0)" onclick="addToWishList('@newArrival.ProductIdString')" class="">
+                                      <i class="fas fa-heart"></i> Wishlist
+                                      </a>
+                                    </div>
+                                </div>               
+                              </article>
+                          </div>
+                        </div>  
+                          count++;
+                          }
+
+                        }
+                        @* <div class="">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 31.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class="mt-4">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 36.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                         </div>
+                          
+                        </div>     
+                        <div class="">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 45.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class=" mt-4">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 37.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class="">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 32.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class=" mt-4">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 38.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                              
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class="">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 3.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                              
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>     
+                        <div class="mt-4">
+                          <div class=" v-product-card2">
+                            <article>
+                              <div class="pro-thumb">
+                                
+                                <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 3.png" alt="Product-Image">
+
+                                  
+
+                                <!-- <div class="pro-hover-icons">
+                                    <div class="icons">
+                                      
+                                      <button class="btn-light icon " onclick="notificationCart();">
+                                          <i class="fas fa-shopping-bag"></i>
+                                      </button>
+                                      <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                      <button class="btn-light icon" onclick="notificationCompare();">
+                                        <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                      </button>
+                                    </div>
+                                </div> -->
+                              </div>
+                            
+
+                              <div class="pro-info">
+                                  <div>
+                                    <p class="text-center p-0">Original Lenovo XT91 TWS Earphone</p>
+                                  </div>
+                                  <div class="pro-price new-price">                     
+                                    
+                                    <ins>$200.00
+                                        <del>
+                                            $350.00     
+                                          </del> 
+                                    </ins>  
+                                    
+                                    <!-- <button  class="btn-light icon " onclick="notificationWishlist();">
+                                        <i class="fas fa-heart"></i>
+                                      </button>             -->
+                                  </div>
+                                  <div class="pro-stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                  </div>
+
+                                  
+                              
+                                <div class="pro-buttons">
+                                  
+                                  <button type="button" class="btn btn-link btn-sm" onclick="notificationCart();">
+                                    <i class="fas fa-shopping-basket "></i>Cart
+                                  </button>  
+                                  <a href="wishlist.html" class="">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                    </a>
+                                  </div>
+                              </div>               
+                            </article>
+                          </div>
+                          
+                        </div>    *@
+                      </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section> 

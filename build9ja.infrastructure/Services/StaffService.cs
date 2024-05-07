@@ -29,6 +29,13 @@ namespace build9ja.infrastructure.Services
             return user != null;
         }
 
+        public async Task<bool> checkStaffHasLoginCredential(string staffId)
+        {
+            StaffCredentialSpecification credentialSpecification = new StaffCredentialSpecification(staffId,true);
+            var user = await _unitOfWork.Repository<StaffCredential>().GetEntityWithSpec(credentialSpecification);
+            return user != null;
+        }
+
         public async Task<int> createStaff(Staff staff)
         {
              _unitOfWork.Repository<Staff>().Add(staff);
@@ -53,6 +60,13 @@ namespace build9ja.infrastructure.Services
         public async Task<IReadOnlyList<Staff>> getStaffs(PaginationSpecification specs)
         {
             StaffSpecification credentialSpecification = new StaffSpecification(specs);
+            var staffs = await _unitOfWork.Repository<Staff>().ListAsync(credentialSpecification);
+            return staffs;
+        }
+
+        public async Task<IReadOnlyList<Staff>> getStaffs()
+        {
+            StaffSpecification credentialSpecification = new StaffSpecification();
             var staffs = await _unitOfWork.Repository<Staff>().ListAsync(credentialSpecification);
             return staffs;
         }
@@ -85,6 +99,7 @@ namespace build9ja.infrastructure.Services
             staffDetail.FirstName = staff.FirstName ?? staffDetail.FirstName;
             staffDetail.LastName = staff.LastName ?? staffDetail.LastName;
             staffDetail.Status = staff.Status ?? staffDetail.Status;
+            staffDetail.DateOfBirth = staff.DateOfBirth ;
             _unitOfWork.Repository<Staff>().Update(staffDetail);
 
             await _unitOfWork.Complete();

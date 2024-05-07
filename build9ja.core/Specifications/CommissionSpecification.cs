@@ -8,6 +8,8 @@ namespace build9ja.core.Specifications
 {
     public class CommissionSpecification : BaseSpecification<Commission>
     {
+        public CommissionSpecification(){}
+
         public CommissionSpecification(long id)
             : base(x => x.Id == id)
         {

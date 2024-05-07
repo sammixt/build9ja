@@ -14,7 +14,7 @@ namespace build9ja.api.Controllers
     
     public class CategoryController : BaseApiController
     {
-         private readonly ICategoryService _categoryService;
+        private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
         public CategoryController(ICategoryService categoryService, IMapper mapper)
         {

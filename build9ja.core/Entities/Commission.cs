@@ -9,13 +9,11 @@ namespace build9ja.core.Entities
     {
         public Commission()
         {
-            DateCreated = DateTime.UtcNow;
+            
         }
 
         public string CommissionType {get; set;}
         public decimal CommissionPercentage {get; set;}
-
-        public DateTime DateCreated {get; set;}
 
         public string Status {get; set;}
 

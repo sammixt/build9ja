@@ -50,6 +50,13 @@ namespace build9ja.infrastructure.Services
             return vendor;
         }
 
+        public  async Task<int> getCount()
+        {
+            VendorSpecification vendorSpecification = new VendorSpecification();
+            var vendor = await _unitOfWork.Repository<Vendor>().CountAsync(vendorSpecification);
+            return vendor;
+        }
+
         public async Task<Vendor> getVendorById(long staffId)
         {
              VendorSpecification vendorSpecification = new VendorSpecification(staffId);
@@ -62,6 +69,13 @@ namespace build9ja.infrastructure.Services
             VendorSpecification vendorSpecification = new VendorSpecification(staffId);
               var vendor = await _unitOfWork.Repository<Vendor>().GetEntityWithSpec(vendorSpecification);
             return vendor;
+        }
+
+        public async Task<IReadOnlyList<Vendor>> getVendorsDataTable(DataTableRequestSpecification spec)
+        {
+            VendorSpecification credentialSpecification = new VendorSpecification(spec);
+            var staffs = await _unitOfWork.Repository<Vendor>().ListAsync(credentialSpecification);
+            return staffs;
         }
 
         public async Task<int> createVendorCredential(VendorCredential vendorCredential)
@@ -81,6 +95,13 @@ namespace build9ja.infrastructure.Services
         public async Task<IReadOnlyList<Vendor>> getVendors(PaginationSpecification specs)
         {
             VendorSpecification credentialSpecification = new VendorSpecification(specs);
+            var staffs = await _unitOfWork.Repository<Vendor>().ListAsync(credentialSpecification);
+            return staffs;
+        }
+
+         public async Task<IReadOnlyList<Vendor>> getVendors()
+        {
+            VendorSpecification credentialSpecification = new VendorSpecification();
             var staffs = await _unitOfWork.Repository<Vendor>().ListAsync(credentialSpecification);
             return staffs;
         }
@@ -133,6 +154,29 @@ namespace build9ja.infrastructure.Services
             return "ER";
         }
 
+        public async Task<string> UpdateVendor(string sellerId,Vendor vendor)
+        {
+            VendorSpecification spec = new VendorSpecification(sellerId);
+            var model = await _unitOfWork.Repository<Vendor>().GetEntityWithSpec(spec);
+            if(model == null) return "99";
+            model.FirstName = vendor.FirstName??model.FirstName;
+            model.LastName = vendor.LastName??model.LastName;
+            model.Address = vendor.Address??model.Address;
+            model.CacNumber = vendor.CacNumber??model.CacNumber;
+            model.City = vendor.City??model.City;
+            model.Company = vendor.Company??model.Company;
+            model.Description = vendor.Description??model.Description;
+            model.PhoneNumber = vendor.PhoneNumber??model.PhoneNumber;
+            model.Email = vendor.Email??model.Email;
+            model.State = vendor.State??model.State;
+            model.TaxNumber = vendor.TaxNumber??model.TaxNumber;
+            model.Status = vendor.Status;
+            _unitOfWork.Repository<Vendor>().Update(model);
+            int output = await _unitOfWork.Complete();
+            if(output > 0) return "00";
+            return "ER";
+        }
+
         public async Task<string> UpdateVendorStatus(long vendorId,string status)
         {
             VendorSpecification spec = new VendorSpecification(vendorId);
@@ -143,6 +187,28 @@ namespace build9ja.infrastructure.Services
             int output = await _unitOfWork.Complete();
             if(output > 0) return "00";
             return "ER";
+        }
+
+        public async Task<VendorBankInfo> GetVendorBankInfo(string vendorId){
+            VendorBankInfoSpecification spec = new VendorBankInfoSpecification(vendorId);
+            var vendorBankInfo = await _unitOfWork.Repository<VendorBankInfo>().GetEntityWithSpec(spec);
+            return vendorBankInfo;
+        }
+
+        public async Task<int> AddOrUpdateVendorBankInfo(VendorBankInfo bankInfo)
+        {
+            VendorBankInfoSpecification spec = new VendorBankInfoSpecification(bankInfo.SellerId);
+             var vendorBankInfo = await _unitOfWork.Repository<VendorBankInfo>().GetEntityWithSpec(spec);
+             if(vendorBankInfo != null){
+                 vendorBankInfo.AccountName = bankInfo.AccountName ?? vendorBankInfo.AccountName;
+                 vendorBankInfo.AccountNumber = bankInfo.AccountNumber ?? vendorBankInfo.AccountNumber;
+                 vendorBankInfo.BankName = bankInfo.BankName ?? vendorBankInfo.BankName;
+                  _unitOfWork.Repository<VendorBankInfo>().Update(vendorBankInfo);
+             }else{
+                 _unitOfWork.Repository<VendorBankInfo>().Add(bankInfo);
+             }
+
+             return await _unitOfWork.Complete();
         }
     }
     //create vendor

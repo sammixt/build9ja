@@ -22,6 +22,16 @@ namespace build9ja.infrastructure.Data
 		public DbSet<VendorBankInfo> vendorBankInfos {get; set;}
 		public DbSet<VendorCredential> VendorCredentials { get; set; }
 		public DbSet<Category> Categories {get; set;}
+		public DbSet<Brand> Brands {get; set;}
+		public DbSet<Product> Products {get; set;}
+		public DbSet<ProductSpecification> ProductSpecifications {get; set;}
+		public DbSet<ProductVariation> ProductVariations {get; set;}
+		public DbSet<ProductImage> ProductImages {get; set;}
+		public DbSet<Banner> Banner {get; set;}
+
+		public DbSet<AppRedis> Redis { get; set; }
+		public DbSet<WishList> Wishlist {get; set;}
+		public DbSet<DeliveryMethod> DeliveryMethods {get; set;}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

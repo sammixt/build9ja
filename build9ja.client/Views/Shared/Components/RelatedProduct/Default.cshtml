@@ -1,0 +1,86 @@
+@model IEnumerable<build9ja.client.Dto.Products.ProductDto>
+<div class="pro-content" style="margin-top:10px">
+          <div class="container">
+            <div class="row ">
+                <div class="col-12 col-md-6">
+                    <div class="pro-heading-title">
+                       <h2> Related Products
+                       </h2>
+                       @* <p>Lorem ipsum dolor sit amet, consectetur  
+                       </p> *@
+                     </div>
+                 </div>
+            </div>
+            <div class="tab-carousel-js row">
+              @if(Model is not null){
+                foreach(var product in Model){
+                   <div class="">
+                      <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                  <img class="img-fluid"  src="@product.ProductImage.MainImage" alt="Product-Image">
+                                }else{
+                                    <img class="img-fluid" src="~/asset/images/product_images/product_image_1.jpg" alt="Product-Image">
+                                }
+                              
+
+                              <div class="badges">
+                                @if(product.IsFeatured){
+                                    <div class="badge badge-info">
+                                      Featured
+                                    </div>
+                                }
+                                
+                                @* <div class="badge badge-danger">
+                                  Sale
+                                </div> *@
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="addToCart('@product.ProductIdString')">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <a class="btn-light icon" asp-action="Product" asp-controller="Shop" asp-route-pid="@product.ProductIdString" >
+                                      <i class="fas fa-eye"></i>
+                                    </a>
+                                    @* <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button> *@
+                                  </div>
+                              </div>
+                            </div>
+                          
+
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                   @product.Category                           
+                                </div>
+                                <h3 ><a asp-action="Product" asp-controller="Shop" asp-route-pid="@product.ProductIdString">@product.ProductName</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>₦@product.BasePrice
+                                      @* <del>
+                                          $182     
+                                        </del>  *@
+                                  </ins>  
+                                
+                                  <a  class="btn-light icon " href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')">
+                                      <i class="fas fa-heart"></i>
+                                    </a>            
+                                </div>
+                          
+
+                            </div>                   
+                        
+      
+                          </article>
+                      </div>
+                  </div>   
+                }
+              }
+          </div>
+        </div>  

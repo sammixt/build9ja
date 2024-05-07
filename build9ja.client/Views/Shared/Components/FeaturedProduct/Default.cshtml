@@ -1,0 +1,245 @@
+  @model build9ja.client.Dto.Products.FeaturedProductDto
+  <section class="feature-product ">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-lg-3">
+                  <div class="pro-heading-title-2">
+                    <h2>Feature Product</h2>
+                    @* <a href="#" class="btn" type="button">All</a> *@
+                  </div>
+                   @if(Model is not null && Model.FeatureA is not null){
+                      foreach(var product in Model.FeatureA)
+                      {
+                          <div class="feature-inner">
+                            <div class="img-div">
+                              @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                    <img class="img-fluid" id="myImage1" src="@product.ProductImage.MainImage" alt="Product-Image">
+                                }else{
+                                    <img src="~/asset/images/mv 2/Layer 39.png" class="img-fluid" alt="Feature-product">
+                                }
+                              
+                            </div>
+                            <div class="product-info">
+                                <h4>@product.ProductName</h4>
+                                <ins>₦@product.BasePrice
+                                  @* <del>
+                                      $350.00     
+                                    </del>  *@
+                              </ins>
+                              <div>
+                                <a href="javascript:void(0)" onclick="addToCart('@product.ProductIdString')"><i class="fas fa-shopping-basket "></i></a>
+                                <a href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')"><i class="fas fa-heart pl-1"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                      }
+                   }
+                  
+                  @* <div class="feature-inner">
+                    <div class="img-div">
+                      <img src="~/asset/images/mv 2/Layer 40.png" class="img-fluid" alt="Feature-product">
+                    </div>
+                    
+                    <div class="product-info">
+                        <h4>Slim Watch Band for Apple</h4>
+                        <ins>$200.00
+                          <del>
+                              $350.00     
+                            </del> 
+                      </ins>
+                      <div>
+                        <a href="#"><i class="fas fa-shopping-basket "></i></a>
+                        <a href="#"><i class="fas fa-heart pl-1"></i></a>
+                      </div>
+                    </div>
+                  </div> *@
+                  @* <div class="feature-inner">
+                    <div class="img-div">
+                      <img src="~/asset/images/mv 2/Layer 13.png" class="img-fluid" alt="Feature-product">
+                      </div>
+                          <div class="product-info">
+                            <h4>Ut in libero eu Perfect Device</h4>
+                            <ins>$200.00
+                              <del>
+                                  $350.00     
+                              </del> 
+                            </ins>
+                          <div>
+                          <a href="#"><i class="fas fa-shopping-basket "></i></a>
+                          <a href="#"><i class="fas fa-heart pl-1"></i></a>
+                        </div>
+                    </div>
+                  </div> *@
+                </div>
+
+                <div class="col-12 col-lg-3">
+                  <div class="pro-heading-title-2">
+                    <h2>Feature Product</h2>
+                    @* <a href="#" class="btn" type="button">All</a> *@
+                  </div>
+                  @if(Model is not null && Model.FeatureB is not null){
+                      foreach(var product in Model.FeatureB)
+                      {
+                          <div class="feature-inner">
+                            <div class="img-div">
+                              @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                    <img class="img-fluid" id="myImage1" src="@product.ProductImage.MainImage" alt="Product-Image">
+                                }else{
+                                    <img src="~/asset/images/mv 2/Layer 39.png" class="img-fluid" alt="Feature-product">
+                                }
+                              
+                            </div>
+                            <div class="product-info">
+                                <h4>@product.ProductName</h4>
+                                <ins>₦@product.BasePrice
+                                  @* <del>
+                                      $350.00     
+                                    </del>  *@
+                              </ins>
+                              <div>
+                                <a href="javascript:void(0)" onclick="addToCart('@product.ProductIdString')"><i class="fas fa-shopping-basket "></i></a>
+                                <a href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')"><i class="fas fa-heart pl-1"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                      }
+                   }
+                  @* <div class="feature-inner">
+                    <div class="img-div">
+                      <img src="~/asset/images/mv 2/Layer 42.png" class="img-fluid" alt="Feature-product">
+                    </div>
+                    <div class="product-info">
+                        <h4>Coffee Drip Filter Cup Stainless Steel</h4>
+                        <ins>$200.00
+                          <del>
+                              $350.00     
+                            </del> 
+                      </ins>
+                      <div>
+                        <a href="#"><i class="fas fa-shopping-basket "></i></a>
+                        <a href="#"><i class="fas fa-heart pl-1"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-inner">
+                    <div class="img-div">
+                      <img src="~/asset/images/mv 2/Layer 43.png" class="img-fluid" alt="Feature-product">
+                    </div>
+                    <div class="product-info">
+                        <h4>Coffee Drip Filter Cup Stainless Steel</h4>
+                        <ins>$200.00
+                          <del>
+                              $350.00     
+                            </del> 
+                      </ins>
+                      <div>
+                        <a href="#"><i class="fas fa-shopping-basket "></i></a>
+                        <a href="#"><i class="fas fa-heart pl-1"></i></a>
+                      </div>
+                    </div>
+                  </div> *@
+                </div>
+                <div class="col-12 col-lg-3">
+                  <div class="pro-heading-title-2">
+                    <h2>Feature Product</h2>
+                    @* <a href="#" class="btn" type="button">All</a> *@
+                  </div>
+                  @if(Model is not null && Model.FeatureC is not null){
+                      foreach(var product in Model.FeatureC)
+                      {
+                          <div class="feature-inner">
+                            <div class="img-div">
+                              @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                    <img class="img-fluid" id="myImage1" src="@product.ProductImage.MainImage" alt="Product-Image">
+                                }else{
+                                    <img src="~/asset/images/mv 2/Layer 39.png" class="img-fluid" alt="Feature-product">
+                                }
+                              
+                            </div>
+                            <div class="product-info">
+                                <h4>@product.ProductName</h4>
+                                <ins>₦@product.BasePrice
+                                  @* <del>
+                                      $350.00     
+                                    </del>  *@
+                              </ins>
+                              <div>
+                                <a href="javascript:void(0)" onclick="addToCart('@product.ProductIdString')"><i class="fas fa-shopping-basket "></i></a>
+                                <a href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')"><i class="fas fa-heart pl-1"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                      }
+                   }
+                  @* <div class="feature-inner">
+                    <div class="img-div">
+                      <img src="~/asset/images/mv 2/Layer 45.png" class="img-fluid" alt="Feature-product">
+                    </div>
+                    <div class="product-info">
+                        <h4>Coffee Drip Filter Cup Stainless Steel</h4>
+                        <ins>$200.00
+                          <del>
+                              $350.00     
+                            </del> 
+                      </ins>
+                      <div>
+                        <a href="#"><i class="fas fa-shopping-basket "></i></a>
+                        <a href="#"><i class="fas fa-heart pl-1"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-inner">
+                    <div class="img-div">
+                      <img src="~/asset/images/mv 2/Layer 46.png" class="img-fluid" alt="Feature-product">
+                    </div>
+                    <div class="product-info">
+                        <h4>Coffee Drip Filter Cup Stainless Steel</h4>
+                        <ins>$200.00
+                          <del>
+                              $350.00     
+                            </del> 
+                      </ins>
+                      <div>
+                        <a href="#"><i class="fas fa-shopping-basket "></i></a>
+                        <a href="#"><i class="fas fa-heart pl-1"></i></a>
+                      </div>
+                    </div>
+                  </div> *@
+
+                </div>
+                <div class="col-12 col-lg-3">
+                  <div class="pro-heading-title-2">
+                    <h2>Feature Product</h2>
+                    @* <a href="#" class="btn" type="button">All</a> *@
+                  </div>
+                  @if(Model is not null && Model.FeatureD is not null){
+                      foreach(var product in Model.FeatureD)
+                      {
+                          <div class="feature-inner">
+                            <div class="img-div">
+                              @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                    <img class="img-fluid" id="myImage1" src="@product.ProductImage.MainImage" alt="Product-Image">
+                                }else{
+                                    <img src="~/asset/images/mv 2/Layer 39.png" class="img-fluid" alt="Feature-product">
+                                }
+                              
+                            </div>
+                            <div class="product-info">
+                                <h4>@product.ProductName</h4>
+                                <ins>₦@product.BasePrice
+                                  @* <del>
+                                      $350.00     
+                                    </del>  *@
+                              </ins>
+                              <div>
+                                <a href="javascript:void(0)" onclick="addToCart('@product.ProductIdString')"><i class="fas fa-shopping-basket "></i></a>
+                                <a href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')"><i class="fas fa-heart pl-1"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                      }
+                   }
+                </div>
+              </div>
+            </div>
+          </section>

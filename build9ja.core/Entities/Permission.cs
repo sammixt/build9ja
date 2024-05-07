@@ -17,7 +17,6 @@ namespace build9ja.core.Entities
 
 		public string CreatedBy { get; set; }
 
-		public DateTime dateCreate { get; set; }
 	}
 }
 

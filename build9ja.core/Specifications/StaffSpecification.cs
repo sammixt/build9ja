@@ -27,6 +27,8 @@ namespace build9ja.core.Specifications
 
 		}
 
+		
+
 		public StaffSpecification(string staffId)
 			: base(a => a.StaffId.Trim() == staffId)
 		{

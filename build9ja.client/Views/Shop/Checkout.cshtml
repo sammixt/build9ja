@@ -1,0 +1,527 @@
+ <!-- Page Header -->
+ @model build9ja.client.Dto.CheckoutShippingAddress
+      <div class="container-fuild">
+          <div class="page-header" style="background-image: url('images/miscellaneous/page-header.png')">
+            <div class="container">
+              <h1 class="page-title">Checkout<span>Introduce Yourself</span></h1>
+            </div><!-- End .container -->
+          </div>
+          <nav aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                </ol>
+            </div>
+          </nav>
+  
+  
+      </div> 
+       <!-- checkout Content -->
+       <section class="pro-content checkout-area">             
+        <div class="container"> 
+          <div class="row">
+              <div class="col-12 col-xl-12">
+                  <div class="row">
+                      <div class="col-12 col-lg-3">
+                       <div class="checkoutd-nav">
+                          <ul class="nav flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link  active" id="pills-shipping-tab" data-toggle="pill" href="#pills-shipping" role="tab" aria-controls="pills-shipping" aria-selected="true">Shipping Address</a>
+                              </li>
+                              @* <li class="nav-item">
+                                <a class="nav-link " id="pills-billing-tab" data-toggle="pill" href="#pills-billing" role="tab" aria-controls="pills-billing" aria-selected="false">Billing Address</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link " id="pills-method-tab" data-toggle="pill" href="#pills-method" role="tab" aria-controls="pills-method" aria-selected="false">Shipping Methods</a>
+                              </li> *@
+                              <li class="nav-item">
+                                  <a class="nav-link " id="pills-order-tab" data-toggle="pill" href="#pills-order" role="tab" aria-controls="pills-order" aria-selected="false">Payment</a>
+                                </li>
+                            </ul>
+                       </div>
+                 
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        <div class="checkout-module">
+                   
+                        
+                            <div class="tab-content" >
+                              <div class="tab-pane fade show active" id="pills-shipping" role="tabpanel" aria-labelledby="pills-shipping-tab">
+                                <h3>Shipping address</h3>
+                                <form>
+                                  <div class="form-row">
+                                      <div class="from-group col-md-6 mb-3">
+                                          <div class="input-group ">
+                                            
+                                            <input type="text" class="form-control" asp-for="FirstName" placeholder="First Name">
+                                          </div>
+                                        </div>
+                                        <div class="from-group col-md-6 mb-3">
+                                          <div class="input-group ">
+                                            
+                                            <input type="text" class="form-control" asp-for="LastName" placeholder="Last Name">
+                                          </div>
+                                        </div>
+                                  </div>
+                                  <div class="form-row">
+                                          <div class="from-group col-md-6 mb-3">
+                                              <div class="input-group"  >
+                                                
+                                                  <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="Phone"> 
+                                              </div>
+                                            </div>
+                                        <div class="from-group col-md-6 mb-3">
+                                            <div class="input-group ">
+                                              
+                                              <input type="text" class="form-control" asp-for="Street" placeholder="Address">
+                                            </div>
+                                          </div>
+                                  </div>
+                                  <div class="form-row">
+                                      <div class="from-group col-md-6 mb-3">
+                                          <div class="input-group select-control">
+                                            
+                                              <select class="form-control" id="inlineFormInputGroup4">
+                                                  <option selected value="Nigeria">Nigeria</option>
+                                                </select>
+                                          </div>
+                                        </div>
+                                        <div class="from-group col-md-6 mb-3">
+                                            <div class="input-group select-control">
+                                              
+                                                @* <select class="form-control" id="inlineFormInputGroup5">
+                                                    <option selected>Select State</option>
+                                                    <option  value="1">New York</option>
+                                                    <option value="2">Taxes</option>
+                                                  </select>  *@
+                                                  <select  asp-for="State" onchange="toggleLGA(this);" id="state" class="form-control">
+                                                    <option value="" selected="selected">- Select State -</option>
+                                                  <option value="Abia">Abia</option>
+                                                  <option value="Adamawa">Adamawa</option>
+                                                  <option value="AkwaIbom">AkwaIbom</option>
+                                                  <option value="Anambra">Anambra</option>
+                                                  <option value="Bauchi">Bauchi</option>
+                                                  <option value="Bayelsa">Bayelsa</option>
+                                                  <option value="Benue">Benue</option>
+                                                  <option value="Borno">Borno</option>
+                                                  <option value="Cross River">Cross River</option>
+                                                  <option value="Delta">Delta</option>
+                                                  <option value="Ebonyi">Ebonyi</option>
+                                                  <option value="Edo">Edo</option>
+                                                  <option value="Ekiti">Ekiti</option>
+                                                  <option value="Enugu">Enugu</option>
+                                                  <option value="FCT">FCT</option>
+                                                  <option value="Gombe">Gombe</option>
+                                                  <option value="Imo">Imo</option>
+                                                  <option value="Jigawa">Jigawa</option>
+                                                  <option value="Kaduna">Kaduna</option>
+                                                  <option value="Kano">Kano</option>
+                                                  <option value="Katsina">Katsina</option>
+                                                  <option value="Kebbi">Kebbi</option>
+                                                  <option value="Kogi">Kogi</option>
+                                                  <option value="Kwara">Kwara</option>
+                                                  <option value="Lagos">Lagos</option>
+                                                  <option value="Nasarawa">Nasarawa</option>
+                                                  <option value="Niger">Niger</option>
+                                                  <option value="Ogun">Ogun</option>
+                                                  <option value="Ondo">Ondo</option>
+                                                  <option value="Osun">Osun</option>
+                                                  <option value="Oyo">Oyo</option>
+                                                  <option value="Plateau">Plateau</option>
+                                                  <option value="Rivers">Rivers</option>
+                                                  <option value="Sokoto">Sokoto</option>
+                                                  <option value="Taraba">Taraba</option>
+                                                  <option value="Yobe">Yobe</option>
+                                                  <option value="Zamfara">Zamafara</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                    
+                                  </div>
+                                  
+                                  <div class="form-row">
+                                      <div class="from-group col-md-6 mb-3">
+                                          <div class="input-group  select-control">
+                                            <select asp-for="City" id="lga" class="form-control select-lga">
+                        
+                                             </select>
+                                          </div>
+                                        </div>
+                                        <div class="from-group col-md-6 mb-3">
+                                            <div class="input-group"  >
+                                              
+                                                <input type="text" class="form-control" id="inlineFormInputGroup77" placeholder="Postal Code"> 
+                                            </div>
+                                          </div>
+                                    
+                                  </div>
+                              
+      
+                                    <div class="col-12 col-sm-12 justify-content-end btn-cont">
+                                      <div class="row">
+                                        
+                                        <a data-toggle="pill" href="#pills-billing" id="continue" class="btn btn-secondary">Continue</a>
+                                      </div>
+                                    </div>
+                                </form>
+                              </div>
+                              @* <div class="tab-pane fade" id="pills-billing" role="tabpanel" aria-labelledby="pills-billing-tab">
+                                <h3>Billing Address</h3>  
+                                <form>
+                                      <div class="form-row">
+                                          <div class="from-group col-md-6 mb-3">
+                                              <div class="input-group ">
+                                                
+                                                <input type="text" class="form-control" id="inlineFormInputGroup09" placeholder="First Name">
+                                              </div>
+                                            </div>
+                                            <div class="from-group col-md-6 mb-3">
+                                              <div class="input-group ">
+                                                
+                                                <input type="text" class="form-control" id="inlineFormInputGroup12" placeholder="Last Name">
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="form-row">
+                                          <div class="from-group col-md-6 mb-3">
+                                              <div class="input-group"  >
+                                                
+                                                  <input type="text" class="form-control" id="inlineFormInputGroup8" placeholder="Phone"> 
+                                              </div>
+                                            </div>
+                                            <div class="from-group col-md-6 mb-3">
+                                                <div class="input-group ">
+                                                  
+                                                  <input type="text" class="form-control" id="inlineFormInputGroup34" placeholder="Address">
+                                                </div>
+                                              </div>
+                                      </div>
+                                      <div class="form-row">
+                                          <div class="from-group col-md-6 mb-3">
+                                              <div class="input-group select-control">
+                                                
+                                                  <select class="form-control" id="inlineFormInputGroup45">
+                                                      <option selected>Select Country</option>
+                                                      <option value="1">USA</option>
+                                                      <option value="2">Canada</option>
+                                                    </select>
+                                              </div>
+                                            </div>
+                                            <div class="from-group col-md-6 mb-3">
+                                                <div class="input-group select-control">
+                                                  
+                                                    <select class="form-control" id="inlineFormInputGroup56">
+                                                        <option selected>Select State</option>
+                                                        <option value="1">New York</option>
+                                                        <option value="2">Taxes</option>
+                                                      </select> 
+                                                </div>
+                                              </div>
+                                        
+                                      </div>
+                                      
+                                      <div class="form-row">
+                                          <div class="from-group col-md-6 mb-3">
+                                              <div class="input-group"  >
+                                                  <input type="text" class="form-control" id="inlineFormInputGroup70" placeholder="City"> 
+                                              </div>
+                                            </div>
+                                            <div class="from-group col-md-6 mb-3">
+                                                <div class="input-group"  >
+                                                  
+                                                    <input type="text" class="form-control" id="inlineFormInputGroup78" placeholder="Postal Code"> 
+                                                </div>
+                                              </div>
+                                        
+                                      </div>
+                                        
+                                      <div class="row">
+                                          <div class="col-12 col-sm-12  justify-content-between btn-cont">
+                                              <div class="form-group">
+                                                  <div class="form-check">
+                                                      
+                                                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck0">
+                                                      <label class="form-check-label" for="defaultCheck0">
+                                                          Same shipping and billing address.
+                                                      </label>
+                                                      <small id="checkboxHelp1" class="form-text text-muted"></small>
+                                                    </div>
+                                              </div>
+                                          <div >
+                                              <a data-toggle="pill" href="#pills-shipping" class="btn btn-light">Back</a>
+                                            <a data-toggle="pill" href="#pills-method" class="btn btn-secondary">Continue</a>
+                                            </div>
+                                          </div>
+                                      </div>
+                                        
+                                    </form>
+                              </div>
+                              <div class="tab-pane fade" id="pills-method" role="tabpanel" aria-labelledby="pills-method-tab">
+                                  <h3>Shipping Methods</h3>
+                                  <p>Please select a prefered shipping method to use on this order</p>
+                                  <div class="row">
+                            
+                                    <div class="col-12 col-sm-6 mb-4">
+                                        <h4>Flate Rate</h4>
+                                          
+                                              <div class="form-check">
+                                                  
+                                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                  <label class="form-check-label" for="defaultCheck1">
+                                                      Flat Rate --- $11
+                                                  </label>
+                                                  <small id="emailHelp" class="form-text text-muted"></small>
+                                                </div>
+                                          
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <h4>UPS Shipping</h4>
+                                          
+                                              <div class="form-check mb-2">
+                                                  
+                                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                  <label class="form-check-label" for="defaultCheck2">
+                                                      24 hours --- $15
+                                                  </label>
+                                                  
+                                                </div>
+                                          
+                                              <div class="form-check mb-2">
+                                                  
+                                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                                  <label class="form-check-label" for="defaultCheck3">
+                                                      48 hours --- $10
+                                                  </label>
+                                                  
+                                                </div>
+
+                                              <div class="form-check mb-4">
+                                                  
+                                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                                  <label class="form-check-label" for="defaultCheck4">
+                                                      48 hours --- $5
+                                                  </label>
+                                                  
+                                                </div>
+                                        
+                                    </div>
+                                  </div>
+                                  <div class="row ">
+                                    <div class="col-12 col-lg-12 justify-content-end btn-cont">
+                                        <a data-toggle="pill" href="#pills-billing" class="btn btn-light  cta">Back</a>
+
+                                        <a  data-toggle="pill" href="#pills-order" class="btn btn-secondary  cta">Continue</a>
+                                    </div>
+                                      
+                                  </div>
+                              </div> *@
+                              <div class="tab-pane fade" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
+                                  <table class="table top-table">
+                                      <tbody id="cart-table">
+                                        @if(Model is not null && Model.Basket is not null)
+                                        {
+                                           
+                          foreach(var item in Model.Basket.Items){
+                              <tr class="d-flex">
+                                    <td class="col-12 col-md-2">
+                                        @if(item.PictureUrl is not null){
+                                            <img class="img-fluid" src="@item.PictureUrl" alt="CartImage">
+                                        }else{
+                                            <img class="img-fluid" src="images/product_images/product_image_1.jpg" alt="CartImage">
+                                        }
+                                    </td>
+                                    <td class="col-12 col-md-4">
+                                        <div class="item-detail">
+                                            <span class="pro-category">@item.Category</span>
+                                            <h3>@item.ProductName
+                                            </h3>
+                                            <div class="item-attributes"></div>
+                                            
+                                        </div>
+                                    </td>
+                                    <td class="col-12 col-md-1 item-price">₦@item.Price</td>
+                                    <td class="col-12 col-md-3 justify-content-center" >
+                                        <div class="input-group-control">
+                                        <input type="text" id="quantity-@item.VariationId" readonly name="quantity" class="form-control" maxlength="2" value="@item.Quantity" size="1">
+                                        </div>
+                                    </td>
+                                    <td class="col-12 col-md-2 item-total">@(item.Price * item.Quantity)</td>
+                                </tr>
+                          }
+                      }
+                      
+                                          @* <tr class="d-flex">
+                                              <td class="col-12 col-md-2">
+                                                    <img class="img-fluid" src="images/product_images/product_image_1.jpg" alt="Imagetag">
+                                              </td>
+                                              <td class="col-12 col-md-4">
+                                                  <div class="item-detail">
+                                                      <span class="pro-category">Decore, Furniture</span>
+                                                      <h3>Modren Single Sofa
+                                                      </h3>
+                                                      <div class="item-attributes"></div>
+                                                      
+                                                  </div>
+                                              </td>
+                                              <td class="col-12 col-md-1 item-price">$385</td>
+                                              <td class="col-12 col-md-3 justify-content-center" >
+                                                  <div class="input-group-control">
+                                                    <input type="text" id="quantity1" name="quantity" class="form-control" value="10" readonly>                  
+                                                </div>
+                                              </td>
+                                              <td class="col-12 col-md-2 item-total">$700</td>
+                                           
+                                            
+                                          </tr>
+                                          <tr class="d-flex">
+                                              <td class="col-12 col-md-2">
+                                                    <img class="img-fluid" src="images/product_images/product_image_2.jpg" alt="Imagetag">
+                                              </td>
+                                              <td class="col-12 col-md-4">
+                                                  <div class="item-detail">
+                                                      <span class="pro-category">Decore, Furniture</span>
+                                                      <h3>Modren Wood Chair
+                                                      </h3>
+                                                      <div class="item-attributes"></div>
+                                                      
+                                                  </div>
+                                              </td>
+                                              <td class="col-12 col-md-1 item-price">$385</td>
+                                              <td class="col-12 col-md-3 justify-content-center" >
+                                                  <div class="input-group-control">
+                                                      <input type="text" id="quantity2" name="quantity" class="form-control" value="10" readonly>
+                                                      
+                                                </div>
+                                              </td>
+                                              <td class="col-12 col-md-2 item-total">$700</td>
+                                           
+                                            
+                                          </tr> *@
+                                      </tbody>
+                                    </table>
+                                    <div class="row justify-content-end"> 
+                                      <div class="col-12">
+                                        <div class="bill-total"> 
+                                            <ul>
+                                                <li>Subtotal</li>
+                                                <li>Shipping</li>
+                                                @* <li>Discount(Coupon)</li> *@
+                                                <li class="text-danger">Total</li>
+                                              </ul>
+                                              <ul>
+                                                 <li><span id="sub_total">₦@Model.SubTotal</span></li>
+                                                 <li><span id="shipping">₦@Model.ShippingCost</span></li>
+                                                 @* <li></li> *@
+                                                 <li class="text-danger"><span id="total">₦@(Model.SubTotal + Model.ShippingCost)</span></li>
+                                               </ul>
+                                        </div>
+                                    
+                                    
+                                            
+                                             
+                                         
+                                      </div>
+
+                                    
+                                    </div>
+                                 
+                                    <div class="col-12 col-sm-12">
+                                        <div class="row">
+                                            <div class="heading">
+                                                <h4>Order Notes</h4>
+                                                
+                                              </div>
+                                          
+                                          <div class="form-group" style="width:100%; padding:0;">
+                                              <label for="exampleFormControlTextarea1">Please write notes of your order</label>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                          
+                                    </div>
+                                    <div class="col-12 col-sm-12 ">
+                                        <div class="row">
+                                          <div class="heading">
+                                            <h4>Payment Methods</h4>
+                                       
+                                          </div>
+                                       
+                                          <ul class="payement-way">
+                                              <li>
+                                                  <!-- Default checked -->
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" 
+                                                id="defaultChecked" name="defaultExampleRadios" checked>
+                                                <label class="custom-control-label"
+                                                  for="defaultChecked"><img src="images/miscellaneous/instamojo.png" alt="Image"></label>
+                                              </div>
+                                              </li>
+                                            <li>  <!-- Default unchecked -->
+                                              <div class="custom-control custom-radio">
+                                                  <input type="radio" class="custom-control-input" 
+                                                  id="defaultUnchecked1" name="defaultExampleRadios">
+                                                  <label class="custom-control-label" 
+                                                  for="defaultUnchecked1"><img src="images/miscellaneous/hyperpay.png" alt="Image"></label>
+                                              </div>
+                                            </li>
+                                          
+                                            <li>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" 
+                                                    id="defaultUnchecked2" name="defaultExampleRadios">
+                                                    <label class="custom-control-label" 
+                                                    for="defaultUnchecked2"><img src="images/miscellaneous/cod.png" alt="Image"></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" 
+                                                    id="defaultUnchecked3" name="defaultExampleRadios">
+                                                    <label class="custom-control-label" 
+                                                    for="defaultUnchecked3"><img src="images/miscellaneous/stripe.png" alt="Image"></label>
+                                                </div>
+                                            </li>
+                                          
+                                            <li>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" 
+                                                    id="defaultUnchecked4" name="defaultExampleRadios">
+                                                    <label class="custom-control-label" 
+                                                    for="defaultUnchecked4">  <img src="images/miscellaneous/paypal.png" alt="Image"></label>
+                                                </div>
+                                            </li>
+                                          </ul>
+                                          
+                                        
+                                       
+                                       
+                                        
+                                       
+                                                
+                                        </div>
+                                        
+                                          
+                                    </div>
+                                    <div class="col-12 col-sm-12 justify-content-end btn-cont">
+                                        <div class="row">
+                                        
+                                      <a href="thankyou.html" class="btn btn-secondary ">Place Order</a>
+                                        </div>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+              </div>
+       
+          </div>
+        </div>
+      </section>
+
+  @section Scripts{
+    <script src="~/js/lga.js"></script>
+    <script src="~/js/checkout.js"></script>
+  }

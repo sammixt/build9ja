@@ -1,0 +1,428 @@
+@model build9ja.admin.Dto.BannerDto
+<div class="content d-flex flex-column flex-column-fluid" id="tc_content">
+					<!--begin::Subheader-->
+        <div class="subheader py-2 py-lg-6 subheader-solid">
+            <div class="container-fluid">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-white mb-0 px-0 py-2">
+                        <li class="breadcrumb-item active" aria-current="page">Commissions</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!--end::Subheader-->
+        <!--begin::Entry-->
+        <div class="d-flex flex-column-fluid">
+            <!--begin::Container-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-xl-12">
+                                <div class="card card-custom gutter-b bg-transparent shadow-none border-0" >
+                                    <div class="card-header align-items-center  border-bottom-dark px-0">
+                                        <div class="card-title mb-0">
+                                            <h3 class="card-label mb-0 font-weight-bold text-body">Banner Setup 
+                                            </h3>
+                                        </div>
+                                        <div class="icons d-flex">
+                                            <button  class="btn ml-2 p-0" 
+                                            id="kt_notes_panel_toggle" data-toggle="tooltip" title="" data-placement="right"
+                                                                data-original-title="Check out more demos" >
+                                                <span class="bg-secondary h-30px font-size-h5 w-30px d-flex align-items-center justify-content-center  rounded-circle shadow-sm ">
+                                                
+                                                        <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-plus white" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                        </svg>
+                                                </span>
+                                            
+                                            </button>
+                                            <a href="#" onclick="printDiv()" class="ml-2">
+                                                <span class="icon h-30px font-size-h5 w-30px d-flex align-items-center justify-content-center rounded-circle ">
+                                                    <svg width="15px" height="15px" viewBox="0 0 16 16" class="bi bi-printer-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5z"/>
+                                                        <path fill-rule="evenodd" d="M11 9H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                                                        <path fill-rule="evenodd" d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                                        </svg>
+                                                </span>
+                                            
+                                            </a>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-12 ">
+                                <div class="card card-custom gutter-b bg-white border-0">
+												<div class="card-header border-0 align-items-center">
+													<h3 class="card-label mb-0 font-weight-bold text-body">Images
+													</h3>
+                                                    <div class="text-right">
+                                                        <button type="button" title="Add New" class="btn btn-primary white p-2 ml-2" data-toggle="modal" data-target="#imagepopup">
+                                                            Add New
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal fade text-left" id="imagepopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" style="display: none;" aria-hidden="true">
+													<div class="modal-dialog " role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+														<h3 class="modal-title" id="myModalLabel1">Add File Here</h3>
+														<button type="button" class="close rounded-pill btn btn-sm btn-icon btn-light btn-hover-primary m-0" data-dismiss="modal" aria-label="Close">
+															<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+															</svg>
+														</button>
+												
+														</div>
+														<div class="modal-body">
+														<p>
+															Click or Drop Images in the Box for Upload.
+														</p>
+														<div class="avatar-upload mb-3">
+															<div class="avatar-edit">
+																<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+																<label for="imageUpload">
+																	image upload
+																</label>
+															</div>
+															<div class="avatar-preview">
+																<div id="imagePreview" class="rounded" style="background-image: url(../assets/images/carousel/slide3.jpg);">
+																</div>
+															</div>
+														</div>
+														<fieldset class="form-group">
+															<select id="imageType" class="js-example-basic-single js-states form-control">
+																<option value="1">Image One</option>
+																<option value="2">Image Two</option>
+																<option value="3">Image Three</option>
+																<option value="4">Image Four</option>
+																<option value="5">Sub Page Image</option>
+															  </select>
+														</fieldset>
+                                                        <fieldset class="form-group">
+															<label class="control-label" for="title">Title</label>
+                                                            <input class="form-control" id="title" type="text" name="title"/>
+														</fieldset>
+                                                        <fieldset class="form-group">
+															<label class="control-label" for="subtitle">Sub Title</label>
+                                                            <input class="form-control" id="subtitle" type="text" name="subtitle"/>
+														</fieldset>
+                                                        <fieldset class="form-group">
+															<label class="control-label" for="link">Link</label>
+                                                            <input class="form-control" id="link" type="text" name="link"/>
+														</fieldset>
+
+
+														</div>
+														<div class="modal-footer">
+														<button type="button" class="btn btn-light" data-dismiss="modal">
+														
+															<span class="">Close</span>
+														</button>
+														<button type="button" class="btn btn-primary ml-1" id="submitImage" data-dismiss="modal">
+														
+															<span class="">Submit</span>
+														</button>
+														</div>
+													</div>
+												</div>
+												</div>
+												</div>
+												<div class="card-body">
+                                                <div class="row">
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4 active">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                    @if(Model != null && Model.ImageOne != null){
+                                                                        <img class="img-fluid" src="@Model.ImageOne" alt="image">
+                                                                    }else{
+                                                                            <img class="img-fluid" src="~/assets/images/carousel/slide3.jpg" alt="image">
+                                                                    }
+                                                                   
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+																@if(Model != null && Model.ImageTwo != null){
+                                                                        <img class="img-fluid" src="@Model.ImageTwo" alt="image">
+                                                                    }else{
+                                                                            <img class="img-fluid" src="~/assets/images/carousel/slide3.jpg" alt="image">
+                                                                    }
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                    @if(Model != null && Model.ImageThree != null){
+                                                                        <img class="img-fluid" src="@Model.ImageThree" alt="image">
+                                                                    }else{
+                                                                            <img class="img-fluid" src="~/assets/images/carousel/slide3.jpg" alt="image">
+                                                                    }
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                    @if(Model != null && Model.ImageFour != null){
+                                                                        <img class="img-fluid" src="@Model.ImageFour" alt="image">
+                                                                    }else{
+                                                                          <img class="img-fluid" src="~/assets/images/carousel/slide1.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model != null && Model.SubPageImage != null){
+                                                                        <img class="img-fluid" src="@Model.SubPageImage" alt="image">
+                                                                    }else{
+                                                                         <img class="img-fluid" src="~/assets/images/carousel/element-banner1-left.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													@* <div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageFive" alt="image">
+                                                                    }else{
+                                                                       <img class="img-fluid" src="~/assets/images/carousel/element-banner1-right.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageSix" alt="image">
+                                                                    }else{
+                                                                       <img class="img-fluid" src="~/assets/images/carousel/element-banner2-center.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.MainImage" alt="image">
+                                                                    }else{
+                                                                       <img class="img-fluid" src="~/assets/images/carousel/element-banner2-left.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div> *@
+													
+													
+                                                </div>
+												
+      </div>
+    </div>
+
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+
+
+@section HeaderScripts{
+    <link href="~/assets/api/multiple-select/multiple-select.min.css" rel="stylesheet">
+}
+@section FooterScripts{
+
+<script src="~/js/setting/banner.js"></script>
+
+}

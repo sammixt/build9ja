@@ -1,0 +1,796 @@
+@model build9ja.admin.Dto.Products.ProductDto
+<div class="content d-flex flex-column flex-column-fluid" id="tc_content">
+					<!--begin::Subheader-->
+					<div class="subheader py-2 py-lg-6 subheader-solid">
+						<div class="container-fluid">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb bg-white mb-0 px-0 py-2">
+									<li class="breadcrumb-item active" aria-current="page">Add Product</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+					<!--end::Subheader-->
+					<!--begin::Entry-->
+					<div class="d-flex flex-column-fluid">
+						<!--begin::Container-->
+						<div class="container-fluid addproduct-main">
+						
+							<div class="row">
+								<div class="col-lg-12 col-xl-12">
+									<div class="card card-custom gutter-b bg-transparent shadow-none border-0" >
+										<div class="card-header align-items-center   border-bottom-dark px-0">
+											<div class="card-title mb-0">
+												<h3 class="card-label mb-0 font-weight-bold text-body">Add Product 
+												</h3>
+											</div>
+											<div class="icons d-flex">
+										
+												<a href="#" onclick="printDiv()" class="ml-2">
+													<span class="icon h-30px font-size-h5 w-30px d-flex align-items-center justify-content-center rounded-circle ">
+														<svg width="15px" height="15px" viewBox="0 0 16 16" class="bi bi-printer-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															<path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5z"/>
+															<path fill-rule="evenodd" d="M11 9H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+															<path fill-rule="evenodd" d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+														  </svg>
+													</span>
+												
+												</a>
+												<a href="#" class="ml-2" >
+													<span class="icon  h-30px font-size-h5 w-30px d-flex align-items-center justify-content-center rounded-circle ">
+														<svg width="15px" height="15px" viewBox="0 0 16 16" class="bi bi-file-earmark-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7 2l.5-2.5 3 3L10 5a1 1 0 0 1-1-1zM4.5 8a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+														  </svg>
+													</span>
+												
+												</a>
+											
+											</div>
+										</div>
+										<div class="card-body pb-0 pt-4 ">
+											<div class="d-flex justify-content-center">
+												<ul class="nav nav-pills mb-0" id="pills-tabmain" role="tablist">
+													<li class="nav-item">
+													  <a class="nav-link active" id="info-tab" data-toggle="pill" href="#info" role="tab" aria-controls="info" aria-selected="true">
+														<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-file-earmark-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															<path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+															<path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
+															<path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+														  </svg>  
+														Basic Info</a>
+													</li>
+													<li class="nav-item">
+													  <a class="nav-link" id="ad-info-tab" data-toggle="pill" href="#ad-info" role="tab" aria-controls="ad-info" aria-selected="false">
+														<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-receipt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"/>
+															<path fill-rule="evenodd" d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+														  </svg>  
+														Specification
+													  </a>
+													</li>
+													<li class="nav-item">
+													  <a class="nav-link" id="pricing-tab" data-toggle="pill" href="#pricing" role="tab" aria-controls="pricing" aria-selected="false">
+														<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-check2-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															<path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+															<path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z"/>
+														  </svg>
+														  Pricing
+													  </a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" id="seo-tab" data-toggle="pill" href="#seo" role="tab" aria-controls="seo" aria-selected="false">
+														  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock-history" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+															  <path fill-rule="evenodd" d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+															  <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+															  <path fill-rule="evenodd" d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+															</svg>
+															Images
+														</a>
+													  </li>
+												  </ul>
+											</div>
+										
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 col-xl-12">
+									<div class="tab-content" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+											<div class="card card-custom gutter-b bg-white border-0" >
+												<div class="card-header border-0 align-items-center">
+													<h3 class="card-label mb-0 font-weight-bold text-body">General Information
+													</h3>
+												</div>
+											
+											
+												<div class="card-body" id="printableTable">
+													<form class="row">
+														<div class="col-md-6 col-12">
+															<h3>Vendor: <span class="text-success">@Model.Vendor</span></h3>
+                                                            <label >Select Vendor</label>
+															<select id="vendorId" class="single-select w-100 mb-3 categories-select">
+																<option selected value="@Model.VendorId">@Model.Vendor</option>
+																@* <option value="1">abc</option>
+																<option value="2">bcd</option>
+																<option value="3">cde</option>
+																<option value="4">def</option>
+																<option value="5">efg</option>
+																<option value="6">fgh</option>
+																<option value="7">ghi</option>
+																<option value="8">hij</option>
+																<option value="9">ijk</option>
+																<option value="10">jkl</option>
+																<option value="11">klm</option> *@
+															  </select>
+
+                                                              <h6 class="text-body">
+                                                            Youtube link
+                                                            </h6>
+                                                            <fieldset class="form-group mb-3">                                                   
+                                                                <input asp-for="YoutubeLink" type="text" class="form-control bg-transparent text-dark" id="youtubeLink" placeholder="Product Name">                                                              
+                                                            </fieldset>
+                                                             
+                                                             <h6 class="text-body">
+                                                            Base Price
+                                                            </h6>
+                                                            <fieldset class="form-group mb-3">
+                                                                
+                                                                <input asp-for="BasePrice" type="number" class="form-control bg-transparent text-dark" id="basePrice" >
+                                                                
+                                                            </fieldset>
+                                                            <h6 class="text-body">
+                                                                Key Features
+                                                            </h6>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12 overflow-hidden">
+                                                                    <textarea id="key_features" class="bg-transparent text-dark">
+                                                                        @Model.KeyFeatures    
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+                                                            <h6 class="text-body">
+                                                               Box Content
+                                                            </h6>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12 overflow-hidden">
+                                                                    <textarea id="box_content" class="bg-transparent text-dark">
+                                                                        @Model.BoxContent
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+														</div>
+														<div class="col-md-6 col-12">
+                                                            <h3>Category: <span class="text-success">@Model.Category</span></h3>
+															<label >Categories</label>
+															<select id="categoryId" class="single-select w-100 mb-3 categories-select">
+																<option selected value="@Model.CategoryId">@Model.Category</option>
+																@* @foreach(var category in ViewBag.Category){
+                                                                    <option value="@category.Id">@category.Name</option>
+                                                                } *@
+															  </select>
+
+                                                            <h3>Brand: <span class="text-success">@Model.Brand</span></h3>
+                                                              <label >Brand</label>
+															<select id="brandId" class="single-select w-100 mb-3 categories-select">
+																<option selected value="@Model.BrandId">@Model.Brand</option>
+																@* @foreach(var brand in ViewBag.Brand){
+                                                                    <option value="@brand.Id">@brand.BrandName</option>
+                                                                } *@
+															  </select>
+
+                                                            <h6 class="text-body">
+                                                            Product Name
+                                                            </h6>
+                                                            <fieldset class="form-group mb-3">
+                                                                <input asp-for="ProductName" type="text" class="form-control bg-transparent text-dark" id="productName" placeholder="Product Name">
+                                                            </fieldset>
+                                                            <label class="mr-1" for="customSwitchcolor445">
+                                                                    Active
+                                                                        <input type="checkbox" asp-for="IsActive" id="isActive">
+                                                                    </label>
+                                                            <h6 class="text-body">
+                                                                Description
+                                                            </h6>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12 overflow-hidden">
+                                                                    <textarea id="description" class="bg-transparent text-dark">
+                                                                        @Model.ProductDescription
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+															  <h6 class="text-body">
+                                                                Additional Note
+                                                            </h6>
+                                                            <div class="row mb-3">
+                                                                <div class="col-12 overflow-hidden">
+                                                                    <textarea id="additional_note" class="bg-transparent text-dark">
+                                                                        @Model.AdditionalNote
+                                                                    </textarea>
+                                                                </div>
+                                                            </div>
+														
+														</div>
+													</form>
+												</div>
+											</div>
+										  <div class="row">
+											  <div class="col-12 d-flex justify-content-end">
+												<a data-toggle="pill" href="#ad-info" class="btn btn-primary cta" id="submitbasic">Continue</a>
+											  </div>
+										  </div>
+										</div>
+										<div class="tab-pane fade" id="ad-info" role="tabpanel" aria-labelledby="ad-info-tab">
+											<div class="card card-custom gutter-b bg-white border-0" >
+												<div class="card-header border-0 align-items-center">
+													<h3 class="card-label mb-0 font-weight-bold text-body">Product Specification
+													</h3>
+												</div>
+												<div class="card-body">
+													<form>
+														<div class="form-group row">
+															<div class="col-md-6">
+																<label >Main Material</label>
+																<fieldset class="form-group mb-3">
+																	<input asp-for="ProductSpecification.MainMaterial" type="text" id="mainMaterial" class="form-control round bg-transparent text-dark" placeholder="Type Here">
+																</fieldset>
+															</div>
+															<div class="col-md-6">
+																<label >Color Family</label>
+																<fieldset class="form-group mb-3">
+																	<input type="text" asp-for="ProductSpecification.ColorFamily" id="colorFamily" class="form-control round bg-transparent text-dark" placeholder="Type Here">
+																</fieldset>
+															</div>
+															<div class="col-md-6">
+																<label >Product Dimension</label>
+																<fieldset class="form-group mb-3">
+																	<input type="text" asp-for="ProductSpecification.Dimension" id="dimension" class="form-control round bg-transparent text-dark" placeholder="Enter Weight">
+																</fieldset>
+															</div>
+															<div class="col-md-6">
+																<label >Product Weight</label>
+																<fieldset class="form-group mb-3">
+																	<input type="number" asp-for="ProductSpecification.Weight" id="weight" class="form-control round bg-transparent text-dark" placeholder="Enter Weight">
+																</fieldset>
+															</div>
+															<div class="col-md-6">
+																<label >Product Model</label>
+																<fieldset class="form-group mb-3">
+																	<input asp-for="ProductSpecification.Model" type="text" id="model" class="form-control round bg-transparent text-dark" placeholder="Type Here">
+																</fieldset>
+															</div>
+															<div class="col-md-6">
+																<label >Product Type</label>
+																<fieldset class="form-group mb-3">
+																	<input asp-for="ProductSpecification.ProductType" type="text" id="type" class="form-control round bg-transparent text-dark" placeholder="Type Here">
+																</fieldset>
+															</div>
+
+														</div>
+													</form>
+
+												</div>
+											
+											</div>
+											<div class="row">
+												<div class="col-12 d-flex justify-content-end">
+													<a data-toggle="pill" href="#info" class="btn btn-dark swipe-to-top cta ">Back</a>
+												<a data-toggle="pill" href="#pricing" id="submitspec" class="btn btn-primary swipe-to-top cta ml-2">Continue</a>
+												</div>
+											</div>
+										
+										</div>
+										<div class="tab-pane fade status-tab-style" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
+											<div class="card card-custom gutter-b bg-white border-0" >
+												<div class="card-header border-0 align-items-center">
+													<h3 class="card-label mb-0 font-weight-bold text-body">Pricing
+													</h3>
+												</div>
+												<div class="card-body">
+													<form>
+														<div class="form-group row">
+															<div class="col-md-6">
+																<label >Variation</label>
+																<fieldset class="form-group mb-3">
+																	<input type="text" id="variation" class="form-control round bg-transparent text-dark" placeholder="Enter Price">
+																</fieldset>
+															</div>
+                                                            <div class="col-md-6">
+																<label >SKU</label>
+																<fieldset class="form-group mb-3">
+																	<input type="text" id="sku" class="form-control round bg-transparent text-dark" placeholder="Enter Price">
+																</fieldset>
+															</div>
+                                                             <div class="col-md-6">
+																<label>IMEI</label>
+																<fieldset class="form-group mb-3">
+																	<input type="text" id="imei" class="form-control round bg-transparent text-dark" placeholder="Enter Price">
+																</fieldset>
+															</div>
+                                                            <div class="col-md-6">
+																<label>Quantity</label>
+																<fieldset class="form-group mb-3">
+                                                                    <input type="hidden" id="variationId" value="0">
+																	<input type="number" id="quantity" class="form-control round bg-transparent text-dark" placeholder="Enter Price">
+																</fieldset>
+															</div>
+                                                            <div class="col-md-6">
+																<label>Selling Price</label>
+																<fieldset class="form-group mb-3">
+																	<input type="number" id="selling_price" class="form-control round bg-transparent text-dark" placeholder="Enter Price">
+																</fieldset>
+															</div>
+															<div class="col-md-6">
+																<label >Discount Price</label>
+																<fieldset class="form-group mb-3">
+																	<input type="number" id="discount_price" class="form-control round bg-transparent text-dark" placeholder="Enter Discount">
+																</fieldset>
+															</div>
+														
+
+														</div>
+													</form>
+													
+														<table class="table table-bordered"	>
+															<thead>
+															  <tr class="row m-0 text-center">
+																<th scope="col" class="col-3" >Variation</th>
+																<th scope="col" class="col-2">Product(SKU)</th>
+																<th scope="col" class="col-2">IMEI</th>
+																<th scope="col" class="col-1">Quantity</th>
+																<th scope="col" class="col-2">Price</th>
+																<th scope="col" class="col-2">Sales Price</th>
+															  </tr>
+															</thead>
+															<tbody id ="table-show" style="display: block;">
+                                                                @foreach (var item in Model.ProductVariations)
+                                                                {
+                                                                     <tr class="row m-0 text-center" onclick="getData(
+                                                                         '@item.Id','@item.Variation','@item.SKU','@item.IMEI',
+                                                                         '@item.Quantity','@item.SellingPrice','@item.DiscountPrice'
+                                                                     )">
+                                                                        <td scope="col" class="col-3" >@item.Variation</td>
+                                                                        <td scope="col" class="col-2">@item.SKU</td>
+                                                                        <td scope="col" class="col-2">@item.IMEI</td>
+                                                                        <td scope="col" class="col-1">@item.Quantity</td>
+                                                                        <td scope="col" class="col-2">@item.SellingPrice</td>
+                                                                        <td scope="col" class="col-2">@item.DiscountPrice</td>
+                                                                    </tr>
+                                                                }
+															  <!-- <tr class="row m-0 text-center">
+																<td  class="col-2">Brown</td>
+																<td class="col-2">Medium</td>
+																<td class="col-3 d-flex justify-content-center">
+																	<input type="text" class="form-control w-150px text-center" id="disabledInput" placeholder="Credit Card" disabled="">
+																</td>
+																<td class="col-2">
+																	<img src="~/assets/images/carousel/slide1.jpg" class="h-45px w-45px img-fluid" alt="img">
+																</td>
+																<td class="col-3 d-flex justify-content-center">
+																	<input type="text" class="form-control w-150px text-center" id="disabledInput" placeholder="Credit Card" disabled="">
+																</td>
+															  </tr>
+															  <tr class="row m-0 text-center">
+																<td  class="col-2">Red</th>
+																<td class="col-2">Large</td>
+																<td class="col-3 d-flex justify-content-center">
+																	<input type="text" class="form-control w-150px text-center" id="disabledInput" placeholder="Credit Card" disabled="">
+																</td>
+																<td class="col-2">
+																	<img src="~/assets/images/carousel/slide1.jpg" class="h-45px w-45px img-fluid" alt="img">
+																</td>
+																<td class="col-3 d-flex justify-content-center ">
+																	<input type="text" class="form-control w-150px text-center" id="disabledInput" placeholder="Credit Card" disabled="">
+																</td>
+															  </tr>
+															   -->
+															</tbody>
+														  </table>
+												
+													
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12 d-flex justify-content-end">
+													<a data-toggle="pill" href="#ad-info" class="btn btn-dark swipe-to-top cta ">Back</a>
+												<a data-toggle="pill" href="#seo" id="submitvariation" class="btn btn-primary swipe-to-top cta ml-2">Continue</a>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
+											<div class="card card-custom gutter-b bg-white border-0">
+												<div class="card-header border-0 align-items-center">
+													<h3 class="card-label mb-0 font-weight-bold text-body">Images
+													</h3>
+                                                    <div class="text-right">
+                                                        <button type="button" title="Add New" class="btn btn-primary white p-2 ml-2" data-toggle="modal" data-target="#imagepopup">
+                                                            Add New
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal fade text-left" id="imagepopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" style="display: none;" aria-hidden="true">
+													<div class="modal-dialog " role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+														<h3 class="modal-title" id="myModalLabel1">Add File Here</h3>
+														<button type="button" class="close rounded-pill btn btn-sm btn-icon btn-light btn-hover-primary m-0" data-dismiss="modal" aria-label="Close">
+															<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+															</svg>
+														</button>
+												
+														</div>
+														<div class="modal-body">
+														<p>
+															Click or Drop Images in the Box for Upload.
+														</p>
+														<div class="avatar-upload mb-3">
+															<div class="avatar-edit">
+																<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+																<label for="imageUpload">
+																	image upload
+																</label>
+															</div>
+															<div class="avatar-preview">
+																<div id="imagePreview" class="rounded" style="background-image: url(../assets/images/carousel/slide3.jpg);">
+																</div>
+															</div>
+														</div>
+														<fieldset class="form-group">
+															<select id="imageType" class="js-example-basic-multiple js-states form-control" name="states[]" multiple="multiple">
+																<option  value="MainImage">Main Image</option>
+																<option value="ImageOne">Image One</option>
+																<option value="ImageTwo">Image Two</option>
+																<option value="ImageThree">Image Three</option>
+																<option value="ImageFour">Image Four</option>
+																<option value="ImageFive">Image Five</option>
+																<option value="ImageSix">Image Six</option>
+															  </select>
+														</fieldset>
+														</div>
+														<div class="modal-footer">
+														<button type="button" class="btn btn-light" data-dismiss="modal">
+														
+															<span class="">Close</span>
+														</button>
+														<button type="button" class="btn btn-primary ml-1" id="submitImage" data-dismiss="modal">
+														
+															<span class="">Submit</span>
+														</button>
+														</div>
+													</div>
+												</div>
+												</div>
+												</div>
+												<div class="card-body">
+                                                <div class="row">
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4 active">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                    @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.MainImage" alt="image">
+                                                                    }else{
+                                                                            <img class="img-fluid" src="~/assets/images/carousel/slide3.jpg" alt="image">
+                                                                    }
+                                                                   
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+																@if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageOne" alt="image">
+                                                                    }else{
+                                                                            <img class="img-fluid" src="~/assets/images/carousel/slide3.jpg" alt="image">
+                                                                    }
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                    @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageTwo" alt="image">
+                                                                    }else{
+                                                                            <img class="img-fluid" src="~/assets/images/carousel/slide3.jpg" alt="image">
+                                                                    }
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                    @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageThree" alt="image">
+                                                                    }else{
+                                                                          <img class="img-fluid" src="~/assets/images/carousel/slide1.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageFour" alt="image">
+                                                                    }else{
+                                                                         <img class="img-fluid" src="~/assets/images/carousel/element-banner1-left.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageFive" alt="image">
+                                                                    }else{
+                                                                       <img class="img-fluid" src="~/assets/images/carousel/element-banner1-right.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.ImageSix" alt="image">
+                                                                    }else{
+                                                                       <img class="img-fluid" src="~/assets/images/carousel/element-banner2-center.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-6 col-sm-4 col-md-3 col-lg-4  col-xl-3 loadingmore">
+														<div class="thumbnail text-center  mb-4">
+															<div class="detail-link">
+																<a href="media-detail.html" class="btn btn-link d-flex justify-content-center align-items-center flex-column ">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+																		<g>
+																			<g>
+																				<g>
+																					<path  d="M508.745,246.041c-4.574-6.257-113.558-153.206-252.748-153.206     c-139.191,0-248.179,146.949-252.748,153.2c-4.332,5.936-4.332,13.986,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206     c139.19,0,248.174-146.95,252.748-153.201C513.083,260.027,513.083,251.971,508.745,246.041z M255.997,385.406     c-102.529,0-191.33-97.533-217.617-129.418c26.253-31.913,114.868-129.395,217.617-129.395     c102.524,0,191.319,97.516,217.617,129.418C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+																				</g>
+																			</g>
+																			<g>
+																				<g>
+																					<path  d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275     c55.842,0,101.274-45.434,101.274-101.275S311.839,154.725,255.997,154.725z M255.997,323.516     c-37.23,0-67.516-30.287-67.516-67.516c0-37.229,30.287-67.516,67.516-67.516c37.229,0,67.516,30.287,67.516,67.516     C323.513,293.229,293.227,323.516,255.997,323.516z"/>
+																				</g>
+																			</g>
+																		</g>
+																		</svg>
+																	View Detail
+																</a>
+															</div>
+															<div class="thumbnail-imges mb-2 ">
+																<a class="img-select d-block" href="javascript:void(0);">
+                                                                     @if(Model.ProductImage != null){
+                                                                        <img class="img-fluid" src="@Model.ProductImage.MainImage" alt="image">
+                                                                    }else{
+                                                                       <img class="img-fluid" src="~/assets/images/carousel/element-banner2-left.jpg" alt="image">
+                                                                    }
+																
+															</a>
+															</div>
+														</div>
+													</div>
+													
+													
+                                                </div>
+												@* </div> *@
+													@* <form>
+														<div class="form-group row">
+															<div class="col-12">
+																<label >Meta Title</label>
+																<fieldset class="form-group mb-3">
+																	<select class="js-example-basic-single js-states form-control bg-transparent" name="state">
+																		<option value="AL">Alabama</option>
+																		 
+																		<option value="WY">Wyoming</option>
+																	  </select>
+																</fieldset>
+															</div>
+															<div class="col-12">
+																<label >Discription</label>
+																<fieldset class="form-label-group mb-3">
+																	<textarea class="border-dark w-100 fixed-size" id="horizontalTextarea2" rows="6" placeholder="Textarea" style="outline: none;"></textarea>
+																
+																</fieldset>
+															</div>
+															<div class="col-12">
+																<label >Meta Image</label>
+																<div class="custom-file">
+																	<input type="file" class="custom-file-input" id="customFile">
+																	<label class="custom-file-label" for="customFile">Upload Image</label>
+																  </div> 
+															</div>
+														</div>
+													</form>		 *@
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-12 d-flex justify-content-end">
+													<a data-toggle="pill" href="#pricing" class="btn btn-dark swipe-to-top cta ">Back</a>
+												<a data-toggle="pill" href="#" class="btn btn-primary swipe-to-top cta ml-2">Save</a>
+												</div>
+											</div>
+		
+										</div>
+									</div>
+								</div>
+							</div>			
+						</div>
+						
+					</div>
+					
+				</div>
+
+@section FooterScripts {
+    <script src="~/assets/js/slick.min.js"></script>
+	<script src="~/assets/api/editor/classic.ckeditor.js"></script>
+	<script src="~/assets/api/editor/inline.ckeditor.js"></script>
+	<script src="~/assets/api/select2/select2.min.js"></script>
+	<script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+	<script src="~/assets/js/script-slick.js"></script>
+    <script src="~/js/product-detail.js"></script>
+}
+
+@section HeaderScripts{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+	<link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
+}

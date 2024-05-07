@@ -50,6 +50,10 @@ namespace build9ja.core.Specifications
             Take = take;
             IsPagingEnabled = true;
         }
+
+        protected void ApplyTake(int take){
+            Take = take;
+        }
     }
 }
 

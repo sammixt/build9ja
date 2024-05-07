@@ -15,7 +15,9 @@ namespace build9ja.core.Interfaces
 		Task<int> getStaffsCount(PaginationSpecification specs);
 		Task<Staff> getStaffByStaffId(string staffId);
 		Task<string> updateStaff(string staffId, Staff staff);
-	}
+        Task<IReadOnlyList<Staff>> getStaffs();
+        Task<bool> checkStaffHasLoginCredential(string staffId);
+    }
 
 }
 

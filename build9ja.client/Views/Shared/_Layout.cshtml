@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @* <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - build9ja</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/build9ja.client.styles.css" asp-append-version="true" /> *@
+
+    <meta charset="UTF-8">
+      <title>Build9ja</title>
+      <meta name="description" content="Buidling materials for your of all sort">
+      <meta name="keywords" content="Building,Materials,Tiles,Floors">
+      <meta name="author" content="">
+      
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link rel="icon" type="image/png" href="images/miscellaneous/fav.png">
+  
+      <!-- Fontawesome CSS Files -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+      <!-- Core CSS Files -->
+      <link rel="stylesheet" type="text/css" href="~/asset/css/style.css">
+      
+      <!-- Slider Revolution CSS Files -->
+      <link rel="stylesheet" type="text/css" href="~/asset/revolution/css/settings.css">
+      <link rel="stylesheet" type="text/css" href="~/asset/revolution/css/layers.css">
+      <link rel="stylesheet" type="text/css" href="~/asset/revolution/css/navigation.css">
+      
+</head>
+<body>
+  <div class="wrapper" ></div>
+   @await Component.InvokeAsync("Header")
+   @RenderBody()
+
+     <footer id="footerOne"  class="footer-area footer-one footer-desktop">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6 newsletter">
+            <h5>
+              Newsletter
+            </h5>
+            <h3>Get Discount 30% OFF</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aliquam congue urna turpis, id hendrerit risus fringilla quis.</p>
+
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter Your Email..." aria-label="Enter Your Email..." aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-secondary" type="button" id="button-addon2">Button</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-0">
+        <div class="copyright-content">
+            <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-12 col-md-6">
+                    <div class="footer-info">
+                        ©&nbsp;2019 Company, Inc. <a href="privacy.html">Privacy</a>&nbsp;•&nbsp;<a href="term.html">Terms</a>
+                    </div>
+                      
+                  </div>
+                  <div class="col-12 col-md-6">
+                      <ul class="socials">
+                          <li><a href="#" class="fab fb fa-facebook-square"></a></li>
+                          <li><a href="#" class="fab tw fa-twitter-square"></a></li>
+                          <li><a href="#" class="fab sk fa-skype"></a></li>
+                          <li><a href="#" class="fab In fa-linkedin"></a></li>
+                          <li><a href="#" class="fab ig fa-instagram"></a></li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </footer>
+  </div>
+
+<div class="mobile-overlay"></div>
+<a href="#" class="btn-secondary " id="back-to-top" title="Back to top">&uarr;</a>
+
+
+<div class="notifications" id="notificationWishlist"><span class="notificationWishlist"></span></div>
+<div class="notifications" id="notificationCart">Product Added To Cart</div>
+<div class="notifications" id="notificationCompare">Product Added For Compare</div>
+
+ <div class="modal fade show" id="variationModal" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg newsletter" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="container">
+                    <div class="row align-items-center">
+                      <div class="col-12 col-md-12" >
+                          <h3 class="text-01">
+                                Select a Variation
+                          </h3>
+                         <table class="table top-table">
+                  <tbody id="variations">
+                      
+                  </tbody>
+                </table>
+                <a href="checkout.html"  class="btn btn-secondary btn-block checkout-continue" >
+                        PROCEED TO CHECKOUT</a>
+                        <a href="shop-4cols.html" class="btn btn-link btn-block checkout-continue">CONTINUE SHOPPING</a>
+                      </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+  
+  
+    <!-- All custom scripts here -->
+ <script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/asset/js/scripts.js"></script>
+<script src="~/asset/js/axios.js"></script>
+<script src="~/js/cart.js"></script>
+<script src="~/js/wishlist.js"></script>
+
+<!-- Slider Revolution core JavaScript files -->
+<script src="~/asset/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="~/asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+
+<!-- Slider Revolution extension scripts. ONLY NEEDED FOR LOCAL TESTING --> 
+<script src="~/asset/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="~/asset/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+ @model build9ja.client.Dto.CustomerBasketDto
+ <!-- Page Header -->
+      <div class="container-fuild">
+          <div class="page-header" style="background-image: url('images/miscellaneous/page-header.png')">
+            <div class="container">
+              <h1 class="page-title">Cart</h1>
+            </div><!-- End .container -->
+          </div>
+          <nav aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                </ol>
+            </div>
+          </nav>
+  
+  
+      </div> 
+    <!-- cart Content -->
+    <section class="pro-content cart-content">      
+      <div class="container cart-area cart-page-one"> 
+        <div class="row">
+              <div class="col-12 col-xl-9">
+                <table class="table top-table">
+                  <tbody id="cart-table">
+                      @if(Model is not null && Model.Items is not null){
+                          foreach(var item in Model.Items){
+                              <tr class="d-flex">
+                                    <td class="col-12 col-md-2">
+                                        @if(item.PictureUrl is not null){
+                                            <img class="img-fluid" src="@item.PictureUrl" alt="CartImage">
+                                        }else{
+                                            <img class="img-fluid" src="images/product_images/product_image_1.jpg" alt="CartImage">
+                                        }
+                                    </td>
+                                    <td class="col-12 col-md-4">
+                                        <div class="item-detail">
+                                            <span class="pro-category">@item.Category</span>
+                                            <h3>@item.ProductName
+                                            </h3>
+                                            <div class="item-attributes"></div>
+                                            
+                                        </div>
+                                    </td>
+                                    <td class="col-12 col-md-1 item-price">₦@item.Price</td>
+                                    <td class="col-12 col-md-3 justify-content-center" >
+                                        <form class="input-group-control"
+                                          data-price="@item.Price"
+                                          data-image="@item.PictureUrl"
+                                          data-category="@item.Category"
+                                          data-product-name="@item.ProductName"
+                                          data-brand="@item.Brand"
+                                          data-product="@item.ProductIdString"
+                                          data-variation="@item.VariationId"
+                                          data-variation-name="@item.VariationName"
+                                          data-sku="@item.sku">
+                    
+                                        
+                                        <input type="text" id="quantity-@item.VariationId" name="quantity" class="form-control" maxlength="2" value="@item.Quantity" size="1">
+                                        <span class="input-group-btn">
+                                            <button type="button" value="quantity" class="quantity-plus btn btn-outline-secondary" data-type="plus" data-field="">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" value="quantity" class="quantity-minus btn btn-outline-secondary" data-type="minus" data-field="">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        </span>
+                                        
+                                        
+                                        
+                                    </form>
+                                    </td>
+                                    <td class="col-12 col-md-2 item-total">@(item.Price * item.Quantity)</td>
+                                </tr>
+                          }
+                      }
+                      
+                      
+                  </tbody>
+                </table>
+             
+                <div class="row justify-content-between click-btn">
+                    <div class="col-12 col-lg-6">
+                          <div class="input-group">
+                              <input type="text" class="form-control"  placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="coupon-code">
+                              <div class="input-group-append">
+                                <button class="btn btn-secondary " type="button" id="coupon-code">APPLY</button>
+                              </div>
+                            </div>
+                    </div>
+                    @* <div class="col-12 col-lg-6 align-right">       
+                        <button type="button" class="btn btn-secondary">UPDATE CART</button> 
+                    </div> *@
+                  </div>
+              </div>
+              <div class="col-12 col-xl-3">
+                  <div class="summery">
+                      <h3>Cart totals</h3>
+                      <table class="table right-table">
+                     
+                        <tbody>
+                          <tr>
+                            <th >Subtotal</th>
+                            <td  class="justify-content-end d-flex">₦<span id="sub-total">0</span></td>
+                            
+                          </tr>
+                          <tr>
+                            <th >Coupon</th>
+                            <td  class="justify-content-end d-flex">₦<span id="coupon">0</span></td>
+                            
+                          </tr>
+                          <tr class="item-price">
+                            <th>Total</th>
+                            <td class="justify-content-end d-flex">₦<span id="total">0</span></td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                      <a asp-action="Checkout" class="btn btn-secondary btn-block" >
+                        PROCEED TO CHECKOUT</a>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-link btn-block">CONTINUE SHOPPING</a>
+                  </div>
+                 
+                </div>
+        </div>
+     </div>
+    </section>

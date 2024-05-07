@@ -22,6 +22,117 @@ namespace build9ja.infrastructure.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("build9ja.core.Entities.AppRedis", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("Expiry")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Redis");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.Banner", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ImageFour")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageOne")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageThree")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageTwo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LinkFour")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LinkOne")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LinkThree")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LinkTwo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubPageImage")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubTitleFour")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubTitleOne")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubTitleThree")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubTitleTwo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleFour")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleOne")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleThree")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleTwo")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banner");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.Brand", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("BrandLogo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BrandName")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsTopBrand")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brands");
+                });
+
             modelBuilder.Entity("build9ja.core.Entities.Category", b =>
                 {
                     b.Property<long>("Id")
@@ -42,6 +153,9 @@ namespace build9ja.infrastructure.Data.Migrations
 
                     b.Property<string>("Image")
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsTopCategory")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .HasMaxLength(50)
@@ -86,6 +200,37 @@ namespace build9ja.infrastructure.Data.Migrations
                     b.ToTable("Commissions");
                 });
 
+            modelBuilder.Entity("build9ja.core.Entities.DeliveryMethod", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("LocalGovt")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("ShippingId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("State")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DeliveryMethods");
+                });
+
             modelBuilder.Entity("build9ja.core.Entities.Permission", b =>
                 {
                     b.Property<long>("Id")
@@ -102,6 +247,9 @@ namespace build9ja.infrastructure.Data.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("PermissionName")
                         .HasMaxLength(250)
                         .HasColumnType("character varying(250)");
@@ -110,12 +258,201 @@ namespace build9ja.infrastructure.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
-                    b.Property<DateTime>("dateCreate")
-                        .HasColumnType("timestamp with time zone");
-
                     b.HasKey("Id");
 
                     b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("AdditionalNote")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("BasePrice")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("BoxContent")
+                        .HasColumnType("text");
+
+                    b.Property<long?>("BrandId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsFeatured")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("KeyFeatures")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductDescription")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductIdString")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.Property<long>("VendorId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("YoutubeLink")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("VendorId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.ProductImage", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ImageFive")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageFour")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageOne")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageSix")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageThree")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageTwo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MainImage")
+                        .HasColumnType("text");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique();
+
+                    b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.ProductSpecification", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("ColorFamily")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Dimension")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MainMaterial")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Model")
+                        .HasColumnType("text");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ProductType")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique();
+
+                    b.ToTable("ProductSpecifications");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.ProductVariation", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("DiscountPrice")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("IMEI")
+                        .HasColumnType("text");
+
+                    b.Property<long?>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("SKU")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("SaleEndDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("SaleStartDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("SellingPrice")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Variation")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductVariations");
                 });
 
             modelBuilder.Entity("build9ja.core.Entities.Staff", b =>
@@ -125,6 +462,9 @@ namespace build9ja.infrastructure.Data.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("timestamp with time zone");
@@ -159,6 +499,9 @@ namespace build9ja.infrastructure.Data.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<bool>("IsPasswordReset")
                         .HasColumnType("boolean");
@@ -203,6 +546,9 @@ namespace build9ja.infrastructure.Data.Migrations
                     b.Property<string>("ClientIpAddress")
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -243,6 +589,9 @@ namespace build9ja.infrastructure.Data.Migrations
                     b.Property<string>("Company")
                         .HasMaxLength(350)
                         .HasColumnType("character varying(350)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
                         .HasMaxLength(500)
@@ -305,6 +654,9 @@ namespace build9ja.infrastructure.Data.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("SellerId")
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
@@ -321,6 +673,9 @@ namespace build9ja.infrastructure.Data.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<bool>("IsPasswordReset")
                         .HasColumnType("boolean");
@@ -349,6 +704,86 @@ namespace build9ja.infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VendorCredentials");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.WishList", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Wishlist");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.Product", b =>
+                {
+                    b.HasOne("build9ja.core.Entities.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId");
+
+                    b.HasOne("build9ja.core.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("build9ja.core.Entities.Vendor", "Vendor")
+                        .WithMany()
+                        .HasForeignKey("VendorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Vendor");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.ProductImage", b =>
+                {
+                    b.HasOne("build9ja.core.Entities.Product", "Product")
+                        .WithOne("ProductImage")
+                        .HasForeignKey("build9ja.core.Entities.ProductImage", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.ProductSpecification", b =>
+                {
+                    b.HasOne("build9ja.core.Entities.Product", "Product")
+                        .WithOne("ProductSpecification")
+                        .HasForeignKey("build9ja.core.Entities.ProductSpecification", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.ProductVariation", b =>
+                {
+                    b.HasOne("build9ja.core.Entities.Product", "Product")
+                        .WithMany("ProductVariations")
+                        .HasForeignKey("ProductId");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("build9ja.core.Entities.Staff", b =>
@@ -388,6 +823,26 @@ namespace build9ja.infrastructure.Data.Migrations
                         });
 
                     b.Navigation("Contact");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.WishList", b =>
+                {
+                    b.HasOne("build9ja.core.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("build9ja.core.Entities.Product", b =>
+                {
+                    b.Navigation("ProductImage");
+
+                    b.Navigation("ProductSpecification");
+
+                    b.Navigation("ProductVariations");
                 });
 #pragma warning restore 612, 618
         }

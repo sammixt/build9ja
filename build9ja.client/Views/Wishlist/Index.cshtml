@@ -1,0 +1,167 @@
+@model build9ja.client.Dto.ShopModel
+
+  <!-- Page Header -->
+      <div class="container-fuild">
+          <div class="page-header" style="background-image: url('images/miscellaneous/page-header.png')">
+            <div class="container">
+              <h1 class="page-title">Wishlist<span>Like Products</span></h1>
+            </div>
+                    </div>
+          <nav aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                </ol>
+            </div>
+          </nav>
+  
+  
+      </div> 
+     
+        <!-- wishlist Content -->
+      <section class="pro-content wishlist-content my-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-12 ">
+                  <table class="table top-table">
+                   
+                      <tbody>
+                      @if(Model is not null && Model.PaginatedWishlist is not null) 
+                      {
+                          foreach(var wishlist in Model.PaginatedWishlist.Data)
+                          {
+                            <tr class="d-flex">
+                              <td class="col-12 col-lg-2">
+                                 @if(wishlist.Product.ProductImage is not null && wishlist.Product.ProductImage is not null){
+                                   <img class="img-fluid" src="@wishlist.Product.ProductImage.MainImage" alt="WishList">
+                                 }else{
+                                    <img class="img-fluid" src="images/product_images/product_image_1.jpg" alt="WishList">
+                                 }
+                                    
+                              </td>
+                              <td class="col-12 col-lg-2">
+                                  <div class="item-detail">
+                                      <span class="pro-category">@wishlist.Product.Category</span>
+                                      <h3>@wishlist.Product.ProductName
+                                      </h3>
+                                      <div class="item-attributes"></div>
+                                      
+                                  </div>
+                              </td>
+                              <td class="col-12 col-lg-2 item-price">₦@wishlist.Product.BasePrice</td>
+                              <td class="col-12 col-lg-2 text-success">
+                                @if(wishlist.Product.totalStock > 0){
+                                      <span class="text-success">InStock</span>
+                                  }else{
+                                      <span class="text-danger">Out Of Stock</span>
+                                  }
+                              </td>
+                              <td class="col-12 col-lg-2 align-middle">
+                                <a href="javascript:void(0)" onclick="removeFromWishList('@wishlist.Product.ProductIdString');"><i class="fas fa-trash fa-2x text-danger"></i></a>
+                              </td>
+                              <td class="col-12 col-lg-2 align-middle">
+                                
+                                  <button type="button" class="btn btn-success btn-md " onclick="addToCart('@wishlist.Product.ProductIdString');">Add to Cart</button>
+                              </td>
+                            
+                          </tr>
+                          }
+                      }
+                        
+                        @* <tr class="d-flex">
+                          <td class="col-12 col-lg-2">
+                                <img class="img-fluid" src="images/product_images/product_image_2.jpg" alt="WishList">
+                          </td>
+                          <td class="col-12 col-lg-3">
+                              <div class="item-detail">
+                                  <span class="pro-category">Decore, Furniture</span>
+                                  <h3>Modren Wood Chair
+                                  </h3>
+                                  <div class="item-attributes"></div>
+                                  
+                              </div>
+                          </td>
+                          <td class="col-12 col-lg-2 item-price">$385</td>
+                          <td class="col-12 col-lg-2 text-success">In stock</td>
+                       
+                          <td class="col-12 col-lg-3 align-middle">
+                              <button type="button" class="btn btn-secondary btn-lg " onclick="notificationCart();">Add to Cart</button>
+                          </td>
+                        
+                      </tr>
+                        <tr class="d-flex">
+                            <td class="col-12 col-lg-2">
+                                  <img class="img-fluid" src="images/product_images/product_image_3.jpg" alt="WishList">
+                            </td>
+                            <td class="col-12 col-lg-3">
+                                <div class="item-detail">
+                                    <span class="pro-category">Decore, Furniture</span>
+                                    <h3>White Plastic Chair
+                                    </h3>
+                                    <div class="item-attributes"></div>
+                                    
+                                </div>
+                            </td>
+                            <td class="col-12 col-lg-2 item-price">$385</td>
+                            <td class="col-12 col-lg-2 text-danger">Out of stock</td>
+                         
+                            <td class="col-12 col-lg-3 align-middle">
+                                <button type="button" class="btn btn-danger btn-lg " onclick="notificationCart();" disabled>Out stock</button>
+                            </td>
+                          
+                        </tr> *@
+                      </tbody>
+                    </table>
+                    <nav aria-label="navigation">
+                        <ul class="pagination">
+                          @{
+                            
+                            int totalPages = Model.PaginatedWishlist.Count/Model.PaginatedWishlist.PageSize;
+                            int remainder = Model.PaginatedWishlist.Count%Model.PaginatedWishlist.PageSize;
+                            int extraItems = remainder == 0 ? 0: 1;
+                            totalPages = totalPages + extraItems;
+                            string disableFirst = Model.PaginatedWishlist.PageIndex == 1 ?"disabled":"";
+                            string disableLast = Model.PaginatedWishlist.PageIndex == totalPages ?"disabled":"";
+                            <li class="page-item @disableFirst">
+                              <a class="page-link page-link-prev" asp-action="Index" asp-controller="Wishlist" 
+                                asp-route-PageIndex="@(Model.PaginatedWishlist.PageIndex - 1)" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                                  Prev
+                              </a>
+                          </li>
+                            for(int i = 1;i <= totalPages; i++){
+                              string active = i == Model.PaginatedWishlist.PageIndex?"active":"";
+                              <li class="page-item @active" aria-current="page">
+                                <a class="page-link" asp-action="Index" asp-controller="Wishlist"
+                                asp-route-PageIndex="@i">@i</a></li>
+                            }
+                            <li class="page-item @disableLast">
+                              <a class="page-link page-link-next" asp-action="Index" asp-controller="Wishlist" 
+                                asp-route-PageIndex="@(Model.PaginatedWishlist.PageIndex + 1)" aria-label="Next">
+                                  Next
+                              </a>
+                          </li>
+                          }
+
+
+                            @* <li class="page-item disabled">
+                                <a class="page-link page-link-prev" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                                    Prev
+                                </a>
+                            </li>
+                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item-total">of 6</li>
+                            <li class="page-item">
+                                <a class="page-link page-link-next" href="#" aria-label="Next">
+                                    Next
+                                </a>
+                            </li> *@
+                        </ul>
+                    </nav>
+              
+              </div>
+            </div>
+          </div>
+      </section>

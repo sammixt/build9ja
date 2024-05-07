@@ -22,6 +22,7 @@ namespace build9ja.core.Entities
 		public bool IsPasswordReset { get; set; }
 
 		public DateTime LastLoginDate { get; set; }
+		
 	}
 }
 

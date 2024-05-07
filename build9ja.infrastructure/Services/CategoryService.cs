@@ -51,6 +51,27 @@ namespace build9ja.infrastructure.Services
             return (List<Category>)categories;
         }
 
+        public async Task<List<Category>> GetTopCategories()
+        {
+            CategorySpecification spec = new CategorySpecification(true);
+            var categories = await _unitOfWork.Repository<Category>().ListAsync(spec);
+            return (List<Category>)categories;
+        }
+
+         public async Task<List<Category>> getCategoryDataTable(DataTableRequestSpecification spec)
+        {
+            CategorySpecification categorySpecification = new CategorySpecification(spec);
+            var categories = await _unitOfWork.Repository<Category>().ListAsync(categorySpecification);
+            return (List<Category>)categories;;
+        }
+
+        public  async Task<int> getCount()
+        {
+            CategorySpecification categorySpecification = new CategorySpecification();
+            var vendor = await _unitOfWork.Repository<Category>().CountAsync(categorySpecification);
+            return vendor;
+        }
+
         public async Task<string> UpdateCategory(long id, Category category)
         {
             CategorySpecification spec = new CategorySpecification(id);
@@ -60,6 +81,8 @@ namespace build9ja.infrastructure.Services
             model.Description = category.Description??model.Description;
             model.Image = category.Image??model.Image;
             model.ParentId = category.ParentId;
+             model.Status = category.Status;
+              model.IsTopCategory = category.IsTopCategory;
             _unitOfWork.Repository<Category>().Update(model);
             int outcome = await _unitOfWork.Complete();
             if(outcome > 0) return "00";

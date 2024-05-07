@@ -1,0 +1,116 @@
+﻿@model IEnumerable<build9ja.client.Dto.Products.ProductDto                                                                                  >
+<section class="v-tabs-content pro-content ">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="pro-heading-title-1">
+                    <h2> Deals of the week</h2>
+                    <p> you can find you best price deals easily</p>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-md-6">
+                <div class="nav" role="tablist" id="tabCarousel">
+                  <a class="nav-link btn btn-secondary active show" data-toggle="tab" href="#featured" role="tab" >View All</a>
+
+                  <a class="nav-link btn btn-secondary"  data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="true" >Table Lab</a>
+
+
+                  <a class="nav-link btn btn-secondary" data-toggle="tab"  href="#liked" role="tab" aria-controls="liked" aria-selected="true" >Chair</a>
+
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="row">
+            <div class="col-12 ">
+
+                <!-- Tab panes -->
+                <div class="tab-content pt-3">
+
+                    <div role="tabpanel" class="tab-pane fade active show" id="featured">
+                        <div class="tab-carousel-js row">
+                            @if(Model is not null){
+                                foreach(var product in Model){
+                                    <div class="">
+                                        <div class=" v-product-card1">
+                                            <article>
+                                                <div class="pro-thumb">
+
+                                                    @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                                        <img class="img-fluid" id="myImage1" src="@product.ProductImage.MainImage" alt="Product-Image">
+                                                    }else{
+                                                        <img class="img-fluid" id="myImage1" src="~/asset/images/mv 2/Layer 3.png" alt="Product-Image">
+                                                    }
+                                                    @* <div class="pro-hover-icons">
+                                                        <div class="icons">
+
+                                                        <button class="btn-light icon " onclick="notificationCart();">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </button>
+                                                        <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                                            <i class="fas fa-eye"></i>
+                                                        </button>
+                                                        <button class="btn-light icon" onclick="notificationCompare();">
+                                                            <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                                        </button>
+                                                        </div>
+                                                    </div>  *@
+                                                </div>
+
+
+                                                <div class="pro-info">
+                                                    <div>
+                                                        <p class="text-center p-0">@product.ProductName</p>
+                                                    </div>
+                                                    <div class="pro-price new-price">
+
+                                                        <ins>
+                                                            ₦@product.BasePrice
+                                                            @* <del>
+                                                                $350.00
+                                                            </del> *@
+                                                        </ins>
+
+                                                         @* <button  class="btn-light icon " onclick="notificationWishlist();">
+                                                            <i class="fas fa-heart"></i>
+                                                        </button>              *@
+                                                    </div>
+                                                    <div class="pro-stars">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+
+
+                                                    @* <div class="countdown pro-timer">
+                                                        <span class="days">364<small>Days</small></span>
+                                                        <span class="hours">11<small>Hour</small></span>
+                                                        <span class="mintues">43<small>Min</small></span>
+                                                        <span class="seconds">35<small>Sec</small></span>
+                                                    </div> *@
+                                                    <div class="pro-buttons">
+
+                                                        <button type="button" class="btn btn-link btn-sm" onclick="addToCart('@product.ProductIdString')">
+                                                            <i class="fas fa-shopping-basket "></i> Add to Cart
+                                                        </button>
+                                                        <a href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')" class="">
+                                                            <i class="fas fa-heart"></i> Wishlist
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <!-- 1st tab -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

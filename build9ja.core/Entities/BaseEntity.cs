@@ -10,6 +10,8 @@ namespace build9ja.core.Entities
 		}
 		[Key]
 		public long Id { get; set; }
+
+		public DateTime DateCreated {get; set;} = DateTime.UtcNow;
 	}
 }
 

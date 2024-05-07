@@ -1,0 +1,936 @@
+@model build9ja.client.Dto.ShopModel
+@{
+  string path = Context.Request.Path;
+  string[] paths = path.Split('/');
+}
+<div class="container-fuild">
+        <div class="page-header" style="background-image: url('images/miscellaneous/page-header.png')">
+          <div class="container">
+            <h3 class="page-title">@paths[3]</h3>
+          </div><!-- End .container -->
+          <nav aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">@paths[3]</li>
+                </ol>
+            </div>
+          </nav>
+        </div>
+      </div> 
+
+      <div class="pro-content page-content shop-page shop-page-one">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+
+                  <div class="toolbar">
+                      <div class="toolbox">
+                          <div class="toolbox-left">
+                            <a class="btn fillter-bottom" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Filters</a>
+                            <div class="fillter-right">
+
+                                <nav class="navbar navbar-expand-lg">
+                               
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fas fa-bars"></i> 
+                                        <i class="fas fa-times"></i>FILLTERS
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <h3>Product Categories</h3>
+                               
+                                                <div class="product-category">
+                                                    <ul class="unorder-list">
+                                                        <li class="list-item">
+                                                            <div class="checkbox">
+                                                                <label class="active"><input type="checkbox" value="" checked>Option 1</label>
+                                                              </div>
+                                                      </li>
+                                                        <li class="list-item">
+                                                            <div class="checkbox">
+                                                                <label><input type="checkbox" value="">Option 1</label>
+                                                              </div>
+                                                        </li>
+                                                          <li class="list-item">
+                                                              <div class="checkbox">
+                                                                  <label><input type="checkbox" value="">Option 1</label>
+                                                                </div>
+                                                          </li>
+                                                            <li class="list-item">
+                                                                <div class="checkbox">
+                                                                    <label><input type="checkbox" value="">Option 1</label>
+                                                                  </div>
+                                                            </li>
+                                                      </ul>    
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <h3>Product Price</h3>
+                                  
+                                                <div class="price-select">
+                                                    <ul class="unorder-list">
+                                                        <li class="list-item">
+                                                        <a class="list-link"  href="#" >
+                                                            $10-$100
+                                                        </a>
+                                                      </li>
+                                                        <li class="list-item">
+                                                          <a class="list-link"  href="#" >
+                                                              $10-$1000
+                                                          </a>
+                                                        </li>
+                                                          <li class="list-item">
+                                                            <a class="list-link"  href="#" >
+                                                                $100-$1000
+                                                            </a>
+                                                          </li>
+                                                            <li class="list-item">
+                                                              <a class="list-link"  href="#" >
+                                                                  $50-$1000
+                                                              </a>
+                                                            </li>
+                                                      </ul>    
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <h3>Filter By Color</h3>
+                                                <div class="color-range">
+                                                    <ul class="unorder-list">
+                                                      <li class="list-item">
+                                                        <div class="radio">
+                                                            <label><input type="radio" name="optradio">Orange</label>
+                                                          </div>
+                                                    </li>
+                                                        <li class="list-item">
+                                                            <div class="radio">
+                                                                <label><input type="radio" name="optradio">Red</label>
+                                                              </div>
+                                                        </li>
+                                                          <li class="list-item">
+                                                              <div class="radio">
+                                                                  <label><input type="radio" name="optradio">yellow</label>
+                                                                </div>
+                                                          </li>
+                                                            <li class="list-item">
+                                                                <div class="radio">
+                                                                    <label><input type="radio" name="optradio">Green</label>
+                                                                  </div>
+                                                            </li>
+                                                      </ul>    
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <h3>Popular Tags</h3> 
+                                                <div class="popular-tags">
+                                                
+                                                    <ul>
+                                                      <li class="active"><a href="shop-4cols.html">Nike</a> </li>
+                                                      <li><a href="shop-4cols.html">Dinner</a> </li>
+                                                  
+                                                    </ul>       
+                                                    <ul>
+                                                       <li><a href="shop-4cols.html">Nike</a></li>
+                                                       <li><a href="shop-4cols.html">Nike</a> </li>
+                                                    </ul>    
+                                                   </div> 
+                                            </div>
+                                        </div>
+                                      </div>
+                                </nav>
+                            </div>
+                            <div class="toolbox-info">
+                                Showing <span>12 of 56</span> Products
+                            </div><!-- End .toolbox-info -->
+                          </div>
+                          <!-- End .toolbox-left -->
+    
+                          
+    
+                          <div class="toolbox-right">
+                            <div class="toolbox-sort">
+                              <label for="sortby">Sort by:</label>
+                              <div class="select-control">
+                            <select name="sortby" id="sortby" class="form-control">
+                              <option value="popularity" selected="selected">Most Popular</option>
+                              <option value="rating">Most Rated</option>
+                              <option value="date">Date</option>
+                            </select>
+                          </div>
+                            </div>
+                            <!-- End .toolbox-sort -->
+                            <div class="toolbox-layout">
+                                <a href="shop-4cols.html" class="btn-layout active">
+                                    <svg width="22" height="10">
+                                      <rect x="0" y="0" width="4" height="4"></rect>
+                                      <rect x="6" y="0" width="4" height="4"></rect>
+                                      <rect x="12" y="0" width="4" height="4"></rect>
+                                      <rect x="18" y="0" width="4" height="4"></rect>
+                                      <rect x="0" y="6" width="4" height="4"></rect>
+                                      <rect x="6" y="6" width="4" height="4"></rect>
+                                      <rect x="12" y="6" width="4" height="4"></rect>
+                                      <rect x="18" y="6" width="4" height="4"></rect>
+                                    </svg>
+                                  </a>
+                                  <a href="shop-3cols.html" class="btn-layout">
+                                      <svg width="16" height="10">
+                                        <rect x="0" y="0" width="4" height="4"></rect>
+                                        <rect x="6" y="0" width="4" height="4"></rect>
+                                        <rect x="12" y="0" width="4" height="4"></rect>
+                                        <rect x="0" y="6" width="4" height="4"></rect>
+                                        <rect x="6" y="6" width="4" height="4"></rect>
+                                        <rect x="12" y="6" width="4" height="4"></rect>
+                                      </svg>
+                                    </a>
+                                    <a href="shop-2cols.html" class="btn-layout">
+                                        <svg width="10" height="10">
+                                          <rect x="0" y="0" width="4" height="4"></rect>
+                                          <rect x="6" y="0" width="4" height="4"></rect>
+                                          <rect x="0" y="6" width="4" height="4"></rect>
+                                          <rect x="6" y="6" width="4" height="4"></rect>
+                                        </svg>
+                                      </a>
+                                <a href="shop-list.html" class="btn-layout ">
+                                  <svg width="16" height="10">
+                                    <rect x="0" y="0" width="4" height="4"></rect>
+                                    <rect x="6" y="0" width="10" height="4"></rect>
+                                    <rect x="0" y="6" width="4" height="4"></rect>
+                                    <rect x="6" y="6" width="10" height="4"></rect>
+                                  </svg>
+                                </a>
+                              </div>
+                          </div>
+                          <!-- End .toolbox-right -->
+                      </div>
+                  
+                  
+                      <div class="collapse" id="collapseExample">
+                          <div class="card card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-3">
+                                    <h3>Product Categories</h3>
+                   
+                                    <div class="product-category">
+                                        <ul class="unorder-list">
+                                            <li class="list-item">
+                                                <div class="checkbox">
+                                                    <label class="active"><input type="checkbox" value="" checked>Option 1</label>
+                                                  </div>
+                                          </li>
+                                            <li class="list-item">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">Option 1</label>
+                                                  </div>
+                                            </li>
+                                              <li class="list-item">
+                                                  <div class="checkbox">
+                                                      <label><input type="checkbox" value="">Option 1</label>
+                                                    </div>
+                                              </li>
+                                                <li class="list-item">
+                                                    <div class="checkbox">
+                                                        <label><input type="checkbox" value="">Option 1</label>
+                                                      </div>
+                                                </li>
+                                          </ul>    
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <h3>Product Price</h3>
+                      
+                                    <div class="price-select">
+                                        <ul class="unorder-list">
+                                            <li class="list-item">
+                                            <a class="list-link"  href="#" >
+                                                $10-$100
+                                            </a>
+                                          </li>
+                                            <li class="list-item">
+                                              <a class="list-link"  href="#" >
+                                                  $10-$1000
+                                              </a>
+                                            </li>
+                                              <li class="list-item">
+                                                <a class="list-link"  href="#" >
+                                                    $100-$1000
+                                                </a>
+                                              </li>
+                                                <li class="list-item">
+                                                  <a class="list-link"  href="#" >
+                                                      $50-$1000
+                                                  </a>
+                                                </li>
+                                          </ul>    
+                                    
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <h3>Filter By Color</h3>
+                                    <div class="color-range">
+                                        <ul class="unorder-list">
+                                          <li class="list-item">
+                                            <div class="radio">
+                                                <label><input type="radio" name="optradio">Orange</label>
+                                              </div>
+                                        </li>
+                                            <li class="list-item">
+                                                <div class="radio">
+                                                    <label><input type="radio" name="optradio">Red</label>
+                                                  </div>
+                                            </li>
+                                              <li class="list-item">
+                                                  <div class="radio">
+                                                      <label><input type="radio" name="optradio">yellow</label>
+                                                    </div>
+                                              </li>
+                                                <li class="list-item">
+                                                    <div class="radio">
+                                                        <label><input type="radio" name="optradio">Green</label>
+                                                      </div>
+                                                </li>
+                                          </ul>    
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3">
+                                    <h3>Popular Tags</h3> 
+                                    <div class="popular-tags">
+                                    
+                                        <ul>
+                                          <li class="active"><a href="shop-4cols.html">Nike</a> </li>
+                                          <li><a href="shop-4cols.html">Dinner</a> </li>
+                                      
+                                        </ul>       
+                                        <ul>
+                                           <li><a href="shop-4cols.html">Nike</a></li>
+                                           <li><a href="shop-4cols.html">Nike</a> </li>
+                                        </ul>    
+                                       </div> 
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                  </div>
+                  <div id="swap" class="productbar">
+              
+                    <div class="row">     
+                        @if(Model is not null && Model.PaginatedProducts.Data is not null){
+                            foreach(var product in Model.PaginatedProducts.Data){
+                                <div class="col-12 col-md-4 col-lg-3">
+                                    <div class="product">
+                                    <article>
+                                        <div class="pro-thumb">
+                                        @if(product.ProductImage is not null && product.ProductImage.MainImage is not null){
+                                            <img class="img-fluid"  src="@product.ProductImage.MainImage" alt="Product-Image">
+                                            }else{
+                                                <img class="img-fluid" src="~/asset/images/product_images/product_image_1.jpg" alt="Product-Image">
+                                            }
+                                        
+
+                                        <div class="badges">
+                                            <div class="badge badge-info">
+                                            Featured
+                                            </div>
+                                            <div class="badge badge-danger">
+                                            Sale
+                                            </div>
+                                        </div>
+
+                                        <div class="pro-hover-icons">
+                                            <div class="icons">
+                                                
+                                                <button class="btn-light icon " onclick="addToCart('@product.ProductIdString')">
+                                                    <i class="fas fa-shopping-bag"></i>
+                                                </button>
+                                                <a asp-action="Product" asp-controller="Shop" asp-route-pid="@product.ProductIdString" class="btn-light icon">
+                                                <i class="fas fa-eye"></i>
+                                                </a>
+                                                @* <button class="btn-light icon" onclick="notificationCompare();">
+                                                <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                                </button> *@
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="pro-info">
+                                            <div class="pro-category">
+                                                @product.Category                            
+                                            </div>
+                                            <h3 ><a href="product-page1.html">@product.ProductName</a></h3>
+                                            
+                                            <div class="pro-price">                     
+                                            
+                                            <ins>₦@product.BasePrice
+                                                @* <del>
+                                                    $182     
+                                                    </del>  *@
+                                            </ins>  
+                                            
+                                            <a  class="btn-light icon " href="javascript:void(0)" onclick="addToWishList('@product.ProductIdString')">
+                                                <i class="fas fa-heart"></i>
+                                                </a>            
+                                            </div>
+                                            <div class="pro-options">
+                                            @* <div class="color-option">
+                                            
+                                                    
+                                                <ul class="product1">
+                                                <li class="active"><a class="green" href="javascript:void(0);"></a></li>
+                                                <li ><a class="red" href="javascript:void(0);"></a></li>
+                                                <li ><a class="yellow" href="javascript:void(0);"></a></li>
+                                                
+                                                </ul>
+                                            </div> *@
+                                            @* <div class="size-option">
+                                            
+                                                <ul class="product2">
+                                                <li class="active"><a class="size-select" href="javascript:void(0);">
+                                                    XS
+                                                </a></li>
+                                                <li ><a class="size-select" href="javascript:void(0);">
+                                                    S
+                                                </a></li>
+                                                <li ><a class="size-select" href="javascript:void(0);">M</a></li>
+                                                
+                                                </ul>
+                                            
+                                            </div> *@
+                                        
+                                            </div>
+                                        </div>                   
+                                        
+                
+                                    </article>
+                                    </div>
+                                </div>
+                            }
+                        }                     
+                      
+                      @* <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_2.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                     
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">Modern Wood Chair</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                 
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                                <div class="pro-options">
+                              
+                                  <div class="size-option">
+                                
+                                    <ul class="product4">
+                                      <li class="active"><a class="size-select" href="javascript:void(0);">
+                                        XS
+                                      </a></li>
+                                      <li ><a class="size-select" href="javascript:void(0);">
+                                        S
+                                      </a></li>
+                                      <li ><a class="size-select" href="javascript:void(0);">M</a></li>
+                                      
+                                    </ul>
+                                   
+                                </div>
+                            
+                                </div>
+                            </div>                   
+                            
+      
+                          </article>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_3.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">White Plastic Chair</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                                <div class="pro-options">
+                                  <div class="color-option">
+                                   
+                                        
+                                    <ul class="product3">
+                                      <li class="active"><a class="green" href="javascript:void(0);"></a></li>
+                                      <li ><a class="red" href="javascript:void(0);"></a></li>
+                                      <li ><a class="yellow" href="javascript:void(0);"></a></li>
+                                      
+                                    </ul>
+                                </div>
+                                 
+                            
+                                </div>
+                            </div>                   
+                            
+      
+                          </article>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_4.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">Black Plastic Chair</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                            </div>                   
+                            
+      
+                          </article>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_5.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">Yellow Armless Chair</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                                <div class="pro-options">
+                                  <div class="color-option">
+                                   
+                                        
+                                    <ul class="product5">
+                                      <li class="active"><a class="green" href="javascript:void(0);"></a></li>
+                                      <li ><a class="red" href="javascript:void(0);"></a></li>
+                                      <li ><a class="yellow" href="javascript:void(0);"></a></li>
+                                      
+                                    </ul>
+                                </div>
+                                  
+                            
+                                </div>
+                            </div>                   
+                            
+      
+                          </article>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_6.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">White Folding Chair</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                                <div class="pro-options">
+                              
+                                  <div class="size-option">
+                                
+                                    <ul class="product6">
+                                      <li class="active"><a class="size-select" href="javascript:void(0);">
+                                        XS
+                                      </a></li>
+                                      <li ><a class="size-select" href="javascript:void(0);">
+                                        S
+                                      </a></li>
+                                      <li ><a class="size-select" href="javascript:void(0);">M</a></li>
+                                      
+                                    </ul>
+                                   
+                                </div>
+                            
+                                </div>
+                            </div>                   
+                            
+      
+                          </article>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_7.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">Leather 2-Seat Sofa</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                            </div>                   
+                            
+      
+                          </article>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <div class="product">
+                          <article>
+                            <div class="pro-thumb">
+                              
+                              <img class="img-fluid" src="~/asset/images/product_images/product_image_8.jpg" alt="Product-Image">
+
+                              <div class="badges">
+                                <div class="badge badge-info">
+                                  Featured
+                                </div>
+                                <div class="badge badge-danger">
+                                  Sale
+                                </div>
+                              </div>
+
+                              <div class="pro-hover-icons">
+                                  <div class="icons">
+                                    
+                                    <button class="btn-light icon " onclick="notificationCart();">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                    <button class="btn-light icon" data-toggle="modal" data-target="#quickViewModal" >
+                                      <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-light icon" onclick="notificationCompare();">
+                                      <i class="fas fa-align-right" data-fa-transform="rotate-90"></i>
+                                    </button>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            <div class="pro-info">
+                                <div class="pro-category">
+                                    Decore, Furniture                              
+                                </div>
+                                <h3 ><a href="product-page1.html">White Armchair</a></h3>
+                                
+                                <div class="pro-price">                     
+                                  
+                                  <ins>$119
+                                      <del>
+                                          $182     
+                                        </del> 
+                                  </ins>  
+                                
+                                  <button  class="btn-light icon " onclick="notificationWishlist();">
+                                      <i class="fas fa-heart"></i>
+                                    </button>            
+                                </div>
+                                <div class="pro-options">
+                                  <div class="color-option">
+                                   
+                                        
+                                    <ul class="product7">
+                                      <li class="active"><a class="green" href="javascript:void(0);"></a></li>
+                                      <li ><a class="red" href="javascript:void(0);"></a></li>
+                                      <li ><a class="yellow" href="javascript:void(0);"></a></li>
+                                      
+                                    </ul>
+                                </div>
+                                  <div class="size-option">
+                                
+                                    <ul class="product8">
+                                      <li class="active"><a class="size-select" href="javascript:void(0);">
+                                        XS
+                                      </a></li>
+                                      <li ><a class="size-select" href="javascript:void(0);">
+                                        S
+                                      </a></li>
+                                      <li ><a class="size-select" href="javascript:void(0);">M</a></li>
+                                      
+                                    </ul>
+                                   
+                                </div>
+                            
+                                </div>
+                            </div>                   
+                            
+
+                          </article>
+                        </div>
+                      </div>   *@
+                  
+                    </div>
+                  </div>
+
+                  <nav aria-label="navigation">
+                      <ul class="pagination">
+                          
+                          @{
+                            
+                            int totalPages = Model.PaginatedProducts.Count/Model.PaginatedProducts.PageSize;
+                            int remainder = Model.PaginatedProducts.Count%Model.PaginatedProducts.PageSize;
+                            int extraItems = remainder == 0 ? 0: 1;
+                            totalPages = totalPages + extraItems;
+                            string disableFirst = Model.PaginatedProducts.PageIndex == 1 ?"disabled":"";
+                            string disableLast = Model.PaginatedProducts.PageIndex == totalPages ?"disabled":"";
+                            <li class="page-item @disableFirst">
+                              <a class="page-link page-link-prev" asp-action="Index" asp-controller="Shop" asp-route-category="@paths[3]"
+                                asp-route-PageIndex="@(Model.PaginatedProducts.PageIndex - 1)" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                                  Prev
+                              </a>
+                          </li>
+                            for(int i = 1;i <= totalPages; i++){
+                              string active = i == Model.PaginatedProducts.PageIndex?"active":"";
+                              <li class="page-item @active" aria-current="page">
+                                <a class="page-link" asp-action="Index" asp-controller="Shop" asp-route-category="@paths[3]"
+                                asp-route-PageIndex="@i">@i</a></li>
+                            }
+                            <li class="page-item @disableLast">
+                              <a class="page-link page-link-next" asp-action="Index" asp-controller="Shop" asp-route-category="@paths[3]"
+                                asp-route-PageIndex="@(Model.PaginatedProducts.PageIndex + 1)" aria-label="Next">
+                                  Next
+                              </a>
+                          </li>
+                          }
+                          
+                          @* <li class="page-item-total">of 6</li> *@
+                          
+                      </ul>
+                  </nav>
+                </div>
+            </div>
+          </div>
+      </div>

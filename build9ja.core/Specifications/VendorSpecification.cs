@@ -23,6 +23,12 @@ namespace build9ja.core.Specifications
 		public VendorSpecification(PaginationSpecification pagination, bool hasCount)
 			: base(x => (string.IsNullOrEmpty(pagination.Search) || x.FirstName.ToLower().Contains(pagination.Search)))
 		{}
+
+        public VendorSpecification(DataTableRequestSpecification spec)
+		: base(x => (string.IsNullOrEmpty(spec.SearchValue) || x.Company.Contains(spec.SearchValue)
+		|| x.TaxNumber.Contains(spec.SearchValue) || x.CacNumber.Contains(spec.SearchValue))){
+			ApplyPaging(((spec.Skip / spec.PageSize) * spec.PageSize),spec.PageSize);
+		}
     }
 
     public class VendorBankInfoSpecification : BaseSpecification<VendorBankInfo>

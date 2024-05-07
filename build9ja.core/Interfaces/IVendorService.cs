@@ -35,5 +35,11 @@ namespace build9ja.core.Interfaces
         //get vendor credential by username;
         Task<VendorCredential> getVendorCredentialByUserName(string username);
         Task<int> createVendorCredential(VendorCredential vendorCredential);
+        Task<string> UpdateVendor(string sellerId, Vendor vendor);
+        Task<IReadOnlyList<Vendor>> getVendorsDataTable(DataTableRequestSpecification spec);
+        Task<int> getCount();
+        Task<IReadOnlyList<Vendor>> getVendors();
+        Task<int> AddOrUpdateVendorBankInfo(VendorBankInfo bankInfo);
+        Task<VendorBankInfo> GetVendorBankInfo(string vendorId);
     }
 }

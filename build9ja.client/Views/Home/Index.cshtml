@@ -1,0 +1,2891 @@
+﻿@model build9ja.client.Dto.HomePageModel
+ @using System.Security.Claims;
+ @{
+     var identity = (ClaimsIdentity)User.Identity;
+    var name = identity.FindFirst(ClaimTypes.GivenName)?.Value;
+    var userId = identity.FindFirst(ClaimTypes.SerialNumber)?.Value;
+ }
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+      <meta charset="UTF-8">
+      <title>Build Naija</title>
+      <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed nibh vel tellus tincidunt molestie. Ut in libero ac elit pharetra auctor a eget nunc.">
+      <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+      <meta name="author" content="">
+      
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link rel="icon" type="image/png" href="~/asset/images/miscellaneous/fav.png">
+  
+      <!-- Fontawesome CSS Files -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+      <!-- Core CSS Files -->
+      <link rel="stylesheet" type="text/css" href="~/asset/css/style.css">
+      <link rel="stylesheet" type="text/css" href="~/asset/css/toastr.css">
+      
+      <!-- Slider Revolution CSS Files -->
+      <link rel="stylesheet" type="text/css" href="~/asset/revolution/css/settings.css">
+      <link rel="stylesheet" type="text/css" href="~/asset/revolution/css/layers.css">
+      <link rel="stylesheet" type="text/css" href="~/asset/revolution/css/navigation.css">
+      
+        
+  </head>
+
+  <body class="home11" style="padding-top: 0px;">
+
+    <div class="se-pre-con">
+      <div class="pre-loader">
+        <div class="">
+          <header class="header-area header-one header-desktop "> 
+            <div class="container">          
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-2">
+                        <div class="logo">
+                            <a href="">
+                              <img class="img-fluid" src="~/asset/images/logo/logo2.png" alt="logo here">                                           
+                            </a>
+                          </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="navbar-collapse">
+                              <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="">
+                                    Home
+                                  </a>
+                                </li>
+                                
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="">
+                                    Shop
+                                  </a>
+                                </li>
+                            
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="">
+                                    Product
+                                  </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="">
+                                    Elements
+                                  </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="">
+                                    Pages
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </nav>
+                    </div>
+                    <div class="col-12 col-lg-5 d-flex justify-content-end">
+                      @* <div class="navbar-lang">
+                        <ul>
+                            <li class="dropdown">
+                            <button class="btn dropdown-toggle" type="button">
+                                En
+                            </button>
+                            </li>
+                            <li class="dropdown">
+                            <button class="btn dropdown-toggle" type="button">
+                                USD
+                            </button>
+                            </li>
+                            </ul>
+                    </div> *@
+                        <ul class="pro-header-right-options">
+                         
+                              <li class="dropdown search-field">
+                                  <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fas fa-search"></i>
+                                  </button>
+                                </li>
+                            <li class="dropdown profile-tags">
+                              <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fas fa-user"></i>
+                              </button>
+                            </li>
+                            <li>
+                              <a href="" class="btn btn-light">
+                                  <i class="far fa-heart"></i>
+                                  <span class="badge badge-secondary">0</span>
+                              </a>
+                            </li>
+                            <li class="dropdown">
+                              <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="badge badge-secondary">2</span>
+                              </button> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </header>
+          <header class="header-area header-mobile">
+
+            <div class="header-maxi bg-header-bar ">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-6 pr-0 flex-col">
+                    <div class="navigation-mobile-container">
+                      <a href="" class="navigation-mobile-">
+                          <span class="fas fa-bars"></span>
+                      </a>
+                  </div>
+
+                  <a href=" " class="logo">
+                      <img class="img-fluid" src="~/asset/images/logo/logo2.png" alt="logo here">                                            
+                    </a>
+                  </div>
+        
+                  <div class="col-6 pl-0">
+                    <ul class="pro-header-right-options">
+          
+                    <li>
+                      <a href="" class="btn  btn-light">
+                          <i class="far fa-heart"></i>
+                          <span class="badge badge-secondary">0</span>
+                      </a>
+                    </li>
+    
+                    <li class="dropdown">
+                      <button class="btn btn-light dropdown-toggle"> 
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge badge-secondary">2</span>
+                      </button> 
+                
+                    </li>
+                </ul>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="header-navbar bg-menu-bar">
+              <div class="container">
+                <form class="form-inline">
+                    <div class="search-field-module">                           
+                      
+                        <div class="search-field-wrap">
+                            <input type="search" placeholder="Search Products..." readonly="">
+                            <button class="btn btn-secondary swipe-to-top">
+                            <i class="fa fa-search"></i></button>
+                        </div>
+                      </div>
+                </form>
+              </div>
+            </div>
+        </header>  
+          <div class="home-slider">
+            <div class="home  skeleton-box"></div>
+        </div>
+       
+        <section class="tabs-content pro-content">
+          <div class="container">
+              <div class="row ">
+                <div class="col-12 col-md-6">
+                  <div class="pro-heading-title">
+                     <h2 class="mb-2 skeleton-box">
+                     </h2>
+                     <p class="skeleton-box"> 
+                     </p>
+                   </div>
+               </div>
+               
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-6 col-md-4  col-lg-3">
+                  <div class="product skeleton-box">
+                    <article>
+                      <div class="pro-thumb">
+                      </div>
+                      <div class="pro-info ">
+                        <div class="pro-category">
+                                                      
+                        </div>
+                        <h3></h3>
+                        
+                        <div class="pro-price bg-no">                     
+                          
+                          <ins>
+                              <del>
+                                       
+                                </del> 
+                          </ins>  
+                         
+                          <button class="btn-light icon " onclick="notificationWishlist();" tabindex="0">
+                         
+                            </button>            
+                        </div>
+                  
+
+                    </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-sm-block d-none">
+                  <div class="product skeleton-box">
+                    <article>
+                      <div class="pro-thumb">
+                      </div>
+                      <div class="pro-info ">
+                        <div class="pro-category">
+                                                      
+                        </div>
+                        <h3></h3>
+                        
+                        <div class="pro-price bg-no">                     
+                          
+                          <ins>
+                              <del>
+                                       
+                                </del> 
+                          </ins>  
+                         
+                          <button class="btn-light icon " onclick="notificationWishlist();" tabindex="0">
+                         
+                            </button>            
+                        </div>
+                  
+
+                    </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-md-block d-none">
+                  <div class="product skeleton-box">
+                    <article>
+                      <div class="pro-thumb">
+                      </div>
+                      <div class="pro-info ">
+                        <div class="pro-category">
+                                                      
+                        </div>
+                        <h3></h3>
+                        
+                        <div class="pro-price bg-no">                     
+                          
+                          <ins>
+                              <del>
+                                       
+                                </del> 
+                          </ins>  
+                         
+                          <button class="btn-light icon " onclick="notificationWishlist();" tabindex="0">
+                         
+                            </button>            
+                        </div>
+                  
+
+                    </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-3  d-lg-block d-none">
+                  <div class="product skeleton-box">
+                    <article>
+                      <div class="pro-thumb">
+                      </div>
+                      <div class="pro-info ">
+                        <div class="pro-category">
+                                                      
+                        </div>
+                        <h3></h3>
+                        
+                        <div class="pro-price bg-no">                     
+                          
+                          <ins>
+                              <del>
+                                       
+                                </del> 
+                          </ins>  
+                         
+                          <button class="btn-light icon " onclick="notificationWishlist();" tabindex="0">
+                         
+                            </button>            
+                        </div>
+                  
+
+                    </div>
+                    </article>
+                  </div>
+                </div>
+          
+              </div>      
+          </div>  
+        </section>
+        <div class="pro-banners-content pre-slick  pro-content ">
+          <div class="tabs-content2 bg-paralex pro-content  d-flex align-items-center"> 
+            <div class=" container">
+              <div class="bannerbg">
+                <div class="parallax-banner-text d-flex flex-column align-items-center">
+                  <h2 class="skeleton-box"></h2>
+                  <p class="skeleton-box"> </p>
+                  <p class="skeleton-box"> </p>
+                  <button class="btn skeleton-box">  </button>
+  
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+       
+        <section class="pro-fs-content pro-content">
+  
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="pro-thumb skeleton-box"></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="pro-info">
+                  <h2 class="skeleton-box"> </h2>
+                  <h3 class="skeleton-box"></h3>
+                  <p class="skeleton-box"> 
+                  </p>
+                   <div class="pro-price">
+                    <ins class="skeleton-box">
+                      
+                    </ins>
+                    <del class="skeleton-box">
+                      
+                    </del>
+                  </div>
+                  <div class=" pro-timer">
+                      <span class="days skeleton-box p-0"><small></small></span>
+                      <span class="hours skeleton-box p-0"><small></small></span>
+                      <span class="mintues skeleton-box p-0"><small></small></span>
+                      <span class="seconds skeleton-box p-0"><small></small></span>
+                  </div>
+                  <button type="button" class="btn  skeleton-box" onclick="notificationCart();" tabindex="0"></button>
+                        
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>  
+        <section class="pro-blog-content pro-content">
+          <div class="container">
+            <div class="row ">
+              <div class="col-12 col-md-6">
+                <div class="pro-heading-title">
+                   <h2 class="mb-2 skeleton-box">
+                   </h2>
+                   <p class="skeleton-box"> 
+                   </p>
+                 </div>
+             </div>
+            
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog">
+                  <div class="blog-thumb skeleton-box">
+                  </div>
+                  <div class="blog-info">
+                      <div class="blog-meta">
+                          <a tabindex="0">
+                             
+                            
+                            </a>
+                          <a tabindex="0">
+                           
+                          </a>
+                        </div>
+                          <h3 class=" skeleton-box"></h3>
+
+                          <p class=" skeleton-box"></p>
+                        
+                  </div>
+                </div>
+              </div>
+              <div class="col-12  col-md-6 col-lg-4 d-md-block d-none">
+                <div class="blog">
+                  <div class="blog-thumb skeleton-box">
+                  </div>
+                  <div class="blog-info">
+                      <div class="blog-meta">
+                          <a tabindex="0">
+                             
+                            
+                            </a>
+                          <a tabindex="0">
+                           
+                          </a>
+                        </div>
+                          <h3 class=" skeleton-box"></h3>
+
+                          <p class=" skeleton-box"></p>
+                        
+                  </div>
+                </div>
+              </div>
+              <div class="col-12  col-md-6 col-lg-4 d-lg-block d-none">
+                <div class="blog">
+                  <div class="blog-thumb skeleton-box">
+                  </div>
+                  <div class="blog-info">
+                      <div class="blog-meta">
+                          <a tabindex="0">
+                             
+                            
+                            </a>
+                          <a tabindex="0">
+                           
+                          </a>
+                        </div>
+                          <h3 class=" skeleton-box"></h3>
+
+                          <p class=" skeleton-box"></p>
+                        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </section>
+        <div class="brands-content pro-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 col-lg-2 col-md-3 col-sm-4 ">
+                <div class="brands-skul skeleton-box"></div>
+              </div>
+              <div class="col-6 col-lg-2 col-md-3  col-sm-4">
+                <div class="brands-skul skeleton-box"></div>
+              </div>
+              <div class="col-12 col-lg-2 col-md-3 col-sm-4  d-sm-block d-none">
+                <div class="brands-skul skeleton-box"></div>
+              </div>
+              <div class="col-12 col-lg-2 col-md-3 d-md-block d-none">
+                <div class="brands-skul skeleton-box"></div>
+              </div>
+              <div class="col-12 col-lg-2 col-md-3 d-lg-block d-none">
+                <div class="brands-skul skeleton-box"></div>
+              </div>
+              <div class="col-12 col-lg-2 col-md-3 d-lg-block d-none">
+                <div class="brands-skul skeleton-box"></div>
+              </div>
+            </div>
+          </div>
+        </div>   
+        <footer class="pro-content footer-area footer-one footer-desktop">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-6 newsletter">
+                <h5 class=" skeleton-box">
+                  
+                </h5>
+                <h3 class=" skeleton-box"></h3>
+                <p class=" skeleton-box"></p>
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Enter Your Email..." aria-label="Enter Your Email..." readonly="">
+                  <div class="input-group-append">
+                    <button class="btn  skeleton-box" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid p-0">
+            <div class="copyright-content">
+                <div class="container">
+                  <div class="row align-items-center">
+                      <div class="col-12 col-md-6">
+                        <div class="footer-info">
+                           <h5 class=" skeleton-box"></h5>
+                        </div>
+                          
+                      </div>
+                      <div class="col-12 col-md-6">
+                          <ul class="socials">
+                              <li class="iconbg skeleton-box"></li>
+                              <li class="iconbg skeleton-box"></li>
+                              <li class="iconbg skeleton-box"></li>
+                              <li class="iconbg skeleton-box"></li>
+                              <li class="iconbg skeleton-box"></li>
+                          </ul>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </footer>
+          </div>
+      </div>
+   
+    </div>
+
+    <div class="header-eleven">
+      <div class="vendor-home-seven">
+        <header class=" header-area new-header header-desktop">
+          <div class="container">
+            <div class="row d-flex align-items-center">
+              <div class="col-12 col-lg-5">
+                <div  class="d-flex">
+                  @* <div class="navbar-lang">
+                    <ul class="d-flex list-unstyled">
+                      <li class="dropdown">
+                      <button class="btn dropdown-toggle" type="button" >
+                        En
+                      </button>
+                      <div class="dropdown-menu " >
+                        <a class="dropdown-item" href="#">En</a>
+                        <a class="dropdown-item" href="#">Ar</a>
+                        
+                      </div>
+                      </li>
+                      <li class="dropdown">
+                      <button class="btn dropdown-toggle" type="button" >
+                        USD
+                      </button>
+                      
+                      <div class="dropdown-menu  ">
+                        <a class="dropdown-item" href="#">USD</a>
+                        <a class="dropdown-item" href="#">AED</a>
+                        
+                      </div>
+                      </li>
+                    </ul>
+                    
+                  </div> *@
+                  <div class=" call-us">
+                    <p><strong>Call us toll free: +123 456 7890</strong></p>
+                  </div>
+                </div>
+              </div>
+    
+                <div class="col-12 col-xl-2 col-lg-2">
+                  <div class="logo">
+                      <a href="index.html">
+                        <img class="img-fluid" src="~/asset/images/logo/logo2.png" alt="logo here">                                           
+                      </a>
+                    </div>
+              </div>
+              <div class="col-12 col-lg-5 col-xl-5 d-flex align-items-center justify-content-end ">
+                <div class=" vendor-icons">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a asp-action="Index" asp-controller="Wishlist" class="icon-link">  
+                        <div><i class="fas fa-heart"></i></div>
+                        <div class="icon-details">
+                          <p>WISHLIST</p>
+                          <p><span class="wishlist-count"></span> ITEMS</p>
+                        </div>
+                      </a>
+                    </li>
+    
+                    <li>
+                      <a href="#" class="icon-link">  
+                        <div><i class="fas fa-dolly"></i></div>
+                        <div class="icon-details">
+                          <p>ORDERS</p>
+                          <p>STATUS</p>
+                        </div>
+                      </a>
+                    </li>
+    
+                    <li>
+                      @if(string.IsNullOrEmpty(userId)){
+                        <a asp-action="Login" asp-controller="Home" class="icon-link">  
+                        <div><i class="fas fa-user"></i></div>
+                        <div class="icon-details">
+                          <p>SIGN IN</p>
+                          <p>JOIN FREE</p>
+                        </div>
+                      </a>
+                      }else{
+                        <a asp-action="Logout" asp-controller="Home" class="icon-link">  
+                        <div><i class="fas fa-lock"></i></div>
+                        <div class="icon-details">
+                          <p>LOG</p>
+                          <p>OFF</p>
+                        </div>
+                      </a>
+                      }
+                      
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+     
+        <div class="vendor-home-eight">
+          <header class=" position-relative  header-eight">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-12 col-xl-2 col-lg-2">
+                  <div class="logo">
+                    <div class="dropdown">
+                      <a class="btn dropdown-toggle down-arrow p-0" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                        Categories
+                      </a>
+                      <div class="dropdown-menu p-0 catgorymenuheader" aria-labelledby="dropdownMenu2">
+                        <nav aria-label="" id="navbar_2_carouselExampleWithCaptions3" class="navbar navbar-expand-lg navbar-light categories-panel">
+                      
+                          <div class="navflex-basis">
+                            <ul class="navbar-nav flex-column ">
+                              @if(Model.Category is not null){
+                                foreach(var category in Model.Category){
+                                    if(category.SubCategories is not null && category.SubCategories.Any()){
+                                      <li class="nav-item dropdown  dropright">
+                                    <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                      <img class="img-fuild" src="~/asset/images/category_icon/one.png" alt="icon">
+                                      @category.Name
+                                    </a>
+                                    <i class="fas fa-caret-right"></i>
+                                    <div class="dropdown-menu pull-right" >
+                                      @* <div class="dropdown-submenu submenu1">
+                                        <a class="dropdown-item" href="shop-page1.html">
+                                          <img class="img-fuild" src="~/asset/images/category_icon/catsub1.png" alt="icon">
+                                          Men Polo shirts
+                                        </a>
+                                        <div class="dropdown-menu pull-right">
+                                          <a class="dropdown-item" href="shop-page1.html">
+                                            <img class="img-fuild" src="~/asset/images/category_icon/catsub1.png" alt="icon">
+                                            Men Polo shirts2
+                                          </a>
+                                          <a class="dropdown-item" href="shop-page1.html">
+                                            <img class="img-fuild" src="~/asset/images/category_icon/catsub1.png" alt="icon">
+                                            Men Polo shirts3
+                                          </a>
+                                        </div>
+                                      </div> *@
+                                      @foreach (var item in category.SubCategories)
+                                      {
+                                         <a class="dropdown-item" asp-action="Index" asp-controller="Shop" asp-route-category="@item.Name">
+                                          <img class="img-fuild" src="~/asset/images/category_icon/catsub2.png" alt="icon">
+                                         @item.Name
+                                        </a>
+                                      }
+                                     
+                                      @* <a class="dropdown-item" href="shop-page1.html">
+                                          <img class="img-fuild" src="~/asset/images/category_icon/catsub3.png " alt="icon">
+                                              Men Jeans
+                                      </a>
+                                      <a class="dropdown-item" href="shop-page1.html">
+                                        <img class="img-fuild" src="~/asset/images/category_icon/catsub4.png" alt="icon">
+                                        Men Shoes
+                                      </a>
+                                      <a class="dropdown-item" href="shop-page1.html">
+                                        <img class="img-fuild" src="~/asset/images/category_icon/catsub5.png" alt="icon">
+                                        Sunglasses & Glasses
+                                      </a> *@
+                                    </div>
+                                  </li>
+                                    }else{
+                                      <li class="nav-item">
+                                        <a class="dropdown-item" href="shop-page1.html">
+                                          <img class="img-fuild" src="~/asset/images/category_icon/catsub2.png" alt="icon">
+                                         @category.Name
+                                        </a>
+                                      </li>
+                                    }
+                                }
+                              
+                              }
+                              
+                              @* <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/two.png" alt="icon">  
+                                  Electronics
+                                 
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub6.png" alt="icon">
+                                    Women Dresses
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub7.png" alt="icon">
+                                    Women Shirts & Tops
+                                  </a>
+            
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub8.png" alt="icon">
+                                    Women Jeans
+                                  </a>
+            
+            
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub9.png" alt="icon">
+                                    Women Hand Bags
+                                  </a>
+                                </div>
+                              </li>      
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/three.png" alt="icon">
+                                  Home & Garden  
+                                  
+                              
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub1.png" alt="icon">
+                                    Boy Polo shirts
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub2.png" alt="icon">
+                                    Boy Casual Shirts
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub3.png" alt="icon">
+                                    Boy Pants & Jeans
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub4.png" alt="icon">
+                                    Boy Shoes
+                                  </a>
+                                </div>
+                              </li> 
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/four.png" alt="icon"> 
+                                  Vehicles & Accessories   
+                                 
+                                 
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub5.png" alt="icon">
+                                    Dresses & Rompers
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub10.png" alt="icon">
+                                    Shorts & Skirts
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub11.png" alt="icon">
+                                    Sweaters
+                                  </a>
+                                </div>
+                              </li>  
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/five.png" alt="icon">  
+                                  Sports & Games
+                               
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub12.png" alt="icon">
+                                    New Born
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub13.png" alt="icon">
+                                    Baby Dresses
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub14.png" alt="icon">
+                                    Baby Blankets 
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/six.png" alt="icon">  
+                                  Men Fashion    
+                                
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub16.png" alt="icon">
+                                    Bedding Collections
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub17.png" alt="icon">
+                                    Throws & Pillows
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub18.png" alt="icon">
+                                    Bath Robes
+                                  </a>
+                                </div>
+                              </li>   
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/seven.png" alt="icon">  
+                                  Women Fashion   
+                                
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub16.png" alt="icon">
+                                    Bedding Collections
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub17.png" alt="icon">
+                                    Throws & Pillows
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub18.png" alt="icon">
+                                    Bath Robes
+                                  </a>
+                                </div>
+                              </li>   
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/eight.png" alt="icon">  
+                                  Watches & Jewelery   
+                                
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub16.png" alt="icon">
+                                    Bedding Collections
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub17.png" alt="icon">
+                                    Throws & Pillows
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub18.png" alt="icon">
+                                    Bath Robes
+                                  </a>
+                                </div>
+                              </li>   
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/nine.png" alt="icon">  
+                                  Health & Bueaty   
+                                
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub16.png" alt="icon">
+                                    Bedding Collections
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub17.png" alt="icon">
+                                    Throws & Pillows
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub18.png" alt="icon">
+                                    Bath Robes
+                                  </a>
+                                </div>
+                              </li>   
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/10thNav.png" alt="icon">  
+                                  Groceries and Pets   
+                                
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub16.png" alt="icon">
+                                    Bedding Collections
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub17.png" alt="icon">
+                                    Throws & Pillows
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub18.png" alt="icon">
+                                    Bath Robes
+                                  </a>
+                                </div>
+                              </li>   
+                              <li class="nav-item dropdown dropright">
+                                <a class="nav-link dropdown-item" href="shop-page1.html" >
+                                  <img class="img-fuild" src="~/asset/images/category_icon/eleven.png" alt="icon">  
+                                  Other Categories  
+                                
+                                </a>
+                                <i class="fas fa-caret-right"></i>
+                                <div class="dropdown-menu pull-right" >
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub16.png" alt="icon">
+                                    Bedding Collections
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub17.png" alt="icon">
+                                    Throws & Pillows
+                                  </a>
+                                  <a class="dropdown-item" href="shop-page1.html">
+                                    <img class="img-fuild" src="~/asset/images/category_icon/catsub18.png" alt="icon">
+                                    Bath Robes
+                                  </a>
+                                </div>
+                              </li>             *@
+                            </ul>
+                          </div>
+                        </nav> 
+                     
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 col-xl-5 ">
+                    
+                  <nav class="navbar navbar-expand-lg">
+                      
+                      <div class="navbar-collapse" >
+                        <ul class="navbar-nav">
+                          @* <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#">
+                              Home
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-submenu">
+                                    <a class="dropdown-item" href="index.html">1- Furniture
+                                      <img src="./~/asset/images/miscellaneous/home1.jpg" alt="home-1">
+                                    </a>
+                                    
+                                  </div>
+                                  <div class="dropdown-submenu">
+                                      <a class="dropdown-item" href="index-2.html">2- Fashion
+                                        <img src="./~/asset/images/miscellaneous/home2.jpg" alt="home-2">
+                                      </a>
+                                      
+                                    </div>
+                                    <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="index-3.html">3- Electronics
+                                          <img src="./~/asset/images/miscellaneous/home3.jpg" alt="home-3">
+                                        </a>
+                                        
+                                      </div>
+                                      <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="index-4.html">4- Grocery
+                                          <img src="./~/asset/images/miscellaneous/home4.jpg" alt="home-4">
+                                        </a>
+                                        
+                                      </div>
+                                      <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="index-5.html">5- Cosmetics
+                                          <img src="./~/asset/images/miscellaneous/home5.jpg" alt="home-5">
+                                        </a>
+                                      </div>
+                                      <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="index-6.html">6- Shoes
+                                          <img src="./~/asset/images/miscellaneous/home6.jpg" alt="home-6">
+                                        </a>
+                                      </div>
+                                      <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="index-7.html">7- Glasses
+                                          <img src="./~/asset/images/miscellaneous/home7.jpg" alt="home-7">
+                                        </a>
+                                      </div>
+                                      <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="index-8.html">8- Flowers
+                                          <img src="./~/asset/images/miscellaneous/home8.jpg" alt="home-8">
+                                        </a>
+                                      </div>
+                                      <div class="dropdown-submenu">
+                                                <a class="dropdown-item" href="index-9.html">9- Jewelry
+                                                  <img src="./~/asset/images/miscellaneous/home9.jpg" alt="home-9">
+                                                </a>
+                                              </div>
+                                              <div class="dropdown-submenu">
+                                                <a class="dropdown-item" href="vendor-home6.html">10- MultiProduct
+                                                  <img src="./~/asset/images/miscellaneous/home10.jpg" alt="home-10">
+                                                </a>
+                                              </div>
+                                              <div class="dropdown-submenu">
+                                                <a class="dropdown-item" href="vendor-home7.html">11- MultiProduct2
+                                                  <img src="./~/asset/images/miscellaneous/home11.jpg" alt="home-11">
+                                                </a>
+                                              </div>
+                                      <div class="dropdown-submenu">
+                                        <a class="dropdown-item" href="vendor-application-page2.html">10- vendor page
+                                          <img src="./~/asset/images/miscellaneous/home9.jpg" alt="home-10">
+                                        </a>
+                                      </div>
+                            </div>
+                          </li>                         
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#">
+                              Shop
+                            </a>
+                            <div class="dropdown-menu mega-menu mega-menu-md row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-4 no-gutters">
+                                            <ul>                                            
+                                              <li class="dropdown-header"><h5>Shop Pages</h5></li>
+                                              <li><a class="dropdown-item" href="shop-2cols.html">Shop Grid 2 Columns</a></li>              		              		
+                                              <li><a class="dropdown-item" href="shop-3cols.html">Shop Grid 3 Columns</a></li>   
+                                              <li><a class="dropdown-item" href="shop-4cols.html">Shop Grid 4 Columns</a></li>  
+                                              <li><a class="dropdown-item" href="shop-6cols.html">Shop Grid 6 Columns</a></li>  		              	
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 no-gutters">
+                                          <ul>                                            
+                                            <li><a class="dropdown-item" href="shop-fullwidth.html">Shop Full Width</a></li>  
+                                            <li><a class="dropdown-item" href="shop-infinitescroll.html">Infinite Scroll</a></li> 
+                                            <li><a class="dropdown-item" href="shop-list.html">Shop List</a></li>    
+                                            <li><a class="dropdown-item" href="shoplist-fullwidth.html">Shop List Full</a></li>     
+                                            <li><a class="dropdown-item" href="shop-sidebar-banner.html">Sidebar & banner</a></li> 
+                                            <li><a class="dropdown-item" href="shop-rightbar.html">Right Sidebar</a></li>         		              	
+                                          </ul>
+                                      </div>
+                                        <div class="col-md-4 no-gutters">
+                                          <ul>                                            
+                                              <li class="dropdown-header"><h5>Account Pages</h5></li>
+                                              <li><a class="dropdown-item" href="cart-page1.html">Cart Page Layout 1</a></li>     <li><a class="dropdown-item" href="cart-page2.html">Cart Page Layout 2</a></li> 	              		
+                                              <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>              		              		
+                                              <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>              		              		
+                                              <li><a class="dropdown-item" href="dashboard.html">My Account</a></li>              		              		
+                                                                              
+                                          </ul>
+                                        </div>
+                                    
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                          </li>
+                      
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" >
+                              Product
+                            </a>
+                            <div class="dropdown-menu mega-menu mega-menu-md row">
+                                <div class="col-12">
+                                  <div class="row">
+                                      <div class="col-md-4 no-gutters">
+                                          <ul>                                            
+                                              <li class="dropdown-header"><h5>Product Detail Pages</h5></li>
+    
+                                              <li><a class="dropdown-item" href="product-page1.html">Left Carousel</a></li>
+                                              <li><a class="dropdown-item" href="product-page2.html">Right Carousel</a> </li>
+                                              <li><a class="dropdown-item" href="product-page3.html">Vertical Carousel</a></li>
+                                              <li><a class="dropdown-item" href="product-page4.html">Right Banner</a></li>
+                                              <li><a class="dropdown-item" href="product-page5.html">Best Seller</a></li>
+                                              
+                                            </ul>
+                                          
+                                        </div>
+                                        <div class="col-md-4 no-gutters">
+                                          <ul>                                            
+                                              <li><a class="dropdown-item" href="product-left-sidebar.html">Left Sidebar</a></li>
+                                              <li><a class="dropdown-item" href="product-right-sidebar.html">Right Sidebar</a></li>
+                                              <li><a class="dropdown-item" href="product-4-image.html">product 4 image</a></li>
+                                              <li><a class="dropdown-item" href="product-accordian.html">product Accordian</a></li>
+                                              <li><a class="dropdown-item" href="product-tabs.html">product Tabs</a></li>
+                                              <li><a class="dropdown-item" href="product-noslide.html">product No Slide</a></li>
+                                              
+                                            </ul>
+                                          
+                                        </div>
+                                    
+                                      <div class="col-md-4 no-gutters">
+                                          <div class="banner banner-overlay">
+                                              <a href="shop-4cols.html" class="banner banner-menu">
+                                                  <img src="~/asset/images/banners/banner-1.jpg" alt="Banner">
+      
+                                                  <div class="banner-content banner-content-top">
+                                                      <div class="banner-title">Last <br>Chance<br><span><strong>Sale</strong></span></div><!-- End .banner-title -->
+                                                  </div><!-- End .banner-content -->
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#">
+                              Elements
+                            </a>
+        
+                            <div class="dropdown-menu">
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-products.html"> Product Cards
+        
+                                </a>
+                              </div>
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-banner.html">Banners
+        
+                                </a>
+        
+                              </div>
+                              
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-blogs.html"> Blog Style
+        
+                                </a>
+        
+                              </div>
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-typography.html"> Typography
+        
+                                </a>
+        
+                              </div>
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-title.html">Title
+        
+                                </a>
+        
+                              </div>
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-tabs.html">Tabs
+        
+                                </a>
+        
+                              </div>
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="element-accordions.html">Accordions
+        
+                                </a>
+        
+                              </div>
+                            </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" >
+                              Pages
+                            </a>
+                            
+                            <div class="dropdown-menu">
+                                <div class="dropdown-submenu">
+                                    <a class="dropdown-item" href="404.html">404 Page
+                                      
+                                    </a>
+                                    
+                                  </div>
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">About
+                                </a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="about-page1.html">About Page 1</a>
+                                  <a class="dropdown-item" href="about-page2.html">About Page 2</a>
+                                </div>
+                              </div>
+                              <div class="dropdown-submenu">
+                                  <a class="dropdown-item" href="#">Contact
+                                  </a>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="contact-page1.html">Contact Page 1</a>
+                                    <a class="dropdown-item" href="contact-page2.html">Contact Page 2</a>
+                                  </div>
+                                </div>
+                              
+                              <div class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Blog
+                                </a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="blog-page1.html">Blog Page 1</a>
+                                  <a class="dropdown-item" href="blog-page2.html">Blog Page 2</a>
+                                  <a class="dropdown-item" href="blog-single-page.html">Blog Single</a>
+                                </div>
+                              </div>
+      
+                              <div class="dropdown-submenu">
+                                  <a class="dropdown-item" href="#">login
+                                  </a>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="login-page1.html">login Page 1</a>
+                                    <a class="dropdown-item" href="login-page2.html">login Page 2</a>
+                                  </div>
+                                </div>
+      
+                                <div class="dropdown-submenu">
+                                    <a class="dropdown-item" href="signup.html">Signup
+                                      
+                                    </a>
+                                    
+                                  </div>
+                            </div>
+                          </li> *@
+                        
+                              
+                        </ul>
+                      </div>
+                    </nav>
+                </div>
+    
+                <div class="col-12 col-lg-5 d-flex justify-content-end">
+                  <form class="d-flex align-items-center w-100">
+                    <div class="input-group  ">
+                      <input type="text" class="form-control form-eight " placeholder="Search Product here">
+                      <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                  </div>
+                  </form>
+                   
+    
+                  <div class=" vendor-icons addtocarts">
+                    <ul class="list-unstyled m-0 p-0">
+                      <li class="dropdown listingLi"> 
+                        <a class="itemclick " type="button" id="dropdownCartButton16" asp-action="Cart" asp-controller="Shop" aria-haspopup="true" aria-expanded="false"> 
+                          <div class="">
+                            <i class=" fas fa-shopping-basket "></i>
+                          </div>
+                          <div class="detail">
+                            <p class="heading">MY CART</p>
+                            <p class="subheading"><span id="cart-count"></span> ITEMS</p>
+                          </div>
+                        </a> 
+                        @* <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCartButton16">
+                            <ul class="shopping-cart-items">
+                              <li>
+                                <div class="item-thumb">
+                                  
+                                  <div class="image">
+                                    <img class="img-fluid" src="~/asset/images/product_~/asset/images/product_image_1.jpg" alt="Product Image">
+                                  </div>
+                                </div>
+                                <div class="item-detail">
+                                    <h3>Modern Single Sofa</h3>
+                                    <div class="item-s">1 x $45.00 <i class="fas fa-trash"></i></div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-thumb">
+                                  
+                                  <div class="image">
+                                    <img class="img-fluid" src="~/asset/images/product_~/asset/images/product_image_3.jpg" alt="Product Image">
+                                  </div>
+                                </div>
+                                <div class="item-detail">
+                                    <h3>Modern Wood Chair</h3>
+                                    <span class="item-s">2 x $90.00 <i class="fas fa-trash"></i></span>
+                                </div>
+                              </li>
+                              <li>
+                                  <span class="item-summary">Total&nbsp;:&nbsp;<span>$145.00</span>
+                                  </span>
+                              </li>
+                              <li>
+                                  <a class="btn btn-link btn-block " href="cart-page1.html">View Cart</a>
+                                  <a class="btn btn-secondary btn-block  " href="checkout.html">Checkout</a>
+                              </li>
+                            </ul>
+                            
+                          
+                        </div> *@
+                      </li>
+                    </ul>
+                  </div>  
+    
+                    
+                    
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+    </div>
+  
+        <!-- //Mobile Header -->
+      <header id="headerMobile" class="header-area header-mobile header-elevenmobile">
+
+          <div class="header-maxi bg-header-bar ">
+            <div class="container">
+                
+              <div class="row align-items-center">
+                <div class="col-6 pr-0 flex-col">
+                  <div class="navigation-mobile-container">
+                    <a href="javascript:void(0)" class="navigation-mobile-toggler">
+                        <span class="fas fa-bars"></span>
+                    </a>
+                    <nav id="navigation-mobile">
+                        <div class="logout-main">
+                            <div class="welcome">
+                                <span>Welcome&nbsp;Guest !</span>
+                            </div>
+                        </div> 
+
+                        <a class="main-manu btn" data-toggle="collapse" href="#homepages" role="button" 
+                        aria-expanded="false" aria-controls="shoppages">
+                            Home
+                          
+                        </a>
+                        <div class="sub-manu collapse multi-collapse" id="homepages">
+                            <ul class="unorder-list">
+                              <li class="">
+                                <a href="index.html" class="btn main-manu">
+                                  1- Furniture
+                                </a>
+                                <a href="index-2.html" class="btn main-manu">
+                                  2- Fashion
+                                </a>
+                                <a href="index-3.html" class="btn main-manu">
+                                  3- Electronics
+                                </a>
+                                <a href="index-4.html" class="btn main-manu">
+                                  4- Grocery
+                              </a>
+                              <a href="index-5.html" class="btn main-manu">
+                                5- Cosmetics
+                              </a>
+                              <a href="index-6.html" class="btn main-manu">
+                                6- Shoes
+                              </a>
+                              <a href="index-7.html" class="btn main-manu">
+                                7- Glasses
+                              </a>
+                              <a href="index-8.html" class="btn main-manu">
+                                8- Flowers
+                              </a>
+                              <a href="index-9.html" class="btn main-manu">
+                                9- Jewelry
+                              </a>
+                              </li>
+                            </ul>
+                        </div>  
+
+                        <a class="main-manu btn" data-toggle="collapse" href="#shoppages" role="button" aria-expanded="false" aria-controls="shoppages">
+                            Shop
+                      
+                        </a>
+                        <div class="sub-manu collapse multi-collapse" id="shoppages">
+                            <ul class="unorder-list">
+                              <li class="">
+                                <a href="shop-4cols.html" class="btn main-manu">
+                                  Shop Grid 4 Columns
+                                </a>
+                                <a href="shop-3cols.html" class="btn main-manu">
+                                  Shop Grid 3 Columns
+                                </a>
+                                <a href="shop-2cols.html" class="btn main-manu">
+                                    Shop Grid 2 Columns
+                                </a>
+                                <a href="shop-list.html" class="btn main-manu">
+                                    shop List
+                                </a>
+                                <a class="btn main-manu" href="shop-6cols.html">Shop Grid 6 Columns</a>
+
+                                <a class="btn main-manu" href="shop-fullwidth.html">Full Width</a>  
+                                <a class="btn main-manu" href="shop-infinitescroll.html">Infinite Scroll</a> 
+                                <a class="btn main-manu" href="shop-list.html">Shop List</a>    
+                                <a class="btn main-manu" href="shoplist-fullwidth.html">Shop List Full</a>     
+                                <a class="btn main-manu" href="shop-sidebar-banner.html">Shop Sidebar & banner</a> 
+                              <a class="btn main-manu" href="shop-rightbar.html">Shop Right Sidebar</a>
+
+
+                              </li>
+                            </ul>
+                        </div>  
+
+                        <a class=" main-manu btn" data-toggle="collapse" href="#productpages" role="button" aria-expanded="false" aria-controls="productpages">
+                          Product
+                        
+                        </a>
+                        <div class="sub-manu collapse multi-collapse" id="productpages">
+                            <ul class="unorder-list">
+                              <li class="">
+                                <a href="product-page1.html" class="btn main-manu">
+                                  Left Carousel
+                                </a>
+                                <a href="product-page2.html" class="btn main-manu">
+                                  Right Carousel
+                                </a>
+                                <a href="product-page3.html" class="btn main-manu">
+                                  Vertical Carousel
+                                </a>
+                                <a href="product-page4.html" class="btn main-manu">
+                                  Right Banner
+                                </a>
+                                <a href="product-page5.html" class="btn main-manu">
+                                  Best Seller
+                                </a>
+
+                                <a class="btn main-manu" href="product-left-sidebar.html">Left Sidebar</a>
+                                <a class="btn main-manu" href="product-right-sidebar.html">Right Sidebar</a>
+                                <a class="btn main-manu" href="product-4-image.html">product 4 image</a>
+                                <a class="btn main-manu" href="product-accordian.html">product Accordian</a>
+                                <a class="btn main-manu" href="product-tabs.html">product Tabs</a>
+                                <a class="btn main-manu" href="product-noslide.html">product No Slide</a>
+                                
+                              </li>
+                            </ul>
+                        </div>   
+
+                        <a class=" main-manu btn" data-toggle="collapse" href="#Featurespages" role="button" aria-expanded="false" aria-controls="productpages">
+                          Features
+                        
+                        </a>
+                        <div class="sub-manu collapse multi-collapse" id="Featurespages">
+                            <ul class="unorder-list">
+                              <li class="">
+                                <a class="btn main-manu" href="element-title.html">Title</a>
+                                <a class="btn main-manu" href="element-banner.html">Collection Banner
+        
+                                </a>
+                              
+                                <a class="btn main-manu" href="element-typography.html"> Typography
+        
+                                </a>
+                                <a class="btn main-manu" href="element-button.html"> Buttons
+        
+                                </a>
+                                <a class="btn main-manu" href="element-products.html"> Product Cards
+        
+                                </a>
+                                <a class="btn main-manu" href="element-blogs.html"> Blog Style
+        
+                                </a>
+                                <a class="btn main-manu" href="element-tabs.html"> Tabs Style
+                
+                                </a>
+                                <a class="btn main-manu" href="element-accordions.html"> Accordions Style
+        
+                                </a>
+
+                                
+                              </li>
+                            </ul>
+                        </div>  
+                          <a class=" main-manu btn" data-toggle="collapse" href="#staticpages" role="button" aria-expanded="false" aria-controls="staticpages">
+                              Pages
+                            
+                          </a>
+                          <div class="sub-manu collapse multi-collapse" id="staticpages">
+                            <ul class="unorder-list">
+                                <li class="">
+                                  <a class="main-manu btn " data-toggle="collapse" href="#staticabout" role="button" aria-expanded="false" aria-controls="staticabout">
+                                      About 
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="staticabout">
+                                    <ul class="unorder-list">
+                                        <li class="">
+                                          <a href="about-page1.html" class="btn main-manu">
+                                            About Page 1
+                                          </a>
+                                          <a href="about-page2.html" class="btn main-manu">
+                                              About Page 2
+                                            </a>
+                                        </li>
+                                    </ul>    
+                                  </div> 
+                                  
+
+                                  <a class="main-manu btn " data-toggle="collapse" href="#staticcontact" role="button" aria-expanded="false" aria-controls="staticcontact">
+                                      Contact
+                                      
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="staticcontact">
+                                    <ul class="unorder-list">
+                                        <li class="">
+                                          <a href="contact-page1.html" class="btn main-manu">
+                                            Contact Page 1
+                                          </a>
+                                          <a href="contact-page2.html" class="btn main-manu">
+                                            Contact Page 2
+                                          </a>
+                                        </li>
+                                    </ul>    
+                                  </div> 
+
+                                  <a class="main-manu btn" data-toggle="collapse" href="#staticlogin" role="button" aria-expanded="false" aria-controls="staticlogin">
+                                    Login
+                                    
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="staticlogin">
+                                    <ul class="unorder-list">
+                                        <li class="">
+                                          <a href="login-page1.html" class="btn main-manu">
+                                            Login Page 1
+                                          </a>
+                                          <a href="login-page2.html" class="btn main-manu">
+                                            Login Page 2
+                                          </a>
+                                        </li>
+                                    </ul>    
+                                  </div>
+
+                                  <a class="main-manu btn " data-toggle="collapse" href="#staticblog" role="button" aria-expanded="false" aria-controls="staticblog">
+                                      Blogs
+                                      
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="staticblog">
+                                    <ul class="unorder-list">
+                                        <li class="">
+                                          <a href="blog-page1.html" class="btn main-manu">
+                                            Blog Page 1
+                                          </a>
+                                          <a href="blog-page2.html" class="btn main-manu">
+                                              Blog Page 2
+                                          </a>
+                                          <a class="btn main-manu" href="blog-single-page.html">Blog Single</a>
+                                        </li>
+                                    </ul>    
+                                  </div>
+
+                                  <a class="main-manu btn " data-toggle="collapse" href="#staticcart" role="button" aria-expanded="false" aria-controls="staticcart">
+                                      Shopping Cart
+                                      
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="staticcart">
+                                    <ul class="unorder-list">
+                                        <li class="">
+                                          <a href="cart-page1.html" class="btn main-manu">
+                                            Cart Page 1
+                                          </a>
+                                          <a href="cart-page2.html" class="btn main-manu">
+                                            Cart Page 2
+                                          </a>
+                                        </li>
+                                    </ul>    
+                                  </div>
+
+                                  <a href="checkout.html" class="main-manu btn ">
+                                    Checkout
+                                  </a>
+                                  
+                                </li>
+                            </ul>    
+                          </div> 
+                          @* <a class=" main-manu btn" data-toggle="collapse" href="#vendor" role="button" aria-expanded="false" aria-controls="vendor">
+                            Vendor
+                          </a> *@
+                          @* <div class="sub-manu collapse multi-collapse" id="vendor">
+                            <ul class="unorder-list">
+                                <li class="">
+                                  <a class="main-manu btn " data-toggle="collapse" href="#vendorhome" role="button" aria-expanded="false" aria-controls="vendorhome">
+                                      Vendor Homes 
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="vendorhome">
+                                    <ul class="unorder-list">
+                                        <li class="">
+                                          <a href="vendor-home1.html" class="btn main-manu">
+                                            vendo Home 1
+                                          </a>
+                                          <a href="vendor-home2.html" class="btn main-manu">
+                                            vendo Home 2
+                                            </a>
+                                            <a href="vendor-home3.html" class="btn main-manu">
+                                              vendo Home 3
+                                            </a>
+                                            <a href="vendor-home3.html" class="btn main-manu">
+                                              vendo Home 4
+                                            </a>
+                                            <a href="vendor-home3.html" class="btn main-manu">
+                                              vendo Home 5
+                                            </a>      
+                                            
+                                        </li>
+                                    </ul>    
+                                  </div> 
+                                  <a class="main-manu btn " data-toggle="collapse" href="#vendorshop" role="button" aria-expanded="false" aria-controls="vendorshop">
+                                    Vendor Shop Pages 
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="vendorshop">
+                                    <ul class="unorder-list">
+                                      <li>
+                                        <a class="btn main-manu" href="vendorshop-2cols.html">Vendor Shop 2 Col</a>
+                                        <a class="btn main-manu" href="vendorshop-3cols.html">Vendor Shop 3 Col</a>  
+                                        <a class="btn main-manu" href="vendorshop-4cols.html">Vendor Shop 4 Col</a>
+                                        <a class="btn main-manu" href="vendorshop-6cols.html">Vendor Shop 6 Col</a>
+                                        <a class="btn main-manu" href="vendorshop-fullwidth.html">Fullwidth Shop</a>
+                                        <a class="btn main-manu" href="vendorshop-list.html">Shop List</a>  
+                                        <a class="btn main-manu" href="vendorshop-infinitescroll.html">Infinite Scroll</a>     		
+                                        <a class="btn main-manu" href="vendorshoplist-fullwidth.html">Shop List Full</a>
+                                        <a class="btn main-manu" href="vendorshop-sidebar-banner.html">Side Bar and Banner</a>     
+                                        <a class="btn main-manu" href="vendorshop-infinitescroll.html">Rigth Side Bar</a>
+                                      </li>           
+                                    </ul>    
+                                  </div>
+                                  <a class="main-manu btn " data-toggle="collapse" href="#vendorproduct" role="button" aria-expanded="false" aria-controls="vendorproduct">
+                                    Vendor Product Pages 
+                                  </a>
+                                  <div class="sub-manu1 collapse multi-collapse" id="vendorproduct">
+                                    <ul class="unorder-list">
+                                      <li>
+                                        <a class="btn main-manu" href="vendorproduct-page1.html">Vendor Product 1</a>
+                                        <a class="btn main-manu" href="vendorproduct-page2.html">Vendor Product 2</a>  
+                                        <a class="btn main-manu" href="vendorproduct-page3.html">Vendor Product 3</a>
+                                        <a class="btn main-manu" href="vendorproduct-page4.html">Vendor Product 4</a>
+                                        <a class="btn main-manu" href="vendorproduct-page5.html">Vendor Product 5</a>
+                                        <a class="btn main-manu" href="vendorproduct-left-sidebar.html">Vendor Product 6</a>  
+                                        <a class="btn main-manu" href="vendorproduct-right-sidebar.html">Vendor Product 7</a>     		
+                                        <a class="btn main-manu" href="vendorproduct-4-image.html">Vendor Product 8</a>
+                                        <a class="btn main-manu" href="vendorproduct-accordian.html">Vendor Product 9</a>     
+                                        <a class="btn main-manu" href="vendorproduct-noslide.html">Vendor Product 10</a>
+                                        <a class="btn main-manu" href="vendorproduct-tabs.html">Vendor Product 11</a>
+                                      </li>           
+                                    </ul>    
+                                  </div>
+
+                                  <a href="vendor-listing.html" class="main-manu btn ">
+                                    All Vendor Listing
+                                  </a>
+                                  
+                                  <a href="vendor-profile.html" class="main-manu btn ">
+                                    Vendor Profile
+                                  </a>
+                                  
+                                  <a href="vendorlogin.html" class="main-manu btn ">
+                                      Vendor Login
+                                  </a>
+                                  
+                                </li>
+                            </ul>    
+                          </div>  *@
+                          <a href="dashboard.html" class="main-manu btn ">
+                              My Account
+                            </a>
+                          <a href="wishlist.html" class="main-manu btn ">
+                            Wishlist (8)
+                          </a>
+                          @* <a href="compare.html" class="main-manu btn ">
+                              Compare
+                            </a> *@
+                            <a href="logiut.html" class="main-manu btn ">
+                                Logout
+                              </a>
+                    </nav>
+                </div>
+                <a href="index.html" class="logo">
+                    <img class="img-fluid" src="~/asset/images/logo/logo2.png" alt="logo here">                                            
+                  </a>
+                </div>
+
+                
+      
+                <div class="col-6 pl-0">
+                  <ul class="pro-header-right-options">
+        
+                  <li>
+                    <a href="wishlist.html" class="btn btn-light" >
+                        <i class="far fa-heart"></i>
+                        <span class="badge badge-secondary">0</span>
+                    </a>
+                  </li>
+
+                  <li class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCartButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                      <i class="fas fa-shopping-bag"></i>
+                      <span class="badge badge-secondary">2</span>
+                    </button> 
+                    <div class="dropdown-menu" aria-labelledby="dropdownCartButton2">
+                        <ul class="shopping-cart-items">
+                          <li>
+                            <div class="item-thumb">
+                              
+                              <div class="image">
+                                <img class="img-fluid" src="~/asset/images/product_~/asset/images/product_image_1.jpg" alt="Product Image">
+                              </div>
+                            </div>
+                            <div class="item-detail">
+                                <h3>Modern Single Sofa</h3>
+                                <div class="item-s">1 x $45.00 <i class="fas fa-trash"></i></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-thumb">
+                              
+                              <div class="image">
+                                <img class="img-fluid" src="~/asset/images/product_~/asset/images/product_image_2.jpg" alt="Product Image">
+                              </div>
+                            </div>
+                            <div class="item-detail">
+                                <h3>Modern Wood Chair</h3>
+                                <span class="item-s">2 x $90.00 <i class="fas fa-trash"></i></span>
+                            </div>
+                          </li>
+                          <li>
+                              <span class="item-summary">Total&nbsp;:&nbsp;<span>$145.00</span>
+                              </span>
+                          </li>
+                          <li>
+                              <a class="btn btn-link btn-block " href="cart-page1.html">View Cart</a>
+                              <a class="btn btn-secondary btn-block  " href="checkout.html">Checkout</a>
+                          </li>
+                        </ul>
+                        
+                      
+                    </div>
+                  </li>
+              </ul>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="header-navbar bg-menu-bar">
+            <div class="container">
+              <form class="form-inline">
+                  <div class="search-field-module">                           
+                    
+                      <div class="search-field-wrap">
+                          <input  type="search" placeholder="Search Products..." data-toggle="tooltip" data-placement="bottom" title="search item">
+                          <button class="btn btn-secondary swipe-to-top" data-toggle="tooltip" data-placement="bottom" title="Search Products">
+                          <i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+              </form>
+            </div>
+          </div>
+      </header>  
+
+          <!-- Revolution Layer Slider -->
+      <div id="rev_slider_1077_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="scroll-effect136" data-source="gallery" style="padding:0px;">
+        <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+          <div id="rev_slider_1077_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+            <ul>
+              <!-- SLIDE 1 -->
+              <li data-index="rs-3042" data-transition="slideoverhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000" data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Big &amp; Bold" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <!-- MAIN IMAGE -->
+                @if(Model is not null && Model.Banner is not null && !string.IsNullOrEmpty(Model.Banner.ImageOne)){
+                  <img src="@Model.Banner.ImageOne"  alt=""  data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"  class="rev-slidebg" data-no-retina>
+                }else{
+                    <img src="~/asset/images/revolution_layer_slider_demo_6/Slider_01_03.jpg"  alt=""  data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"  class="rev-slidebg" data-no-retina>
+                } 
+                <!-- LAYERS -->
+            
+                <div class="container" style="position: relative;">
+  
+                  <!-- LAYER NR. 1 -->
+                <div class="tp-caption new-big-bold  " 
+                id="slide-3043-layer-c" 
+                data-x="['left','left','left','left']" data-hoffset="['100','15','15','15']"
+                data-y="['top','top','top','top']" data-voffset="['140','90','30','20']" 
+                data-fontsize="['18','18','18','14']"
+                data-width="['100%','100%','100%','100%']"
+                data-height="none"
+                data-whitespace="normal"
+          
+                data-type="text" 
+                data-basealign="slide" 
+                data-responsive_offset="off" 
+                data-responsive="off"
+                data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                "speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},
+                {"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+                data-textAlign="['left','left','left','left']"
+                data-paddingtop="[0,0,0,0]"
+                data-paddingright="[0,0,0,0]"
+                data-paddingbottom="[0,0,0,0]"
+                data-paddingleft="[0,0,0,0]"
+          
+                style="z-index: 12;  white-space: normal; line-height: 1.5;">
+                <span>New Arrivals</span>
+            
+              </div>
+  
+                
+                <!-- LAYER NR. 2 -->
+  
+                <div class="tp-caption BigBold-Title   tp-resizeme" 
+                  id="slide-3043-layer-1" 
+                  data-x="['left','left','left','left']" data-hoffset="['100','15','15','15']"
+                  data-y="['top','top','top','top']" data-voffset="['170','110','40','40']" 
+                  data-fontsize="['50','40','30','24']"
+                  data-lineheight="['70','50','40','30']"
+                  data-width="['100%','100%','100%','100%']"
+                  data-height="none"
+                  data-whitespace="['nowrap','nowrap','nowrap','normal']"
+            
+                  data-type="text" 
+                  data-basealign="slide" 
+                  data-responsive_offset="off" 
+            
+                  data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                  "mask":"x:0px;y:[-100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;",
+                  "delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[-100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                  data-textAlign="['left','left','left','left']"
+                  data-paddingtop="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+            
+                  style="z-index: 11; white-space: nowrap; color:#212121; ">
+                  Antique Jewelry <br>
+                  <span>Best Collection</span>
+                </div>
+            
+              
+            
+                  <!-- LAYER NR. 3 -->
+                  <div class="tp-caption BigBold-Button rev-btn " 
+                    id="slide-3043-layer-7" 
+                    data-x="['left','left','left','left']" data-hoffset="['100','15','15','15']"
+                    data-y="['top','top','top','top']" data-voffset="['350','270','200','150']" 
+                    
+                    data-height="none"
+                    data-whitespace="nowrap"
+              
+                    data-type="button" 
+                    data-actions='[{"event":"click","action":"simplelink","target": "_self","url":"shop-4cols.html"}]'
+                    data-basealign="slide" 
+                    data-responsive_offset="off" 
+                    data-responsive="off"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                    "speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},
+                    {"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},
+                    {"frame":"hover","speed":"300","ease":"Power1.easeInOut",
+                    "to":"o:1;rX:0;rY:0;rZ:0;z:0;",
+                    "style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+                    data-textAlign="['center','center','center','center']"
+                    data-paddingtop="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+              
+                    style="z-index: 13; text-transform: uppercase; white-space: nowrap;outline:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius: 200px;">
+                  <button class="btn btn-primary"> Shop Now</button> 
+                  </div>
+                  
+  
+                </div>
+              </li>
+                  <!-- SLIDE  3-->
+              <li data-index="rs-3045" data-transition="slideoverhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000" data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Big &amp; Bold" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <!-- MAIN IMAGE -->
+                @if(Model is not null && Model.Banner is not null && !string.IsNullOrEmpty(Model.Banner.ImageTwo)){
+                  <img src="@Model.Banner.ImageTwo"  alt=""  data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"  class="rev-slidebg" data-no-retina>
+                }else{
+                  <img src="~/asset/images/revolution_layer_slider/Slider_01_03.jpg"  alt=""  data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                } 
+                <!-- LAYERS -->
+            
+                <div class="container" style="position: relative;">
+
+                  <!-- LAYER NR. 1 -->
+                <div class="tp-caption BigBold-SubTitle  " 
+                id="slide-3043-layer-2" 
+                data-x="['left','left','left','left']" data-hoffset="['603','480','300','20']"
+                data-y="['top','top','top','top']" data-voffset="['150','90','60','40']" 
+                data-fontsize="['18','18','18','14']"
+                data-width="['580','580','100%','100%']"
+                data-height="none"
+                data-whitespace="normal"
+          
+                data-type="text" 
+                data-basealign="slide" 
+                data-responsive_offset="off" 
+                data-responsive="off"
+                data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                "speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},
+                {"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+                data-textAlign="['left','left','left','left']"
+                data-paddingtop="[0,0,0,0]"
+                data-paddingright="[0,0,0,0]"
+                data-paddingbottom="[0,0,0,0]"
+                data-paddingleft="[0,0,0,0]"
+          
+                style="z-index: 12;  white-space: normal;  line-height: 1.5;">Get 50% OFF</div>
+
+                
+                <!-- LAYER NR. 2 -->
+
+                <div class="tp-caption BigBold-Title   tp-resizeme" 
+                  id="slide-3043-layer-b" 
+                  data-x="['left','left','left','left']" data-hoffset="['602','480','300','20']"
+                  data-y="['top','top','top','top']" data-voffset="['170','120','90','70']" 
+                  data-fontsize="['50','40','30','24']"
+                  data-lineheight="['70','50','40','30']"
+                  data-width="['580','580','100%','100%']"
+                  data-height="none"
+                  data-whitespace="['nowrap','nowrap','nowrap','normal']"
+            
+                  data-type="text" 
+                  data-basealign="slide" 
+                  data-responsive_offset="off" 
+            
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                  "mask":"x:0px;y:[-100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;",
+                  "delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[-100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                  data-textAlign="['left','left','left','left']"
+                  data-paddingtop="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+            
+                  style="z-index: 11; white-space: nowrap; color:#212121; ">Bed Design For<br> Bed Room</div>
+            
+              
+            
+                  <!-- LAYER NR. 3 -->
+                  <div class="tp-caption BigBold-Button rev-btn " 
+                    id="slide-3043-layer-3" 
+                    data-x="['left','left','left','left']" data-hoffset="['602','480','300','20']"
+                    data-y="['top','top','top','top']" data-voffset="['330','250','200','150']" 
+                    
+                    data-height="none"
+                    data-whitespace="nowrap"
+              
+                    data-type="button" 
+                    data-actions='[{"event":"click","action":"simplelink","target": "_self","url":"shop-4cols.html"}]'
+                    data-basealign="slide" 
+                    data-responsive_offset="off" 
+                    data-responsive="off"
+                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                    "speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},
+                    {"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},
+                    {"frame":"hover","speed":"300","ease":"Power1.easeInOut",
+                    "to":"o:1;rX:0;rY:0;rZ:0;z:0;",
+                    "style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+                    data-textAlign="['center','center','center','center']"
+                    data-paddingtop="[13,13,13,13]"
+                    data-paddingright="[25,25,25,25]"
+                    data-paddingbottom="[13,13,13,13]"
+                    data-paddingleft="[25,25,25,25]"
+              
+                    style="z-index: 13; text-transform: uppercase; white-space: nowrap;outline:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius: 3px;">Shop Now</div>
+
+                </div>
+              </li>       
+                  <!-- SLIDE  2-->
+              <li data-index="rs-3044" data-transition="slideoverhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000" data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Big &amp; Bold" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <!-- MAIN IMAGE -->
+                 @if(Model is not null && Model.Banner is not null && !string.IsNullOrEmpty(Model.Banner.ImageThree)){
+                  <img src="@Model.Banner.ImageThree"  alt=""  data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"  class="rev-slidebg" data-no-retina>
+                }else{
+                  <img src="~/asset/images/revolution_layer_slider/Slider_01_02.jpg"  alt=""  data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                } 
+                
+                <!-- LAYERS -->
+            
+                <div class="container" style="position: relative;">
+
+                  <!-- LAYER NR. 1 -->
+                <div class="tp-caption BigBold-SubTitle  " 
+                id="slide-3043-layer-8" 
+                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                data-y="['top','top','top','top']" data-voffset="['150','90','60','40']" 
+                data-fontsize="['18','18','18','14']"
+                data-width="['100%','100%','100%','100%']"
+                data-height="none"
+                data-whitespace="normal"
+          
+                data-type="text" 
+                data-basealign="slide" 
+                data-responsive_offset="off" 
+                data-responsive="off"
+                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                "speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},
+                {"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+                data-textAlign="['center','center','center','center']"
+                data-paddingtop="[0,0,0,0]"
+                data-paddingright="[0,0,0,0]"
+                data-paddingbottom="[0,0,0,0]"
+                data-paddingleft="[0,0,0,0]"
+          
+                style="z-index: 12;  white-space: normal; line-height: 1.5;">Get Quality Furniture</div>
+
+                
+                <!-- LAYER NR. 2 -->
+
+                <div class="tp-caption BigBold-Title   tp-resizeme" 
+                  id="slide-3043-layer-a" 
+                  data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                  data-y="['top','top','top','top']" data-voffset="['170','120','90','70']" 
+                  data-fontsize="['50','40','30','24']"
+                  data-lineheight="['70','50','40','30']"
+                  data-width="['100%','100%','100%','100%']"
+                  data-height="none"
+                  data-whitespace="['nowrap','nowrap','nowrap','normal']"
+            
+                  data-type="text" 
+                  data-basealign="slide" 
+                  data-responsive_offset="off" 
+            
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                  "mask":"x:0px;y:[-100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;",
+                  "delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[-100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                  data-textAlign="['center','center','center','center']"
+                  data-paddingtop="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+            
+                  style="z-index: 11; white-space: nowrap; color:#000; ">TV Lounge Decorate<br> With Furniture</div>
+            
+              
+            
+                  <!-- LAYER NR. 3 -->
+                  <div class="tp-caption BigBold-Button rev-btn " 
+                    id="slide-3043-layer-7" 
+                    data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                    data-y="['top','top','top','top']" data-voffset="['330','250','200','150']" 
+                    
+                    data-height="none"
+                    data-whitespace="nowrap"
+              
+                    data-type="button" 
+                    data-actions='[{"event":"click","action":"simplelink","target": "_self","url":"shop-4cols.html"}]'
+                    data-basealign="slide" 
+                    data-responsive_offset="off" 
+                    data-responsive="off"
+                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;",
+                    "speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},
+                    {"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},
+                    {"frame":"hover","speed":"300","ease":"Power1.easeInOut",
+                    "to":"o:1;rX:0;rY:0;rZ:0;z:0;",
+                    "style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+                    data-textAlign="['center','center','center','center']"
+                    data-paddingtop="[13,13,13,13]"
+                    data-paddingright="[25,25,25,25]"
+                    data-paddingbottom="[13,13,13,13]"
+                    data-paddingleft="[25,25,25,25]"
+              
+                    style="z-index: 13; text-transform: uppercase; white-space: nowrap;outline:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius: 3px;">Shop Now</div>
+
+                </div>
+              </li>
+              
+            </ul>
+          <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	
+        </div>
+      </div><!-- END REVOLUTION SLIDER -->
+        
+          
+            <!-- Tabs section -->
+       @* <vc:weekly-deal></vc:weekly-deal> *@
+       @await Component.InvokeAsync("WeeklyDeal")
+        
+       @await Component.InvokeAsync("TopSelection")  
+        
+          <!-- banner style -->
+          <div class="banner-seventeen ">
+            <div class="container">
+                <div class="group-banners">
+                    <div class="row">
+                          <div class="col-12 col-lg-3">
+                            <figure class="banner-image ">
+                              <a href="shop-page1.html">
+                                @if(Model.TopCategoryA is not null && Model.TopCategoryA.Image is not null){
+                                    <img class="img-fluid" id="myImage1" style="width:270px;height:502px" src="@Model.TopCategoryA.Image" alt="Banner Image">
+                                  }else{
+                                       <img class="img-fluid" src="~/asset/images/mv 2/Group 3.png" alt="Banner Image">
+                                  }
+                               
+                                
+                              </a>
+                              <div class="v-contain-banner">
+                                <div class="banner-in">
+                                  <h2 class="bold">@Model?.TopCategoryA?.Name</h2>
+                                  <h4>@Model?.TopCategoryA?.Description</h4>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                            <figure class="banner-image imagespace" >
+                              <a href="shop-page1.html">
+                                 @if(Model.TopCategoryB is not null && Model.TopCategoryB.Image is not null){
+                                    <img class="img-fluid"  style="width:570px;height:241px" src="@Model.TopCategoryB.Image" alt="Banner Image">
+                                  }else{
+                                    <img class="img-fluid" src="~/asset/images/mv 2/Group 3.png" alt="Banner Image">
+                                  }
+                              </a>
+                              <div class="v-contain-banner2">
+                                <div class="banner-in">
+                                 <h2 class="bold">@Model?.TopCategoryB?.Name</h2>
+                                  <h4>@Model?.TopCategoryB?.Description</h4>>
+                                </div>
+                              </div>
+                            </figure>
+                            <figure class="banner-image ">
+                              <a href="shop-page1.html">
+                                @if(Model.TopCategoryC is not null && Model.TopCategoryC.Image is not null){
+                                    <img class="img-fluid" style="width:570px;height:241px" src="@Model.TopCategoryC.Image" alt="Banner Image">
+                                  }else{
+                                    <img class="img-fluid" src="~/asset/images/mv 2/Group 3.png" alt="Banner Image">
+                                  }
+                                <div class="v-contain-banner3">
+                                  <div class="banner-in">
+                                     <h2 class="bold">@Model?.TopCategoryC?.Name</h2>
+                                     <h4>@Model?.TopCategoryC?.Description</h4>>
+                                  </div>
+                                </div>
+                              </a>
+                            </figure>
+                          </div>
+                          <div class="col-12 col-lg-3">
+                            <figure class="banner-image  imagespace">
+                              <a href="shop-page1.html">
+                                 @if(Model.TopCategoryD is not null && Model.TopCategoryD.Image is not null){
+                                    <img class="img-fluid" style="width:270px;height:238px" src="@Model.TopCategoryD.Image" alt="Banner Image">
+                                  }else{
+                                    <img class="img-fluid" src="~/asset/images/mv 2/Group 3.png" alt="Banner Image">
+                                  }
+                                
+                                </a>
+                              <div class="v-contain-banner4">
+                                <div class="banner-in">
+                                 <h2 class="bold">@Model?.TopCategoryD?.Name</h2>
+                                  <h4>@Model?.TopCategoryD?.Description</h4>>
+                                </div>
+                              </div>
+                            </figure>
+                            <figure class="banner-image">
+                              <a href="shop-page1.html">
+                                @if(Model.TopCategoryA is not null && Model.TopCategoryA.Image is not null){
+                                    <img class="img-fluid" style="width:270px;height:238px" src="@Model.TopCategoryA.Image" alt="Banner Image">
+                                  }else{
+                                    <img class="img-fluid" src="~/asset/images/mv 2/Group 311.png" alt="Banner Image">
+                                  }
+                                </a>
+                              <div class="v-contain-banner5">
+                                <div class="banner-in">
+                                  <h2 class="bold">@Model?.TopCategoryA?.Name</h2>
+                                  <h4>@Model?.TopCategoryA?.Description</h4>>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                    </div>                              
+                </div>
+            </div>
+          </div> 
+          <!-- Feature Product -->
+        @await Component.InvokeAsync("FeaturedProduct")  
+
+    
+
+      <!-- top Brands -->
+
+      @* <section class="top-brands">
+        <div class="container"> 
+          <div class="row">
+            <div class="pro-heading-title-2">
+              <h2>Top Brands</h2>
+              <p>You can find you best price deals easily</p>
+            </div>
+            <div class="col-12 col-lg-2 ">
+              <div class="top-padd">
+                <div class="brands-inner imagespace">
+                  <img src="~/asset/images/mv 2/Layer 14.png" class="img-fluid" alt="">
+                </div>
+                <div class="brands-inner">
+                  <img src="~/asset/images/mv 2/Layer 20.png" class="img-fluid" alt="">
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-12 col-lg-2">
+              <div class="top-padd">
+                <div class="brands-inner imagespace">
+                  <img src="~/asset/images/mv 2/Layer 15.png" class="img-fluid" alt="">
+                </div>
+                <div class="brands-inner">
+                  <img src="~/asset/images/mv 2/Layer 21.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div class="top-padd">
+                <div class="brands-inner imagespace">
+                  <img src="~/asset/images/mv 2/Layer 16.png" class="img-fluid" alt="">
+                </div>
+                <div class="brands-inner">
+                  <img src="~/asset/images/mv 2/Layer 22.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div class="top-padd">
+                <div class="brands-inner imagespace">
+                  <img src="~/asset/images/mv 2/Layer 17.png" class="img-fluid" alt="">
+                </div>
+                <div class="brands-inner">
+                  <img src="~/asset/images/mv 2/Layer 23.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div class="top-padd">
+                <div class="brands-inner imagespace">
+                  <img src="~/asset/images/mv 2/Layer 18.png" class="img-fluid" alt="">
+                </div>
+                <div class="brands-inner">
+                  <img src="~/asset/images/mv 2/Layer 24.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div class="top-padd">
+                <div class="brands-inner imagespace">
+                  <img src="~/asset/images/mv 2/Layer 19.png" class="img-fluid" alt="">
+                </div>
+                <div class="brands-inner">
+                  <img src="~/asset/images/mv 2/Layer 25.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> *@
+
+      <!-- subscribe -->
+      <section class="footer-subscribe">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-4">
+              <div>
+                <form class="form-inline">
+                  <div class="search-field-module">    
+                    <div class="input-group align-items-center">
+                   <input type="email" class="form-control" placeholder="Enter Your Email..." aria-label="Enter Your Email..." aria-describedby="button-addo2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button" id="button-addo2">
+                      Subscribe</button>
+                    </div>
+                          </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-12 col-lg-8">
+              <div class="footer-space">
+                <div class="footer-description "> 
+                  <h4>SIGN UP FOR OUR NEWSLETTER</h4>
+                  <p>Receive an email for special deals</p>
+                </div>
+                
+                <div class="d-flex">
+                  <div>
+                    <p>Find us on</p>
+                    <h4>Social Media</h4>
+                  </div>
+                 
+                  <div class=" footer-social-icon">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="new-footer-two">
+        <div class="container" >
+          <div class="row">
+            <div class="col-12 col-lg-2">
+              <div>
+                <h2>SHOOPING WITH US</h2>
+                <div class="details ">
+                  <a href="#">
+                    <i class="fas fa-angle-double-right"></i>
+                    making payments
+                  </a>
+                </div>
+                <div class="details ">
+                  <a href="#">
+                    <i class="fas fa-angle-double-right"></i>
+                    delivery options
+                  </a>
+                </div>
+                <div class="details ">
+                  <a href="#">
+                    <i class="fas fa-angle-double-right"></i>
+                    Buyer Protection
+                  </a>
+                </div>
+                <div class="details ">
+                  <a href="#">
+                    <i class="fas fa-angle-double-right"></i>
+                    Rating and Reviews
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div>
+                <h2>CUSTOMER CARE</h2>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Help center
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Contact Us
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Report Abuse
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Submit a Dispute
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Policies & Rules
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Get Paid For Your Feedback
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div>
+                <h2>ABOUT US</h2>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Our Commitments
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Meet Our Founder
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  FAQs
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Sitemap
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div>
+                <h2>TRADE SERVICES</h2>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  State Assurance
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Business Identity
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Logistics Service
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Production Monitoring
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Letter Credit
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div>
+                <h2>SELL ON STORE</h2>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Supplier Memberships
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Learning Center
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Partner Program
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-2">
+              <div>
+                <h2>STAY CONNECTED</h2>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Facebook
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Instagram
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Youtube
+                </a>
+              </div>
+              <div class="details ">
+                <a href="#">
+                  <i class="fas fa-angle-double-right"></i>
+                  Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+          
+        <div class=" new-footer3 ">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-4">
+                <div>
+                  <img src="~/asset/images/mv 2/df24df9d72ab24ebe82f15569e49d094.png" class="img-fluid" alt="pic">
+                </div>
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class=" footer-details">
+                  <p>  © 2022 Build9ja.com All rights reseverd </p>
+                    <div>
+                      <a href="#"> <img src="~/asset/images/mv 2/google.png" class="img-fluid" alt="">  </a>
+                      <a href="#"> <img src="~/asset/images/mv 2/apple.png" class="img-fluid  pl-3" alt=""></a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        @* <div class=" tag-section ">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-12">
+                <div class="tag">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Nokia |</a></li>
+                    <li><a href="#">Samsung |</a></li>
+                    <li><a href="#">HTC |</a></li>
+                    <li><a href="#">Laptop |</a></li>
+                    <li><a href="#">Smartphone |</a></li>
+                    <li><a href="#">Tablet |</a></li>
+                    <li><a href="#">Vinava |</a></li>
+                    <li><a href="#">Smartwatch |</a></li>
+                    <li><a href="#">Wireless |</a></li>
+                    <li><a href="#">Charger |</a></li>
+                    <li><a href="#">Company |</a></li>
+                    <li><a href="#">Iphone 7S Plus |</a></li>
+                    <li><a href="#">Nova Fashion |</a></li>
+
+                    <li><a href="#">Android Phone |</a></li>
+                    <li><a href="#">Ios Phone |</a></li>
+                    <li><a href="#">OPPO |</a></li>
+                    <li><a href="#">USB Kingston 128GB |</a></li>
+                    <li><a href="#">Bluetooth Motercycle |</a></li>
+                    <li><a href="#">Headset |</a></li>
+                    <li><a href="#">Speaker |</a></li>
+                    <li><a href="#">Headphone |</a></li>
+                    <li><a href="#">Huawei |</a></li>
+                    <li><a href="#">Zippo |</a></li>
+                    <li><a href="#">Digimart |</a></li>
+                    <li><a href="#">Novamart |</a></li>
+
+                    <li><a href="#">Nokia |</a></li>
+                    <li><a href="#">Samsung |</a></li>
+                    <li><a href="#">HTC |</a></li>
+                    <li><a href="#">Laptop |</a></li>
+                    <li><a href="#">Smartphone |</a></li>
+                    <li><a href="#">Tablet |</a></li>
+                    <li><a href="#">Vinava |</a></li>
+                    <li><a href="#">Smartwatch |</a></li>
+                    <li><a href="#">Wireless |</a></li>
+                    <li><a href="#">Charger |</a></li>
+                    <li><a href="#">Company |</a></li>
+                    <li><a href="#">Iphone 7S Plus |</a></li>
+                    <li><a href="#">Nova Fashion |</a></li>
+
+                    <li><a href="#">Android Phone |</a></li>
+                    <li><a href="#">Ios Phone |</a></li>
+                    <li><a href="#">OPPO |</a></li>
+                    <li><a href="#">USB Kingston 128GB |</a></li>
+                    <li><a href="#">Bluetooth Motercycle |</a></li>
+                    <li><a href="#">Headset |</a></li>
+                    <li><a href="#">Speaker |</a></li>
+                    <li><a href="#">Headphone |</a></li>
+                    <li><a href="#">Huawei |</a></li>
+                    <li><a href="#">Zippo |</a></li>
+                    <li><a href="#">Digimart |</a></li>
+                    <li><a href="#">Novamart |</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> *@
+        <!-- //footer style One -->
+      
+
+        <div class="mobile-overlay"></div>
+        <a href="#" class="btn-secondary " id="back-to-top" title="Back to top">&uarr;</a>
+
+      
+        <div class="notifications" id="notificationWishlist"><span class="notificationWishlist"></span></div>
+        <div class="notifications" id="notificationCart">Product Added To Cart</div>
+        <div class="notifications" id="notificationCompare">Product Added For Compare</div>
+
+        
+        <!-- Product Modal -->
+      <div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-hidden="true">
+          
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  
+                  <div class="container">
+                    <div class="row ">
+                      <div class="col-12 col-md-6">
+                          <div class="row ">
+                              <div id="quickViewCarousel" class="carousel slide" data-ride="carousel">
+                                  <!-- The slideshow -->
+                                  <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        
+                                      <img class="img-fluid" src="~/asset/images/gallery/preview/Product_image_01.jpg" alt="image">
+                                    </div>
+                                    <div class="carousel-item">
+                                        
+                                      <img class="img-fluid" src="~/asset/images/gallery/preview/Product_image_02.jpg" alt="image">
+                                    </div>
+                                    <div class="carousel-item">
+                                        
+                                      <img class="img-fluid" src="~/asset/images/gallery/preview/Product_image_03.jpg" alt="image">
+                                    </div>
+                                    <div class="carousel-item">
+                                        
+                                      <img class="img-fluid" src="~/asset/images/gallery/preview/Product_image_04.jpg" alt="image">
+                                    </div>
+                                  </div>
+
+                                  <a class="carousel-control-prev" href="#quickViewCarousel" data-slide="prev">
+                                    <span class="fas fa-angle-left "></span>
+                                  </a>
+                                  <a class="carousel-control-next" href="#quickViewCarousel" data-slide="next">
+                                    <span class="fas fa-angle-right "></span>
+                                  </a>
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-6 pro-description">
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="badges">
+                                  <div class="badge badge-success">New</div>
+                                    <div class="badge badge-info">
+                                      Featured
+                                    </div>
+                                    <div class="badge badge-danger">
+                                      Sale
+                                    </div>
+                                    <div class="badge badge-dark">
+                                      Out Of Stock
+                                    </div>
+                                </div>   
+                                <h3 >Luxerious  Bed </h3>
+                                
+                                <div class="pro-price">                     
+                                    <ins>$358</ins>           
+                                    <del>$192</del>                        
+                                </div>
+                                <div class="pro-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <a href="#review" class="btn-link">2 reviews</a>
+                                </div>
+                                <div class="pro-info">
+                                    <div class="pro-single-info"><b>Product ID :</b><span>1004</span></div>
+                                    <div class="pro-single-info"><b>Categroy :</b><span><a href="#">Furniture</a></span></div>
+                                    <div class="pro-single-info">
+                                      <b>Tags :</b>
+                                      <ul>
+                                          <li><a href="#">Beds</a></li>
+                                          <li><a href="#">Chair</a></li>
+                                          <li><a href="#">Sofa</a></li>
+                                          
+                                      </ul>
+                                    </div>
+                                    <div class="pro-single-info"><b>Available :</b><span class="text-secondary">InStock</span></div>
+                                    <div class="pro-single-info"><b>Min Order Limit :</b><span><a href="#">5</a></span></div>
+                                </div>
+                                
+                                <div class="pro-options">
+                                  <div class="color-option">
+                                      <b>Color : </b>
+                                      
+                                      <ul class="product-model">
+                                        <li class="active"><a class="green" href="javascript:void(0);"></a></li>
+                                        <li ><a class="red" href="javascript:void(0);"></a></li>
+                                        
+                                      </ul>
+                                  </div>
+                                  <div class="size-option">
+                                    <b>Size : </b>
+                                    <ul class="product-model1">
+                                      <li class="active"><a class="size-select" href="javascript:void(0);">
+                                        XS
+                                      </a></li>
+                                      <li><a class="size-select" href="javascript:void(0);">
+                                        S
+                                      </a></li>
+                                      <li><a class="size-select" href="javascript:void(0);">M</a></li>
+                                      
+                                    </ul>
+                                  
+                                </div>
+                                </div>
+                
+                                <div class="pro-quantiy">
+                    
+                                  <div class="input-group-control">
+                
+                                    
+                                      <input type="text" id="quantity1" name="quantity" class="form-control" maxlength="2" value="10" size="2">
+                                      <span class="input-group-btn">
+                                        <button type="button" value="quantity1" class="quantity-plus1 btn btn-outline-secondary" data-type="plus" data-field="">
+                                          <i class="fas fa-plus"></i>
+                                      </button>
+                                      <button type="button" value="quantity1" class="quantity-minus1 btn btn-outline-secondary" data-type="minus" data-field="">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                      </span>
+                                      
+                                    
+                                    
+                                </div>
+                                      
+                                <button type="button" class="btn btn-secondary btn-lg" onclick="notificationCart();">Add to Cart</button> 
+                              
+                                </div>
+                          
+                                </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+          </div>
+        </div>
+      </div>
+
+<div class="modal fade show" id="variationModal" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg newsletter" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="container">
+                    <div class="row align-items-center">
+                      <div class="col-12 col-md-12" >
+                          <h3 class="text-01">
+                                Select a Variation
+                          </h3>
+                         <table class="table top-table">
+                  <tbody id="variations">
+                      
+                  </tbody>
+                </table>
+                <a href="checkout.html"  class="btn btn-secondary btn-block checkout-continue" >
+                        PROCEED TO CHECKOUT</a>
+                        <a href="shop-4cols.html" class="btn btn-link btn-block checkout-continue">CONTINUE SHOPPING</a>
+                      </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+        
+      <!-- Newsletter Modal -->
+      @* <div class="modal fade show" id="newsletterModal" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg newsletter" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="container">
+                    <div class="row align-items-center">
+                      <div class="col-12 col-md-6" >
+                          <div class="pro-image">
+                            <img class="img-fluid" src="~/asset/images/miscellaneous/newslater.jpg" alt="blogImage">
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-6" >
+                          <div class="promo-box">
+                              <h2 class="text-01">
+                                Sign Up for Our Newsletter
+                              </h2>
+                              <p class="text-03">
+                                Be the first to learn about our latest trends and get exclusive offers.
+                              </p>
+                              <form>
+                                <div class="form-group">
+                                  <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Enter Your Email Address...">
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck0">
+                                  <label class="form-check-label" for="defaultCheck0">
+                                    Do Not Show This Popup Again
+                                  </label>
+                                  <small id="checkboxHelp" class="form-text text-muted"></small>
+                                </div>
+                                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-secondary swipe-to-top">Subscribe</button>
+                              </form>
+                          </div>
+                      </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div> *@
+      
+        
+        
+        <div class="dropdown switecher-new" >
+          <button class="btn btn-primary swipe-to-top dropdown-toggle" type="button" id="headerOneCartButton"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+          </button> 
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerOneCartButton">
+            
+            <a href="#" class="swticher-rtl">
+              <div class="text ">Use demo with RTL</div>
+              <div class="toggle">
+                <span class="circle "></span>
+              </div>
+            
+          </a>
+          <a href="#" class="swticher-boxed ">
+              <div class="text ">Use demo with Box</div>
+              <div class="toggle">
+                <span class="circle"></span>
+              </div>
+          </a>
+
+          <div class="swicher-color">
+              <div class="text "><b>Use demo with Colors</b></div>
+              <ul id="switchColor" > 
+                <li class="active">
+                  <a href="#" id="default"><div id="default-sprite" ></div></a>
+                </li>
+                <li>
+                  <a href="#" id="yellow"><div id="yellow-sprite" ></div></a>
+                </li>
+                <li>
+                  <a href="#" id="blue"><div id="blue-sprite" ></div></a>
+                </li>
+                <li>
+                  <a href="#" id="green"><div id="green-sprite" ></div></a>
+                </li>
+                <li>
+                  <a href="#" id="navy-blue"><div id="navy-blue-sprite" ></div></a>
+                </li>
+                <li>
+                  <a href="#" id="red"><div id="red-sprite" ></div></a>
+                </li>
+                <li>
+                  <a href="#" id="pink"><div id="pink-sprite" ></div></a>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+
+        <button class="switch btn btn-secondary btn-sm" data-switch-dark >Dark</button>
+  
+<!-- All custom scripts here -->
+    
+    <script src="~/js/site.js"></script>
+    <script src="~/asset/js/scripts.js"></script>
+    <script src="~/asset/js/axios.js"></script>
+    <script src="~/js/cart.js"></script>
+    <script src="~/js/wishlist.js"></script>
+
+    <!-- Slider Revolution core JavaScript files -->
+    <script src="~/asset/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Slider Revolution extension scripts. ONLY NEEDED FOR LOCAL TESTING --> 
+    <script src="~/asset/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/asset/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+
+    <script>
+      @* var countDownDate = new Date("dec 27, 2021 15:37:25").getTime();
+    var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("demo1").innerHTML = days; 
+    document.getElementById("demo2").innerHTML = hours;
+    document.getElementById("demo3").innerHTML = minutes;
+    document.getElementById("demo4").innerHTML = seconds;
+    },1000);*@
+    
+    @* $('body').css('padding-top', jQuery('.navbar').outerHeight() + 'px');  *@
+    @* $('body').css('padding-top', '0px');  *@
+    </script>
+
+</body>
+</html>

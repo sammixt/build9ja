@@ -1,0 +1,118 @@
+ <div class="container-fuild">
+          <div class="page-header" style="background-image: url('images/miscellaneous/page-header.png')">
+            <div class="container">
+              <h1 class="page-title">Login<span>Introduce Yourself</span></h1>
+            </div><!-- End .container -->
+          </div>
+          <nav aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Login</li>
+                </ol>
+            </div>
+          </nav>
+  
+  
+      </div> 
+      
+      <!-- login Content -->
+      <section class="pro-content account-content">
+        <div class="container"> 
+          
+          
+            <div class="row">
+              <div class="col-12 col-sm-12 col-lg-6">
+                <h3 class="heading login-heading">LOGIN</h3>
+                <div class="registration-process">
+                    
+                  <form>
+                      <div class="from-group mb-3">
+              
+                        <div class="input-group col-12">
+                      
+                          <input type="email" class="form-control" id="loginEmail" placeholder="Enter Your Email" required>
+                        </div>
+                      </div>
+                      <div class="from-group mb-3">
+                        
+                          <div class="input-group col-12">
+                         
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter Your Password" required>
+                            <input type="hidden" id ="loginReturnUrl", value="@ViewBag.ReturnUrl" />
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-12">
+                            <button class="btn btn-secondary" id="login">Login</button>
+                          <a href="change-password.html" class="btn btn-link">Forgot Password</a>
+                        </div>
+                  </form>
+                </div>
+                <div class="col-12 col-sm-12 left">
+                  <div class="registration-socials">
+                    @* <div class="col-12 col-sm-12 left">
+                      <button type="button" class="btn btn-google"><i class="fab fa-google-plus-g"></i>&nbsp;Login with Google</button>
+                      <button type="button" class="btn btn-facebook"><i class="fab fa-facebook-f"></i>&nbsp;Login with Facebook</button>
+          
+                      </div> *@
+                </div>
+               
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-lg-6">
+                  <h3 class="heading login-heading">NEW CUSTOMER</h3>
+                  <div class="registration-process">
+                    <form >
+                      <div class="from-group row mb-3">
+                         
+                          <div class="input-group col-12">
+                            
+                            <input type="text" name="firstName" class="form-control" id="firstname" placeholder="Enter Your First Name" required>
+                          </div>
+                        </div>
+                         <div class="from-group row mb-3">
+                         
+                          <div class="input-group col-12">
+                            
+                            <input type="text" name="lastName" class="form-control" id="lastname" placeholder="Enter Your Last Name" required>
+                          </div>
+                        </div>
+                      <div class="from-group row mb-3">
+                     
+                        <div class="input-group col-12">
+                          
+                          <input type="text" name="email" class="form-control" id="email" placeholder="Enter Your Email" required>
+                        </div>
+                      </div>
+                      <div class="from-group row mb-3">
+                        
+                          <div class="input-group col-12">
+                            
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter Your Password" required>
+                          </div>
+                        </div>
+                        <div class="from-group row mb-3">
+                       
+                            <div class="input-group col-12">
+                              
+                              <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Your Mobile Number" required>
+                              <input type="hidden" id ="returnUrl", value="@ViewBag.ReturnUrl" />
+                            </div>
+                          </div>
+                        <div class="from-group">
+                            <button class="btn btn-primary swipe-to-top" id="register">Create Account</button>
+                          
+                        </div>
+                  </form>
+                  </div>
+               
+              </div>
+         
+            </div>
+
+        </div>
+      </section>
+
+      @section Scripts{
+        <script src="~/js/login.js"></script>
+      }
